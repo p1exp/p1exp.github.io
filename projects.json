@@ -1,26 +1,47 @@
 {
-  "software": [
-    {
-      "title": "Generative Sequencer Matrix",
-      "description": "A digital script library running custom probability curves for structural MIDI notes.",
-      "image": "https://picsum.photos/600/300?random=1",
-      "link": "#"
-    }
-  ],
-  "hardware": [
-    {
-      "title": "Tactile Control Surface",
-      "description": "A custom physical layout box featuring high-torque potentiometers and custom CV breakout lanes.",
-      "image": "https://picsum.photos/600/300?random=2",
-      "link": "#"
-    }
-  ],
-  "audio": [
-    {
-      "title": "Live Lab Tape #4",
-      "description": "Recorded live straight to stereo tape using purely hardware sequencers.",
-      "image": "https://picsum.photos/600/300?random=3",
-      "link": "#"
-    }
-  ]
+  "software": {
+    "header": {
+      "title": "SOFTWARE SYNTHESIS // RUNTIME",
+      "text": "Deep dive into algorithmic MIDI scripts, probability gates, and generative sequence logic engines built to feed external hardware systems.",
+      "image": "https://picsum.photos/1200/500?random=101"
+    },
+    "items": [
+      {
+        "title": "Generative Sequencer Matrix",
+        "description": "A digital script library running custom probability curves for structural MIDI notes.",
+        "image": "https://picsum.photos/600/300?random=1",
+        "link": "#"
+      }
+    ]
+  },
+  "hardware": {
+    "header": {
+      "title": "HARDWARE WORKBENCH // LAYOUTS",
+      "text": "Custom physical control boxes, analog component assembly notes, and voltage distribution modules built for physical tactile routing.",
+      "image": "https://picsum.photos/1200/500?random=102"
+    },
+    "items": [
+      {
+        "title": "Tactile Control Surface",
+        "description": "A custom physical layout box featuring high-torque potentiometers and custom CV breakout lanes.",
+        "image": "https://picsum.photos/600/300?random=2",
+        "link": "#"
+      }
+    ]
+  },
+  "audio": {
+    "header": {
+      "title": "SONIC RECORDINGS // MASTER ARRAYS",
+      "text": "Stereo mixdown prints captured live directly from hardware synthesis configurations. No edits, no post-processing arrays.",
+      "image": "https://picsum.photos/1200/500?random=103"
+    },
+    "items": [
+      {
+        "title": "Live Lab Tape #4",
+        "description": "Recorded live straight to stereo tape using purely hardware sequencers.",
+        "image": "https://picsum.photos/600/300?random=3",
+        "link": "#"
+      }
+    ]
+  }
 }
