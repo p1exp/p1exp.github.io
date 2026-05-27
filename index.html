@@ -5,39 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio & Projects Hub</title>
     <style>
-        /* Reset and layout setup */
+        /* --- CORE SYSTEM RESET --- */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        /* Custom scrollbar for the center frame */
-main::-webkit-scrollbar {
-    width: 8px;
-}
-main::-webkit-scrollbar-track {
-    background: #121212; 
-}
-main::-webkit-scrollbar-thumb {
-    background: #333; 
-    border-radius: 4px;
-}
-main::-webkit-scrollbar-thumb:hover {
-    background: #00ffcc; /* Accent color on hover */
-}
-
         body {
-            font-family: 'Courier New', Courier, monospace; /* Clean, electronic/hardware aesthetic */
+            font-family: 'Courier New', Courier, monospace;
             background-color: #121212;
             color: #e0e0e0;
             height: 100vh;
             display: grid;
-            grid-template-rows: 60px 1fr 140px; /* Top nav, middle content, bottom player */
-            overflow: hidden; /* Prevents the whole window from scrolling */
+            /* 3-Frame Layout: Header (60px), Center (flexible), Footer (grows with content) */
+            grid-template-rows: 60px 1fr auto; 
+            overflow: hidden; /* Prevents the main browser window from breaking layout */
         }
 
-        /* --- FRAME 1: TOP NAV BAR --- */
+        /* --- MODERN CUSTOM SCROLLBARS --- */
+        main::-webkit-scrollbar {
+            width: 8px;
+        }
+        main::-webkit-scrollbar-track {
+            background: #121212; 
+        }
+        main::-webkit-scrollbar-thumb {
+            background: #252525; 
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+        main::-webkit-scrollbar-thumb:hover {
+            background: #00ffcc; 
+        }
+
+        /* --- FRAME 1: TOP NAVIGATION BAR --- */
         header {
             background-color: #1a1a1a;
             border-bottom: 2px solid #333;
@@ -51,7 +53,8 @@ main::-webkit-scrollbar-thumb:hover {
         header .logo {
             font-weight: bold;
             font-size: 1.2rem;
-            color: #00ffcc; /* Acid/neon accent */
+            color: #00ffcc;
+            letter-spacing: 1px;
         }
 
         nav a {
@@ -68,8 +71,7 @@ main::-webkit-scrollbar-thumb:hover {
 
         /* --- FRAME 2: SCROLLING CENTER CONTENT --- */
         main {
-            grid-row: 2;
-            overflow-y: auto; /* Enables scrolling just for this center frame */
+            overflow-y: auto; /* Forces independent frame scrolling */
             padding: 40px 20px;
             max-width: 800px;
             margin: 0 auto;
@@ -87,6 +89,9 @@ main::-webkit-scrollbar-thumb:hover {
         h2 {
             color: #00ffcc;
             margin-bottom: 15px;
+            font-size: 1.3rem;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
         }
 
         p {
@@ -95,107 +100,113 @@ main::-webkit-scrollbar-thumb:hover {
             margin-bottom: 15px;
         }
 
-        /* --- FRAME 3: BOTTOM BANDCAMP PLAYER --- */
+        /* Styling for the audio switcher links inside text blocks */
+        main a {
+            color: #00ffcc;
+            text-decoration: underline;
+            font-weight: bold;
+            padding: 2px 4px;
+            transition: all 0.2s;
+        }
+        
+        main a:hover {
+            color: #121212;
+            background-color: #00ffcc;
+            text-decoration: none;
+        }
+
+        /* --- FRAME 3: BOTTOM DECK (BANDCAMP & TOGGLE) --- */
         footer {
             background-color: #1a1a1a;
             border-top: 2px solid #333;
-            padding: 10px;
             z-index: 10;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            position: relative;
         }
 
-        .player-container {
+        /* Sleek hardware-style Up/Down toggle switch button */
+        .toggle-btn-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: -14px; 
+            z-index: 20;
+        }
+
+        .toggle-btn {
+            background-color: #1a1a1a;
+            color: #00ffcc;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 4px 15px;
+            font-family: inherit;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .toggle-btn:hover {
+            background-color: #00ffcc;
+            color: #1a1a1a;
+            border-color: #00ffcc;
+        }
+
+        /* Container that smoothly handles the clip and height transitions */
+        .player-wrapper {
             width: 100%;
             max-width: 800px;
-            height: 120px;
+            height: 120px; /* Default height: clips tracklist view, leaves main player */
+            overflow: hidden;
+            transition: height 0.3s ease-in-out;
+            padding: 10px 0;
+        }
+
+        /* Expanded layout class triggered via JavaScript */
+        .player-wrapper.expanded {
+            height: 300px; /* Tall enough to reveal the dropdown tracklist */
         }
 
         iframe {
             border: 0;
             width: 100%;
-            height: 100%;
+            height: 280px; /* Fixed height for inside elements */
         }
-
-        /* Responsive adjustments for mobile screens */
-@media (max-width: 600px) {
-    body {
-        grid-template-rows: auto auto auto; /* Let content dictate height */
-        overflow: y; /* Let the whole screen scroll naturally */
-        height: auto;
-    }
-    
-    main {
-        overflow-y: visible; /* Disable the isolated scrolling panel */
-    }
-    
-    footer {
-        position: sticky;
-        bottom: 0; /* Keep player pinned, or let it sit at the bottom */
-    }
-}
-        
     </style>
 </head>
 <body>
 
-    <!-- FRAME 1: Navigation -->
     <header>
         <div class="logo">DESKTOP // LAB</div>
         <nav>
             <a href="#projects">Projects</a>
             <a href="#hardware">Hardware</a>
-            <a href="#audio">Audio</a>
+            <a href="#system">System</a>
         </nav>
     </header>
 
-    <!-- FRAME 2: Center Content (Scrollable) -->
     <main>
         <section id="projects" class="content-block">
             <h2>Generative Sequences & Tools</h2>
-            <p>Welcome to the central repository. This space acts as an interactive log for ongoing software workflows, hardware configurations, and core process tracking.</p>
+            <p>Welcome to the digital lab workspace. Use the matrix links below to alter the layout parameters and update the active background master feed without disturbing the layout state.</p>
+            
             <p>
-  Check out my latest experimental loops. Listen to 
-  <a href="#" onclick="changeTrack('album=327864152')">Album 1</a> 
-  or switch to 
-  <a href="#" onclick="changeTrack('album=1568662603')">Album 2</a>.
-</p>
+              Select Core Feed: 
+              <a href="#" onclick="changeTrack('album=327864152')">Album 1</a> 
+              or switch to 
+              <a href="#" onclick="changeTrack('album=1568662603')">Album 2</a>.
+            </p>
         </section>
 
         <section id="hardware" class="content-block">
-            <h2>Hardware Builds</h2>
-            <p>Exploring tactile layouts involving custom potentiometer matrices, custom control voltage (CV) routing, and dedicated hardware clock synchronization for hardware synthesizers.</p>
+            <h2>Hardware Architecture</h2>
+            <p>Exploring multi-channel control loops, hardware clock distribution matrices, and custom signal chains. Elements focus on synchronization stability across modular interfaces.</p>
         </section>
 
-        <section id="audio" class="content-block">
-            <h2>Audio Archives</h2>
-            <p>Scroll through updates while listening to the background feed. The player below contains recent loop arrangements, test patterns, and complete live takes.</p>
-            <!-- Adding extra dummy text to guarantee the center frame scrolls -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Up and down the rack, patching signals and tweaking variables. Modulating parameters dynamically via localized controls.</p>
-            <p>More scrolling testing content here to ensure the center frame acts independently while the header and footer remain completely locked in place.</p>
-        </section>
-    </main>
-
-    <!-- FRAME 3: Bandcamp Player -->
-    <footer>
-        <div class="player-container">
-            <!-- Swap the URL below out with your own Bandcamp embed code later -->
-            <iframe id="bandcamp-player" src="https://bandcamp.com/EmbeddedPlayer/album=1308553531/size=small/bgcol=333333/linkcol=00ffcc/tracklist=false/artwork=small/transparent=true/" seamless>
-    <a href="https://bandcamp.com">Bandcamp Audio</a>
-</iframe>
-        </div>
-        <script>
-    function changeTrack(embedId) {
-        // Prevent the page from jumping to the top
-        //event.preventDefault(); 
-        
-        const player = document.getElementById('bandcamp-player');
-        // Reconstructs the Bandcamp URL with your new album/track ID
-        player.src = `https://bandcamp.com/EmbeddedPlayer/${embedId}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/`;
-    }
-</script>
-    </footer>
-
-</body>
-</html>
+        <section id="system" class="content-block">
+            <h2>System Architecture Logs</h2>
+            <p>This layout operates entirely inside a single-page modern execution frame. Scroll down through this module block to test the isolated panel physics—notice how the top navigation layout and the bottom player panel remain completely anchored to the window viewport margins.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus diam at leo finibus, id pulvinar ante consequat. Mauris sed lorem a erat volutpat laoreet
