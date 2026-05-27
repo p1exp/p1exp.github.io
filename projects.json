@@ -29,7 +29,7 @@
       }
     ]
   },
-    "hardware": {
+    "hardware2": {
     "header": {
       "title": "HARDWARE WORKBENCH // LAYOUTS",
       "text": "Custom physical control boxes, analog component assembly notes, and voltage distribution modules built for physical tactile routing.",
