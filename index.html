@@ -209,4 +209,49 @@
         <section id="system" class="content-block">
             <h2>System Architecture Logs</h2>
             <p>This layout operates entirely inside a single-page modern execution frame. Scroll down through this module block to test the isolated panel physics—notice how the top navigation layout and the bottom player panel remain completely anchored to the window viewport margins.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus diam at leo finibus, id pulvinar ante consequat. Mauris sed lorem a erat volutpat laoreet
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus diam at leo finibus, id pulvinar ante consequat. Mauris sed lorem a erat volutpat laoreet. Quisque finibus justo vitae tortor varius feugiat.</p>
+            <p>End of system architecture configuration array.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="toggle-btn-container">
+            <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()">▲ SHOW TRACKLIST</button>
+        </div>
+        
+        <div class="player-wrapper" id="player-wrapper">
+            <iframe id="bandcamp-player" src="https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/" seamless>
+                <a href="https://bandcamp.com">Bandcamp Audio</a>
+            </iframe>
+        </div>
+    </footer>
+
+    <script>
+        // Handler 1: Toggle Tracklist Up / Down state
+        function toggleTracklist() {
+            const wrapper = document.getElementById('player-wrapper');
+            const button = document.getElementById('tracklist-toggle');
+            
+            wrapper.classList.toggle('expanded');
+            
+            if (wrapper.classList.contains('expanded')) {
+                button.innerHTML = "▼ HIDE TRACKLIST";
+            } else {
+                button.innerHTML = "▲ SHOW TRACKLIST";
+            }
+        }
+
+        // Handler 2: Audio matrix switching links
+        function changeTrack(embedId) {
+            // Stops the browser from jumping the page scroll view when link is clicked
+            event.preventDefault(); 
+            
+            const player = document.getElementById('bandcamp-player');
+            
+            // Re-renders the frame source URL cleanly with tracklist configurations intact
+            player.src = `https://bandcamp.com/EmbeddedPlayer/${embedId}/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/`;
+        }
+    </script>
+
+</body>
+</html>
