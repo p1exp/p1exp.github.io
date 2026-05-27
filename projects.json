@@ -1,0 +1,26 @@
+{
+  "software": [
+    {
+      "title": "Generative Sequencer Matrix",
+      "description": "A digital script library running custom probability curves for structural MIDI notes.",
+      "image": "https://picsum.photos/600/300?random=1",
+      "link": "#"
+    }
+  ],
+  "hardware": [
+    {
+      "title": "Tactile Control Surface",
+      "description": "A custom physical layout box featuring high-torque potentiometers and custom CV breakout lanes.",
+      "image": "https://picsum.photos/600/300?random=2",
+      "link": "#"
+    }
+  ],
+  "audio": [
+    {
+      "title": "Live Lab Tape #4",
+      "description": "Recorded live straight to stereo tape using purely hardware sequencers.",
+      "image": "https://picsum.photos/600/300?random=3",
+      "link": "#"
+    }
+  ]
+}
