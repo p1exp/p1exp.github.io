@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio & Projects Hub</title>
+    <style>
+        /* Reset and layout setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Clean, electronic/hardware aesthetic */
+            background-color: #121212;
+            color: #e0e0e0;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 60px 1fr 140px; /* Top nav, middle content, bottom player */
+            overflow: hidden; /* Prevents the whole window from scrolling */
+        }
+
+        /* --- FRAME 1: TOP NAV BAR --- */
+        header {
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        header .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #00ffcc; /* Acid/neon accent */
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #00ffcc;
+        }
+
+        /* --- FRAME 2: SCROLLING CENTER CONTENT --- */
+        main {
+            grid-row: 2;
+            overflow-y: auto; /* Enables scrolling just for this center frame */
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .content-block {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #00ffcc;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        /* --- FRAME 3: BOTTOM BANDCAMP PLAYER --- */
+        footer {
+            background-color: #1a1a1a;
+            border-top: 2px solid #333;
+            padding: 10px;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .player-container {
+            width: 100%;
+            max-width: 800px;
+            height: 120px;
+        }
+
+        iframe {
+            border: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FRAME 1: Navigation -->
+    <header>
+        <div class="logo">DESKTOP // LAB</div>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="#hardware">Hardware</a>
+            <a href="#audio">Audio</a>
+        </nav>
+    </header>
+
+    <!-- FRAME 2: Center Content (Scrollable) -->
+    <main>
+        <section id="projects" class="content-block">
+            <h2>Generative Sequences & Tools</h2>
+            <p>Welcome to the central repository. This space acts as an interactive log for ongoing software workflows, hardware configurations, and core process tracking.</p>
+        </section>
+
+        <section id="hardware" class="content-block">
+            <h2>Hardware Builds</h2>
+            <p>Exploring tactile layouts involving custom potentiometer matrices, custom control voltage (CV) routing, and dedicated hardware clock synchronization for hardware synthesizers.</p>
+        </section>
+
+        <section id="audio" class="content-block">
+            <h2>Audio Archives</h2>
+            <p>Scroll through updates while listening to the background feed. The player below contains recent loop arrangements, test patterns, and complete live takes.</p>
+            <!-- Adding extra dummy text to guarantee the center frame scrolls -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Up and down the rack, patching signals and tweaking variables. Modulating parameters dynamically via localized controls.</p>
+            <p>More scrolling testing content here to ensure the center frame acts independently while the header and footer remain completely locked in place.</p>
+        </section>
+    </main>
+
+    <!-- FRAME 3: Bandcamp Player -->
+    <footer>
+        <div class="player-container">
+            <!-- Swap the URL below out with your own Bandcamp embed code later -->
+            <iframe src="https://bandcamp.com/EmbeddedPlayer/album=1308553531/size=large/bgcol=333333/linkcol=00ffcc/tracklist=false/artwork=small/transparent=true/" seamless>
+                <a href="https://bandcamp.com">Bandcamp Audio</a>
+             iframe>
+        </div>
+    </footer>
+
+</body>
+</html>
