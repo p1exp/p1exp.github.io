@@ -29,6 +29,21 @@
       }
     ]
   },
+    "hardware": {
+    "header": {
+      "title": "HARDWARE WORKBENCH // LAYOUTS",
+      "text": "Custom physical control boxes, analog component assembly notes, and voltage distribution modules built for physical tactile routing.",
+      "image": "https://picsum.photos/1200/500?random=102"
+    },
+    "items": [
+      {
+        "title": "Tactile Control Surface",
+        "description": "A custom physical layout box featuring high-torque potentiometers and custom CV breakout lanes.",
+        "image": "https://picsum.photos/600/300?random=2",
+        "link": "#"
+      }
+    ]
+  },
   "audio": {
     "header": {
       "title": "SONIC RECORDINGS // MASTER ARRAYS",
