@@ -155,6 +155,12 @@ main::-webkit-scrollbar-thumb:hover {
         <section id="projects" class="content-block">
             <h2>Generative Sequences & Tools</h2>
             <p>Welcome to the central repository. This space acts as an interactive log for ongoing software workflows, hardware configurations, and core process tracking.</p>
+            <p>
+  Check out my latest experimental loops. Listen to 
+  <a href="#" onclick="changeTrack('album=1308553531')">Album 1</a> 
+  or switch to 
+  <a href="#" onclick="changeTrack('album=2843513607')">Album 2</a>.
+</p>
         </section>
 
         <section id="hardware" class="content-block">
@@ -175,10 +181,20 @@ main::-webkit-scrollbar-thumb:hover {
     <footer>
         <div class="player-container">
             <!-- Swap the URL below out with your own Bandcamp embed code later -->
-            <iframe src="https://bandcamp.com/EmbeddedPlayer/album=1308553531/size=large/bgcol=333333/linkcol=00ffcc/tracklist=false/artwork=small/transparent=true/" seamless>
-                <a href="https://bandcamp.com">Bandcamp Audio</a>
-             iframe>
+            <iframe id="bandcamp-player" src="https://bandcamp.com/EmbeddedPlayer/album=1308553531/size=large/bgcol=333333/linkcol=00ffcc/tracklist=false/artwork=small/transparent=true/" seamless>
+    <a href="https://bandcamp.com">Bandcamp Audio</a>
+</iframe>
         </div>
+        <script>
+    function changeTrack(embedId) {
+        // Prevent the page from jumping to the top
+        event.preventDefault(); 
+        
+        const player = document.getElementById('bandcamp-player');
+        // Reconstructs the Bandcamp URL with your new album/track ID
+        player.src = `https://bandcamp.com/EmbeddedPlayer/${embedId}/size=large/bgcol=333333/linkcol=00ffcc/tracklist=false/artwork=small/transparent=true/`;
+    }
+</script>
     </footer>
 
 </body>
