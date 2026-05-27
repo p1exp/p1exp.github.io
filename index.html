@@ -12,6 +12,21 @@
             padding: 0;
         }
 
+        /* Custom scrollbar for the center frame */
+main::-webkit-scrollbar {
+    width: 8px;
+}
+main::-webkit-scrollbar-track {
+    background: #121212; 
+}
+main::-webkit-scrollbar-thumb {
+    background: #333; 
+    border-radius: 4px;
+}
+main::-webkit-scrollbar-thumb:hover {
+    background: #00ffcc; /* Accent color on hover */
+}
+
         body {
             font-family: 'Courier New', Courier, monospace; /* Clean, electronic/hardware aesthetic */
             background-color: #121212;
@@ -102,6 +117,25 @@
             width: 100%;
             height: 100%;
         }
+
+        /* Responsive adjustments for mobile screens */
+@media (max-width: 600px) {
+    body {
+        grid-template-rows: auto auto auto; /* Let content dictate height */
+        overflow: y; /* Let the whole screen scroll naturally */
+        height: auto;
+    }
+    
+    main {
+        overflow-y: visible; /* Disable the isolated scrolling panel */
+    }
+    
+    footer {
+        position: sticky;
+        bottom: 0; /* Keep player pinned, or let it sit at the bottom */
+    }
+}
+        
     </style>
 </head>
 <body>
