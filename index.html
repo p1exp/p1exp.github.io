@@ -62,39 +62,45 @@
         .content-inner-wrap { padding: 0 20px; }
         .section-label { color: #00ffcc; font-size: 0.9rem; margin: 35px 0 15px 0; letter-spacing: 2px; border-bottom: 1px dashed #222; padding-bottom: 6px; }
 
-        /* --- FEATURED SINGLE CARD --- */
-        .featured-project-card { background-color: #141414; border: 2px solid #222; border-radius: 4px; overflow: hidden; margin-bottom: 20px; }
-        .media-container { width: 100%; height: 340px; background-color: #000; border-bottom: 1px solid #222; position: relative; }
-        .media-container img { width: 100%; height: 100%; object-fit: cover; }
-        .media-container iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
-        .featured-info { padding: 20px; }
-        .featured-info h2 { color: #fff; font-size: 1.3rem; margin-bottom: 10px; }
-        .meta-tag { font-size: 0.75rem; color: #00ffcc; background: #1a2925; padding: 2px 8px; display: inline-block; margin-bottom: 10px; border-radius: 3px; }
+        /* --- CENTER INTERFACE MODULE CARDS --- */
+        .project-layout-card { 
+            background-color: #141414; border: 1px solid #222; border-radius: 4px; 
+            overflow: hidden; margin-bottom: 25px; display: flex; flex-direction: row;
+        }
+        
+        .card-thumbnail { width: 220px; height: 160px; object-fit: cover; border-right: 1px solid #222; flex-shrink: 0; }
+        .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-details h2, .card-details h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
+        .card-details p { font-size: 0.85rem; color: #aaa; line-height: 1.5; margin-bottom: 15px; }
+        
+        .meta-tag { font-size: 0.75rem; color: #00ffcc; background: #1a2925; padding: 2px 8px; align-self: flex-start; margin-bottom: 10px; border-radius: 3px; }
+        .card-footer-text { font-size: 0.75rem; color: #555; margin-top: auto; font-style: italic; }
 
-        /* --- COLLECTION GRID --- */
-        .collection-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 20px; }
-        .collection-item-card { background-color: #121212; border: 1px solid #222; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
-        .collection-media { width: 100%; height: 220px; background: #000; position: relative; border-bottom: 1px solid #222; }
-        .collection-media img { width:100%; height:100%; object-fit: cover; }
-        .collection-media iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
-        .collection-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
-        .collection-info h3 { color: #fff; font-size: 1.1rem; margin-bottom: 8px; }
-        .collection-info p { font-size: 0.85rem; color: #aaa; line-height: 1.5; flex-grow: 1; }
-        .card-footer { font-size: 0.75rem; color: #666; margin-top: 10px; padding-top: 8px; border-top: 1px solid #222; font-style: italic; }
+        /* MASTER LINK ACTIVATION BUTTON */
+        .route-link {
+            align-self: flex-start; background: #1a1a1a; color: #00ffcc; 
+            border: 1px solid #00ffcc; padding: 6px 12px; font-size: 0.75rem; 
+            font-weight: bold; cursor: pointer; text-decoration: none; border-radius: 3px;
+            transition: all 0.2s; margin-top: auto;
+        }
+        .route-link:hover { background: #00ffcc; color: #121212; }
 
-        /* --- FRAME 3: FOOTER DECK --- */
+        /* --- FRAME 3: PINS DECK LAYOUT --- */
         footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; }
         .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; }
         .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 15px; font-family: inherit; font-size: 0.7rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); }
         .toggle-btn:hover { background-color: #00ffcc; color: #121212; border-color: #00ffcc; }
-        .player-wrapper { width: 100%; max-width: 700px; height: 120px; overflow: hidden; transition: height 0.3s ease-in-out; }
-        .player-wrapper.expanded { height: 300px; }
+        
+        /* Wrapper targets structural canvas height profiles dynamically */
+        .player-wrapper { width: 100%; max-width: 700px; height: 140px; overflow: hidden; transition: height 0.3s ease-in-out; padding: 10px 0; }
+        .player-wrapper.expanded { height: 360px; }
+        iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">P1EXP // LAB</div>
+        <div class="logo">P1EXP // DECK MATRIX</div>
         <nav id="nav-filters">
             <button class="active" onclick="switchCategory('projects', this)">Projects</button>
             <button onclick="switchCategory('sessions', this)">Sessions</button>
@@ -106,81 +112,88 @@
         <section class="workspace-hero">
             <img id="hero-image" src="" class="hero-banner-img">
             <div class="hero-text-container">
-                <h1 id="hero-title">ENGINE STABILIZED</h1>
+                <h1 id="hero-title">ENGINE RUNNING</h1>
                 <p id="hero-description"></p>
             </div>
         </section>
 
         <div class="content-inner-wrap">
-            <div class="section-label">SPOTLIGHT TRACK // MODULE</div>
+            <div class="section-label">SPOTLIGHT TARGET LAYER</div>
             <div id="featured-project-container"></div>
 
-            <div class="section-label">ARCHIVE DISCOGRAPHY COMPILATION</div>
-            <div id="collection-grid-container" class="collection-grid"></div>
+            <div class="section-label">ARCHIVE DISCOGRAPHY COLLECTION ARRAY</div>
+            <div id="collection-grid-container"></div>
         </div>
     </main>
 
     <footer>
         <div class="toggle-btn-container">
-            <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()">▲ SHOW TRACKLIST</button>
+            <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()">▲ SHOW DECK MATRIX</button>
         </div>
         <div class="player-wrapper" id="player-wrapper">
-            <iframe id="bandcamp-player" style="border:0; width:100%; height:280px;" src="https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/" seamless></iframe>
+            <iframe id="master-deck-frame" src="https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/" allow="autoplay; encrypted-media; fullscreen"></iframe>
         </div>
     </footer>
 
     <script>
         function renderCategory(categoryKey) {
-            // Read directly from global object loaded in database.js
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
-            // 1. Map Top Banner View
+            // 1. Paint Header Banners
             document.getElementById('hero-image').src = dataBlock.titleBanner.image;
             document.getElementById('hero-title').textContent = dataBlock.titleBanner.title;
             document.getElementById('hero-description').textContent = dataBlock.titleBanner.text;
 
-            // 2. Map Central Primary Spotlight
+            // 2. Paint Featured Card with Route Activation Links
             const featuredContainer = document.getElementById('featured-project-container');
             const feat = dataBlock.featuredProject;
             
-            let mediaContent = `<img src="${feat.image}">`;
-            if (feat.iframe) { mediaContent = feat.iframe; }
-
             featuredContainer.innerHTML = `
-                <div class="featured-project-card">
-                    <div class="media-container">${mediaContent}</div>
-                    <div class="featured-info">
+                <div class="project-layout-card">
+                    <img src="${feat.image}" class="card-thumbnail">
+                    <div class="card-details">
                         <h2>${feat.title}</h2>
                         ${feat.location ? `<span class="meta-tag">${feat.location}</span>` : ''}
                         <p>${feat.description}</p>
+                        ${feat.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${feat.mediaUrl}')">⚡ ACTIVATE PLAY FOR DECK</button>` : ''}
                     </div>
                 </div>
             `;
 
-            // 3. Map Secondary Collection Grid Array
+            // 3. Paint Secondary Dashboard Collection lists
             const collectionContainer = document.getElementById('collection-grid-container');
             collectionContainer.innerHTML = '';
 
             dataBlock.collection.forEach(item => {
                 const card = document.createElement('div');
-                card.className = 'collection-item-card';
-                
-                let subMedia = `<img src="${item.image}">`;
-                if (item.iframe) { subMedia = item.iframe; }
-
+                card.className = 'project-layout-card';
                 card.innerHTML = `
-                    <div class="collection-media">${subMedia}</div>
-                    <div class="collection-info">
+                    <img src="${item.image}" class="card-thumbnail">
+                    <div class="card-details">
                         <h3>${item.title}</h3>
                         <p>${item.description}</p>
-                        ${item.footer ? `<div class="card-footer">${item.footer}</div>` : ''}
+                        ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">⚡ ACTIVATE PLAY FOR DECK</button>` : ''}
+                        ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
                     </div>
                 `;
                 collectionContainer.appendChild(card);
             });
 
             document.getElementById('main-scroll-panel').scrollTop = 0;
+        }
+
+        // MASTER AUDIO FRAME SWITCHING DISPATCHER ENGINE
+        function routeToDeck(targetUrl) {
+            const deckFrame = document.getElementById('master-deck-frame');
+            const wrapper = document.getElementById('player-wrapper');
+            
+            // Inject the pristine URL directly into the running framework frame
+            deckFrame.src = targetUrl;
+            
+            // Auto-expand the bottom tray so video/tracklists are fully accessible immediately
+            wrapper.classList.add('expanded');
+            document.getElementById('tracklist-toggle').innerHTML = "▼ HIDE DECK MATRIX";
         }
 
         function switchCategory(categoryKey, buttonElement) {
@@ -194,14 +207,11 @@
             const wrapper = document.getElementById('player-wrapper');
             const button = document.getElementById('tracklist-toggle');
             wrapper.classList.toggle('expanded');
-            button.innerHTML = wrapper.classList.contains('expanded') ? "▼ HIDE TRACKLIST" : "▲ SHOW TRACKLIST";
+            button.innerHTML = wrapper.classList.contains('expanded') ? "▼ HIDE DECK MATRIX" : "▲ SHOW DECK MATRIX";
         }
 
-        // Run instantly without wait states
         if (typeof projectDatabase !== 'undefined') {
             renderCategory('projects');
-        } else {
-            document.getElementById('hero-title').textContent = "DATABASE LINK MISSING";
         }
     </script>
 </body>
