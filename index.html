@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1EXP // Platform-1 Experimental</title>
+    
+    <script src="./database.js"></script>
+
     <style>
         /* --- CORE SYSTEM RESET --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -103,7 +106,7 @@
         <section class="workspace-hero">
             <img id="hero-image" src="" class="hero-banner-img">
             <div class="hero-text-container">
-                <h1 id="hero-title">LOADING ENGINE...</h1>
+                <h1 id="hero-title">ENGINE STABILIZED</h1>
                 <p id="hero-description"></p>
             </div>
         </section>
@@ -127,19 +130,8 @@
     </footer>
 
     <script>
-        let projectDatabase = null;
-
-        async function initDatabase() {
-            try {
-                const response = await fetch('./projects.json');
-                projectDatabase = await response.json();
-                renderCategory('projects');
-            } catch (error) {
-                document.getElementById('hero-title').textContent = "DATA DISCONNECT ERROR";
-            }
-        }
-
         function renderCategory(categoryKey) {
+            // Read directly from global object loaded in database.js
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
@@ -152,7 +144,6 @@
             const featuredContainer = document.getElementById('featured-project-container');
             const feat = dataBlock.featuredProject;
             
-            // Check if embed code or image is used for media
             let mediaContent = `<img src="${feat.image}">`;
             if (feat.iframe) { mediaContent = feat.iframe; }
 
@@ -193,7 +184,7 @@
         }
 
         function switchCategory(categoryKey, buttonElement) {
-            if (!projectDatabase) return;
+            if (typeof projectDatabase === 'undefined') return;
             document.querySelectorAll('#nav-filters button').forEach(btn => btn.classList.remove('active'));
             buttonElement.classList.add('active');
             renderCategory(categoryKey);
@@ -206,7 +197,12 @@
             button.innerHTML = wrapper.classList.contains('expanded') ? "▼ HIDE TRACKLIST" : "▲ SHOW TRACKLIST";
         }
 
-        initDatabase();
+        // Run instantly without wait states
+        if (typeof projectDatabase !== 'undefined') {
+            renderCategory('projects');
+        } else {
+            document.getElementById('hero-title').textContent = "DATABASE LINK MISSING";
+        }
     </script>
 </body>
 </html>
