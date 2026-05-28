@@ -76,14 +76,15 @@
         .meta-tag { font-size: 0.75rem; color: #00ffcc; background: #1a2925; padding: 2px 8px; align-self: flex-start; margin-bottom: 10px; border-radius: 3px; }
         .card-footer-text { font-size: 0.75rem; color: #555; margin-top: auto; font-style: italic; }
 
-        /* MASTER LINK ACTIVATION BUTTON */
+        /* PLAY LINK COMPONENT FOR BOTTOM FRAME PIPING */
         .route-link {
             align-self: flex-start; background: #1a1a1a; color: #00ffcc; 
-            border: 1px solid #00ffcc; padding: 6px 12px; font-size: 0.75rem; 
-            font-weight: bold; cursor: pointer; text-decoration: none; border-radius: 3px;
-            transition: all 0.2s; margin-top: auto;
+            border: 1px solid #00ffcc; padding: 6px 14px; font-size: 0.75rem; 
+            font-family: inherit; font-weight: bold; cursor: pointer; text-decoration: none; 
+            border-radius: 3px; transition: all 0.2s; margin-top: auto;
+            letter-spacing: 1px;
         }
-        .route-link:hover { background: #00ffcc; color: #121212; }
+        .route-link:hover { background: #00ffcc; color: #121212; box-shadow: 0 0 10px rgba(0,255,204,0.3); }
 
         /* --- FRAME 3: PINS DECK LAYOUT --- */
         footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; }
@@ -91,7 +92,6 @@
         .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 15px; font-family: inherit; font-size: 0.7rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); }
         .toggle-btn:hover { background-color: #00ffcc; color: #121212; border-color: #00ffcc; }
         
-        /* Wrapper targets structural canvas height profiles dynamically */
         .player-wrapper { width: 100%; max-width: 700px; height: 140px; overflow: hidden; transition: height 0.3s ease-in-out; padding: 10px 0; }
         .player-wrapper.expanded { height: 360px; }
         iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; }
@@ -118,10 +118,10 @@
         </section>
 
         <div class="content-inner-wrap">
-            <div class="section-label">SPOTLIGHT TARGET LAYER</div>
+            <div class="section-label">SPOTLIGHT COLLECTION LAYER</div>
             <div id="featured-project-container"></div>
 
-            <div class="section-label">ARCHIVE DISCOGRAPHY COLLECTION ARRAY</div>
+            <div class="section-label">ARCHIVE COLLECTION COMPILATIONS</div>
             <div id="collection-grid-container"></div>
         </div>
     </main>
@@ -145,7 +145,7 @@
             document.getElementById('hero-title').textContent = dataBlock.titleBanner.title;
             document.getElementById('hero-description').textContent = dataBlock.titleBanner.text;
 
-            // 2. Paint Featured Card with Route Activation Links
+            // 2. Paint Featured Spotlight with Play Collection trigger
             const featuredContainer = document.getElementById('featured-project-container');
             const feat = dataBlock.featuredProject;
             
@@ -156,12 +156,12 @@
                         <h2>${feat.title}</h2>
                         ${feat.location ? `<span class="meta-tag">${feat.location}</span>` : ''}
                         <p>${feat.description}</p>
-                        ${feat.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${feat.mediaUrl}')">⚡ ACTIVATE PLAY FOR DECK</button>` : ''}
+                        ${feat.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${feat.mediaUrl}')">▶ PLAY COLLECTION IN DECK</button>` : ''}
                     </div>
                 </div>
             `;
 
-            // 3. Paint Secondary Dashboard Collection lists
+            // 3. Paint Collections Grid with individual active routing triggers
             const collectionContainer = document.getElementById('collection-grid-container');
             collectionContainer.innerHTML = '';
 
@@ -173,7 +173,7 @@
                     <div class="card-details">
                         <h3>${item.title}</h3>
                         <p>${item.description}</p>
-                        ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">⚡ ACTIVATE PLAY FOR DECK</button>` : ''}
+                        ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">▶ PLAY COLLECTION IN DECK</button>` : ''}
                         ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
                     </div>
                 `;
@@ -183,15 +183,15 @@
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
 
-        // MASTER AUDIO FRAME SWITCHING DISPATCHER ENGINE
+        // DISPATCHER ENGINE: Routes collection arrays to the bottom panel frame
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
             
-            // Inject the pristine URL directly into the running framework frame
+            // Pipe the raw destination URL cleanly into the frame
             deckFrame.src = targetUrl;
             
-            // Auto-expand the bottom tray so video/tracklists are fully accessible immediately
+            // Instantly open the dashboard tray so controls/tracklists slide into view
             wrapper.classList.add('expanded');
             document.getElementById('tracklist-toggle').innerHTML = "▼ HIDE DECK MATRIX";
         }
