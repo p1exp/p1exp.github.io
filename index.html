@@ -116,19 +116,33 @@
             padding: 0 20px;
         }
 
-        /* --- INTERFACE DISPLAY TILES --- */
+        /* --- MODERN RESPONSIVE FLEX INTERFACE CARDS --- */
         .project-layout-card { 
             background-color: #121212; border: 1px solid #222; border-radius: 4px; 
-            overflow: hidden; margin-bottom: 25px; display: flex; flex-direction: row;
+            overflow: hidden; margin-bottom: 25px; 
+            display: flex; 
+            flex-direction: row; /* Default: Side-by-side on desktop layouts */
             width: 100%;
         }
 
+        /* Strip desktop card properties when nested inside the 100vw wrap track */
         .featured-wrapper-card .project-layout-card {
             border: none; background: transparent; border-radius: 0; margin-bottom: 0;
         }
         
-        .card-thumbnail { width: 220px; height: 160px; object-fit: cover; border-right: 1px solid #222; flex-shrink: 0; }
-        .featured-wrapper-card .card-thumbnail { width: 300px; height: 200px; }
+        /* Thumbnail baselines for desktop */
+        .card-thumbnail { 
+            width: 220px; 
+            height: 160px; 
+            object-fit: cover; 
+            border-right: 1px solid #222; 
+            flex-shrink: 0; 
+        }
+        
+        .featured-wrapper-card .card-thumbnail { 
+            width: 300px; 
+            height: 200px; 
+        }
 
         .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
         .card-details h2, .card-details h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
@@ -156,6 +170,40 @@
         .player-wrapper { width: 100%; max-width: 700px; height: 140px; overflow: hidden; transition: height 0.3s ease-in-out; padding: 10px 0; }
         .player-wrapper.expanded { height: 360px; }
         iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; }
+
+        /* =========================================================
+           NEW: RESPONSIVE MEDIA BREAKPOINT SYSTEM FOR PHONES
+           ========================================================= */
+        @media (max-width: 768px) {
+            /* 1. Shift card design to stack vertically */
+            .project-layout-card, 
+            .featured-wrapper-card { 
+                flex-direction: column; 
+            }
+
+            /* 2. Make thumbnail images go full width, sitting ABOVE the text area */
+            .card-thumbnail,
+            .featured-wrapper-card .card-thumbnail {
+                width: 100%;
+                height: 220px; /* Locked height for clean mobile card proportions */
+                border-right: none;
+                border-bottom: 1px solid #222; /* Shifting the border partition to the bottom */
+            }
+
+            /* 3. Handle padding cleanups for smaller screens */
+            .hero-text-container {
+                padding: 20px 15px;
+            }
+            .content-inner-wrap, .wide-label {
+                padding: 0 15px;
+            }
+            
+            /* 4. Let the button snap wide on mobile phone layouts */
+            .route-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -196,45 +244,38 @@
     </footer>
 
     <script>
-        // 1. Initial Application Setup Engine
         function bootstrapApplication() {
             if (typeof projectDatabase === 'undefined') return;
 
             const config = projectDatabase.siteConfiguration;
 
-            // Paint Master Static Layout Text
             document.getElementById('site-logo').textContent = config.logoTitle;
             document.getElementById('spotlight-label').textContent = config.sectionLabels.spotlight;
             document.getElementById('archive-label').textContent = config.sectionLabels.archive;
             document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow;
 
-            // Fabricate Top Filter Menu System Dynamically
             const navContainer = document.getElementById('nav-filters');
             navContainer.innerHTML = '';
 
             config.navigationMenu.forEach((menuItem, idx) => {
                 const btn = document.createElement('button');
                 btn.textContent = menuItem.label;
-                if (idx === 0) btn.className = 'active'; // Select first category on launch
+                if (idx === 0) btn.className = 'active'; 
                 btn.onclick = function() { switchCategory(menuItem.id, this); };
                 navContainer.appendChild(btn);
             });
 
-            // Trigger core default view parsing loop
             renderCategory(config.navigationMenu[0].id);
         }
 
-        // 2. Tab Module Repainting Core Loop
         function renderCategory(categoryKey) {
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
-            // Parse 100vw Header Blocks
             document.getElementById('hero-image').src = dataBlock.titleBanner.image;
             document.getElementById('hero-title').textContent = dataBlock.titleBanner.title;
             document.getElementById('hero-description').textContent = dataBlock.titleBanner.text;
 
-            // Parse 100vw Spotlight Content Core
             const featuredContainer = document.getElementById('featured-project-container');
             const feat = dataBlock.featuredProject;
             
@@ -252,7 +293,6 @@
                 </div>
             `;
 
-            // Parse 850px Nested Archive Collections arrays
             const collectionContainer = document.getElementById('collection-grid-container');
             collectionContainer.innerHTML = '';
 
@@ -274,7 +314,6 @@
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
 
-        // 3. Central Media Routing Channel
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
@@ -283,14 +322,13 @@
             document.getElementById('tracklist-toggle').innerHTML = projectDatabase.siteConfiguration.sectionLabels.deckMatrixHide;
         }
 
-        // 4. View State Menu Filter Switcher
         function switchCategory(categoryKey, buttonElement) {
             document.querySelectorAll('#nav-filters button').forEach(btn => btn.classList.remove('active'));
             buttonElement.classList.add('active');
             renderCategory(categoryKey);
         }
 
-        // 5. Drawer UI Height Toggle Logic
+        // Drawer UI Toggle Logic
         function toggleTracklist() {
             const wrapper = document.getElementById('player-wrapper');
             const button = document.getElementById('tracklist-toggle');
@@ -300,7 +338,6 @@
             button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
         }
 
-        // Execute Boot Sequence instantly upon loading scripts
         bootstrapApplication();
     </script>
 </body>
