@@ -1,9 +1,9 @@
 const projectDatabase = {
   "siteConfiguration": {
-    "logoTitle": "P1EXP // DECK MATRIX",
+    "logoTitle": "P1EXP",
     "navigationMenu": [
       { "id": "projects", "label": "Projects" },
-      { "id": "sessions", "label": "Sessions" },
+      { "id": "sessions", "label": "INTERLOOPER" },
       { "id": "legacy", "label": "Legacy" }
     ],
     "sectionLabels": {
