@@ -48,7 +48,7 @@
         }
         nav button:hover, nav button.active { color: #00ffcc; border-bottom: 2px solid #00ffcc; }
 
-        /* --- FRAME 2: SCROLLING CENTER CHASSIS (Sub-Grid Layout System) --- */
+        /* --- FRAME 2: SCROLLING CENTER CHASSIS --- */
         main {
             overflow-y: auto;
             padding-bottom: 40px;
@@ -57,7 +57,7 @@
             grid-template-columns: minmax(0, 1fr) minmax(0, 850px) minmax(0, 1fr);
         }
 
-        /* --- MODULE 1: 70vh FULL-WIDTH SITE TITLE BANNER --- */
+        /* --- MODULE 1: 70vh SITE TITLE BANNER OVERLAY --- */
         .workspace-hero { 
             grid-column: 1 / -1; 
             width: 100vw; 
@@ -94,11 +94,11 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.8);
         }
 
-        /* --- MODULE 2: NEW 60vh FULL-WIDTH PROJECT DISPLAY HEADER --- */
+        /* --- MODULE 2: 60vh CLEAN PROJECT header BANNER OVERLAY --- */
         #project-header-banner {
             grid-column: 1 / -1;
             width: 100vw;
-            height: 60vh; /* Match the requested 60vh height spec profile */
+            height: 60vh; 
             background-color: #141414;
             border-top: 1px solid #222;
             border-bottom: 1px solid #222;
@@ -109,10 +109,9 @@
 
         .proj-banner-bg {
             width: 100%; height: 100%; object-fit: cover;
-            filter: grayscale(40%) contrast(105%) brightness(35%); /* Dimmed for clean copy separation */
+            filter: grayscale(40%) contrast(105%) brightness(35%); 
         }
 
-        /* Clean overlay alignment zone—centered text with absolutely NO button links inside */
         .proj-banner-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -137,7 +136,7 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.9);
         }
 
-        /* --- MODULE 3: 850px LOCKED ARCHIVE CONTENT WRAPPER --- */
+        /* --- MODULE 3: 850px LOCKED ARCHIVE MAIN CONTENT WRAPPER --- */
         .content-inner-wrap { 
             grid-column: 2; 
             padding: 0 20px; 
@@ -150,7 +149,7 @@
             padding: 0 20px;
         }
 
-        /* --- STANDARD 850px COMPACT ARCHIVE CARD WORKSPACE --- */
+        /* --- STANDARD DASHBOARD CARD LAYOUT --- */
         .project-layout-card { 
             background-color: #121212; border: 1px solid #222; border-radius: 4px; 
             overflow: hidden; margin-bottom: 25px; 
@@ -159,12 +158,25 @@
             width: 100%;
         }
         
+        /* Thumbnail baselines for the primary Spotlight card layout */
         .card-thumbnail { 
             width: 220px; 
             height: 160px; 
             object-fit: cover; 
             border-right: 1px solid #222; 
             flex-shrink: 0; 
+        }
+
+        /* =========================================================
+           UPDATED: SQUARE THUMBNAIL LAYOUT RULE FOR LOWER COLLECTIONS
+           ========================================================= */
+        #collection-grid-container .card-thumbnail {
+            width: 160px;               /* Fixed structural width channel */
+            height: 160px;              /* Equal vertical boundary track */
+            aspect-ratio: 1 / 1;        /* Locks layout mapping into a perfect square */
+            object-fit: cover;          /* Crops content asset smoothly without warp */
+            border-right: 1px solid #222;
+            flex-shrink: 0;
         }
 
         .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -184,7 +196,7 @@
         }
         .route-link:hover { background: #00ffcc; color: #121212; box-shadow: 0 0 10px rgba(0,255,204,0.3); }
 
-        /* --- FRAME 3: FOOTER LAYER --- */
+        /* --- FRAME 3: FOOTER MASTER RUNTIME DECK --- */
         footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100vw; }
         .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; }
         .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 15px; font-family: inherit; font-size: 0.7rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); }
@@ -194,18 +206,24 @@
         .player-wrapper.expanded { height: 360px; }
         iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; }
 
-        /* --- MOBILE PHONE BREAKPOINTS RESPONSIVENESS --- */
+        /* --- RESPONSIVE PHONE BREAKER TRANSITIONS --- */
         @media (max-width: 768px) {
-            .workspace-hero { height: 50vh; } 
-            #project-header-banner { height: 50vh; } 
-            
+            .workspace-hero, #project-header-banner { height: 50vh; } 
             .hero-text-container h1, .proj-banner-overlay h2 { font-size: 1.4rem; }
             .hero-text-container p, .proj-banner-overlay p { font-size: 0.85rem; }
 
             .content-inner-wrap { padding: 0 15px; }
+            
+            /* Stacking overrides for mobile orientation */
             .project-layout-card { flex-direction: column; }
-            .card-thumbnail {
-                width: 100%; height: 200px; border-right: none; border-bottom: 1px solid #222;
+            
+            .card-thumbnail,
+            #collection-grid-container .card-thumbnail {
+                width: 100%; 
+                height: auto;
+                aspect-ratio: 1 / 1; /* Retain perfect square geometry on mobile streams */
+                border-right: none; 
+                border-bottom: 1px solid #222;
             }
             .card-details { padding: 15px; }
             .route-link { width: 100%; text-align: center; }
@@ -283,12 +301,12 @@
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
-            // 1. Process 70vh Site Header Banner Content
+            // Render Title Hero
             document.getElementById('hero-image').src = dataBlock.titleBanner.image;
             document.getElementById('hero-title').textContent = dataBlock.titleBanner.title;
             document.getElementById('hero-description').textContent = dataBlock.titleBanner.text;
 
-            // 2. Process 60vh Clean Full-Width Project Header (No Links/Buttons Here)
+            // Render 60vh Clean Project Header
             const projHeaderContainer = document.getElementById('project-header-banner');
             const feat = dataBlock.featuredProject;
             
@@ -300,7 +318,7 @@
                 </div>
             `;
 
-            // 3. Process the Featured Project as a 850px Card with standard active link control
+            // Render Primary Spotlight Card (Uses standard rectangle proportions)
             const featuredCardWrap = document.getElementById('featured-card-wrapper');
             featuredCardWrap.innerHTML = `
                 <div class="project-layout-card">
@@ -314,7 +332,7 @@
                 </div>
             `;
 
-            // 4. Process secondary Collection Cards inside the 850px alignment container
+            // Render Secondary Archive Cards (SQUARE Overrides Applied automatically via context selector)
             const collectionContainer = document.getElementById('collection-grid-container');
             collectionContainer.innerHTML = '';
 
