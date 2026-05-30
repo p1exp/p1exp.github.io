@@ -17,7 +17,6 @@
             color: #e0e0e0;
             height: 100vh;
             display: grid;
-            /* Structural 3-Frame Core Layout Split */
             grid-template-rows: 60px 1fr auto; 
             overflow: hidden; 
         }
@@ -46,47 +45,57 @@
         main {
             overflow-y: auto; padding-bottom: 40px; width: 100vw;
             display: grid;
-            /* Columns: 1. Left Buffer | 2. Fixed Content Column (850px) | 3. Right Buffer */
             grid-template-columns: minmax(0, 1fr) minmax(0, 850px) minmax(0, 1fr);
         }
 
-        /* --- TITLE & PROJECT BREAKOUT OVERLAY BANNERS (100vw Full Width) --- */
+        /* --- TITLE & PROJECT BREAKOUT HERO STRIPS (100vw Full width) --- */
         .workspace-hero, .modular-breakout-banner { 
             grid-column: 1 / -1; 
             width: 100vw; 
             background-color: #111; 
-            border-bottom: 2px solid #222; 
             position: relative; 
             overflow: hidden;
         }
-        .workspace-hero { height: 70vh; margin-bottom: 30px; }
-        .modular-breakout-banner { height: 60vh; margin: 35px 0 35px 0; border-top: 2px solid #222; }
+        .workspace-hero { height: 50vh; border-bottom: 2px solid #222; }
+        .modular-breakout-banner { height: 40vh; margin-top: 40px; border-top: 2px solid #222; border-bottom: 2px solid #222; }
 
         .banner-bg-img { 
             width: 100%; height: 100%; object-fit: cover; 
-            filter: grayscale(40%) contrast(110%) brightness(45%); 
+            filter: grayscale(40%) contrast(110%) brightness(35%); 
         }
 
+        /* Clean full-bleed overlay centering title headings cleanly */
         .banner-text-overlay { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             display: flex; flex-direction: column; justify-content: center; align-items: center; 
             text-align: center; padding: 0 20px;
-            background: linear-gradient(to bottom, rgba(12,12,12,0.3) 0%, rgba(12,12,12,0.6) 100%);
+            background: linear-gradient(to bottom, rgba(12,12,12,0.2) 0%, rgba(12,12,12,0.5) 100%);
             z-index: 2;
         }
         .banner-text-overlay h1, .banner-text-overlay h2 { 
-            color: #fff; font-size: 2rem; letter-spacing: 4px; margin-bottom: 15px; 
-            text-shadow: 0 4px 12px rgba(0,0,0,0.8); 
-        }
-        .banner-text-overlay p { 
-            line-height: 1.6; color: #ccc; font-size: 0.95rem; max-width: 800px; 
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            color: #fff; font-size: 2rem; letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.9); 
         }
 
-        /* --- THE LOG ARCHIVE COLLECTION CARDS (850px Content Column Alignment) --- */
+        /* --- NEW: DETACHED STANDALONE DESCRIPTION BLOCKS (850px Content Columns) --- */
+        .banner-description-block {
+            grid-column: 2;
+            padding: 30px 20px 20px 20px;
+            width: 100%;
+        }
+        .banner-description-block p {
+            line-height: 1.7;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            border-left: 2px solid #252525;
+            padding-left: 20px;
+        }
+
+        /* --- COMPACT ARCHIVE CARD CONTAINER (850px Locked) --- */
         .card-inner-alignment-track {
             grid-column: 2;
-            padding: 0 20px;
+            padding: 15px 20px;
             width: 100%;
         }
 
@@ -95,7 +104,6 @@
             overflow: hidden; margin-bottom: 25px; display: flex; flex-direction: row; width: 100%;
         }
         
-        /* Forces Collection Images to Crop into Perfect Squares */
         .card-thumbnail { 
             width: 160px; height: 160px; aspect-ratio: 1 / 1; 
             object-fit: cover; border-right: 1px solid #222; flex-shrink: 0; 
@@ -105,7 +113,6 @@
         .card-details h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
         .card-details p { font-size: 0.85rem; color: #aaa; line-height: 1.5; margin-bottom: 15px; }
 
-        /* The Audio Routing Dispatch Trigger Link */
         .route-link {
             align-self: flex-start; background: #1a1a1a; color: #00ffcc; 
             border: 1px solid #00ffcc; padding: 6px 14px; font-size: 0.75rem; 
@@ -119,17 +126,17 @@
         .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; }
         .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 15px; font-family: inherit; font-size: 0.7rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); }
         .toggle-btn:hover { background-color: #00ffcc; color: #121212; border-color: #00ffcc; }
-        
         .player-wrapper { width: 100%; max-width: 700px; height: 140px; overflow: hidden; transition: height 0.3s ease-in-out; padding: 10px 0; }
         .player-wrapper.expanded { height: 360px; }
         iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; }
 
-        /* --- RESPONSIVE LAYOUT BREAKPOINTS FOR MOBILE OVERRIDES --- */
+        /* --- RESPONSIVE PHONE BREAKER TRANSITIONS --- */
         @media (max-width: 768px) {
-            .workspace-hero { height: 50vh; } 
-            .modular-breakout-banner { height: 45vh; }
+            .workspace-hero, .modular-breakout-banner { height: 40vh; }
             .banner-text-overlay h1, .banner-text-overlay h2 { font-size: 1.4rem; }
-            .banner-text-overlay p { font-size: 0.85rem; }
+            
+            .banner-description-block { padding: 20px 15px 10px 15px; }
+            .banner-description-block p { font-size: 0.85rem; padding-left: 15px; }
 
             .card-inner-alignment-track { padding: 0 15px; }
             .project-layout-card { flex-direction: column; }
@@ -142,7 +149,7 @@
 <body>
 
     <header>
-        <div class="logo" id="site-logo"></div>
+        <div class="logo" id="site-logo">LOADING TITLE...</div>
         <nav id="nav-filters"></nav>
     </header>
 
@@ -152,9 +159,12 @@
             <img id="hero-image" src="" class="banner-bg-img">
             <div class="banner-text-overlay">
                 <h1 id="hero-title"></h1>
-                <p id="hero-description"></p>
             </div>
         </section>
+
+        <div class="banner-description-block">
+            <p id="hero-description"></p>
+        </div>
 
         <div id="dynamic-stream-canvas" style="display: contents;"></div>
         
@@ -162,7 +172,7 @@
 
     <footer>
         <div class="toggle-btn-container">
-            <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
+            <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()">▲ DECK MATRIX</button>
         </div>
         <div class="player-wrapper" id="player-wrapper">
             <iframe id="master-deck-frame" src="https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/" allow="autoplay; encrypted-media; fullscreen"></iframe>
@@ -170,91 +180,114 @@
     </footer>
 
     <script>
+        let menuShowLabel = "▲ SHOW DECK MATRIX";
+        let menuHideLabel = "▼ HIDE DECK MATRIX";
+
         function bootstrapApplication() {
-            if (typeof projectDatabase === 'undefined') return;
+            if (typeof projectDatabase === 'undefined') {
+                document.getElementById('hero-title').textContent = "DATABASE FILE ERROR";
+                return;
+            }
+
             const config = projectDatabase.siteConfiguration;
+            menuShowLabel = config.sectionLabels.deckMatrixShow;
+            menuHideLabel = config.sectionLabels.deckMatrixHide;
 
             document.getElementById('site-logo').textContent = config.logoTitle;
-            document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow;
+            document.getElementById('tracklist-toggle').textContent = menuShowLabel;
 
             const navContainer = document.getElementById('nav-filters');
             navContainer.innerHTML = '';
+
             config.navigationMenu.forEach((menuItem, idx) => {
                 const btn = document.createElement('button');
                 btn.textContent = menuItem.label;
                 if (idx === 0) btn.className = 'active'; 
-                btn.onclick = function() { switchCategory(menuItem.id, this); };
+                btn.addEventListener('click', function() {
+                    switchCategory(menuItem.id, this);
+                });
                 navContainer.appendChild(btn);
             });
 
-            renderCategory(config.navigationMenu[0].id);
+            if (config.navigationMenu.length > 0) {
+                renderCategory(config.navigationMenu[0].id);
+            }
         }
 
         function renderCategory(categoryKey) {
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
-            // 1. Process Master Site Title Header Setup Elements
-            document.getElementById('hero-image').src = dataBlock.titleBanner.image;
-            document.getElementById('hero-title').textContent = dataBlock.titleBanner.title;
-            document.getElementById('hero-description').textContent = dataBlock.titleBanner.text;
+            // 1. Process Master Site Header Elements
+            if (dataBlock.titleBanner) {
+                document.getElementById('hero-image').src = dataBlock.titleBanner.image || '';
+                document.getElementById('hero-title').textContent = dataBlock.titleBanner.title || '';
+                document.getElementById('hero-description').textContent = dataBlock.titleBanner.text || '';
+            }
 
-            // 2. Wipe clean the dynamic layer canvas
+            // 2. Wipe active canvas elements clean
             const streamCanvas = document.getElementById('dynamic-stream-canvas');
             streamCanvas.innerHTML = '';
 
             let currentCardWrapper = null;
 
-            // 3. Process the sequential JSON layout Canvas array loop
-            dataBlock.layoutCanvas.forEach(node => {
-                
-                if (node.type === 'breakoutBanner') {
-                    // Close standard card tracking tracks if open
-                    currentCardWrapper = null;
+            // 3. Loop through canvas stream items
+            if (dataBlock.layoutCanvas && Array.isArray(dataBlock.layoutCanvas)) {
+                dataBlock.layoutCanvas.forEach(node => {
+                    
+                    if (node.type === 'breakoutBanner') {
+                        currentCardWrapper = null; // Reset width alignment tracker
 
-                    const bannerSection = document.createElement('section');
-                    bannerSection.className = 'modular-breakout-banner';
-                    bannerSection.innerHTML = `
-                        <img src="${node.image}" class="banner-bg-img">
-                        <div class="banner-text-overlay">
-                            <h2>${node.title}</h2>
-                            <p>${node.description}</p>
-                        </div>
-                    `;
-                    streamCanvas.appendChild(bannerSection);
+                        // Banner full width section
+                        const bannerSection = document.createElement('section');
+                        bannerSection.className = 'modular-breakout-banner';
+                        bannerSection.innerHTML = `
+                            <img src="${node.image}" class="banner-bg-img">
+                            <div class="banner-text-overlay">
+                                <h2>${node.title || ''}</h2>
+                            </div>
+                        `;
+                        streamCanvas.appendChild(bannerSection);
 
-                } else if (node.type === 'archiveCard') {
-                    // Open an 850px wide column track if none exists
-                    if (!currentCardWrapper) {
-                        currentCardWrapper = document.createElement('div');
-                        currentCardWrapper.className = 'card-inner-alignment-track';
-                        streamCanvas.appendChild(currentCardWrapper);
+                        // --- NEW ENGINE FEATURE: INJECT DETACHED 850px DESCRIPTION TEXT AREA ---
+                        if (node.longDescription) {
+                            const descBlock = document.createElement('div');
+                            descBlock.className = 'banner-description-block';
+                            descBlock.innerHTML = `<p>${node.longDescription}</p>`;
+                            streamCanvas.appendChild(descBlock);
+                        }
+
+                    } else if (node.type === 'archiveCard') {
+                        if (!currentCardWrapper) {
+                            currentCardWrapper = document.createElement('div');
+                            currentCardWrapper.className = 'card-inner-alignment-track';
+                            streamCanvas.appendChild(currentCardWrapper);
+                        }
+
+                        const card = document.createElement('div');
+                        card.className = 'project-layout-card';
+                        card.innerHTML = `
+                            <img src="${node.image}" class="card-thumbnail">
+                            <div class="card-details">
+                                <h3>${node.title || ''}</h3>
+                                <p>${node.description || ''}</p>
+                                ${node.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${node.mediaUrl}')">${node.buttonLabel || 'PLAY'}</button>` : ''}
+                            </div>
+                        `;
+                        currentCardWrapper.appendChild(card);
                     }
-
-                    const card = document.createElement('div');
-                    card.className = 'project-layout-card';
-                    card.innerHTML = `
-                        <img src="${node.image}" class="card-thumbnail">
-                        <div class="card-details">
-                            <h3>${node.title}</h3>
-                            <p>${node.description}</p>
-                            ${node.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${node.mediaUrl}')">${node.buttonLabel}</button>` : ''}
-                        </div>
-                    `;
-                    currentCardWrapper.appendChild(card);
-                }
-            });
+                });
+            }
 
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
 
-        // DISPATCHER PIPELINE: Intercepts clicks and injects URLs into Frame 3
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
             deckFrame.src = targetUrl;
             wrapper.classList.add('expanded');
-            document.getElementById('tracklist-toggle').innerHTML = projectDatabase.siteConfiguration.sectionLabels.deckMatrixHide;
+            document.getElementById('tracklist-toggle').innerHTML = menuHideLabel;
         }
 
         function switchCategory(categoryKey, buttonElement) {
@@ -266,12 +299,11 @@
         function toggleTracklist() {
             const wrapper = document.getElementById('player-wrapper');
             const button = document.getElementById('tracklist-toggle');
-            const labels = projectDatabase.siteConfiguration.sectionLabels;
             wrapper.classList.toggle('expanded');
-            button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
+            button.innerHTML = wrapper.classList.contains('expanded') ? menuHideLabel : menuShowLabel;
         }
 
-        bootstrapApplication();
+        window.addEventListener('DOMContentLoaded', bootstrapApplication);
     </script>
 </body>
 </html>
