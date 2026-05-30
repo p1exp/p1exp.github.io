@@ -17,30 +17,24 @@
             color: #e0e0e0;
             height: 100vh;
             display: grid;
+            /* Structural 3-Frame Core Layout Split */
             grid-template-rows: 60px 1fr auto; 
             overflow: hidden; 
         }
 
-        /* --- HARDWARE CUSTOM SCROLLBARS --- */
+        /* --- STYLED HARDWARE SCROLLBARS --- */
         main::-webkit-scrollbar { width: 8px; }
         main::-webkit-scrollbar-track { background: #0c0c0c; }
         main::-webkit-scrollbar-thumb { background: #222; border: 1px solid #333; border-radius: 4px; }
         main::-webkit-scrollbar-thumb:hover { background: #00ffcc; }
 
-        /* --- FRAME 1: TOP NAV BAR ($100vw Edge-to-Edge) --- */
+        /* --- FRAME 1: TOP NAVIGATION MENU (Locked 100vw Width) --- */
         header {
-            background-color: #121212;
-            border-bottom: 2px solid #252525;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            z-index: 10;
-            width: 100vw;
+            background-color: #121212; border-bottom: 2px solid #252525;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 20px; z-index: 10; width: 100vw;
         }
-
         header .logo { font-weight: bold; font-size: 1.1rem; color: #00ffcc; letter-spacing: 2px; }
-
         nav button {
             background: none; border: none; font-family: inherit; color: #888;
             margin-left: 20px; font-size: 0.85rem; text-transform: uppercase;
@@ -48,155 +42,79 @@
         }
         nav button:hover, nav button.active { color: #00ffcc; border-bottom: 2px solid #00ffcc; }
 
-        /* --- FRAME 2: SCROLLING CENTER CHASSIS --- */
+        /* --- FRAME 2: SCROLLING CENTER RECONSTRUCTION PANEL --- */
         main {
-            overflow-y: auto;
-            padding-bottom: 40px;
-            width: 100vw;
+            overflow-y: auto; padding-bottom: 40px; width: 100vw;
             display: grid;
+            /* Columns: 1. Left Buffer | 2. Fixed Content Column (850px) | 3. Right Buffer */
             grid-template-columns: minmax(0, 1fr) minmax(0, 850px) minmax(0, 1fr);
         }
 
-        /* --- MODULE 1: 70vh SITE TITLE BANNER OVERLAY --- */
-        .workspace-hero { 
+        /* --- TITLE & PROJECT BREAKOUT OVERLAY BANNERS (100vw Full Width) --- */
+        .workspace-hero, .modular-breakout-banner { 
             grid-column: 1 / -1; 
             width: 100vw; 
-            height: 70vh; 
             background-color: #111; 
             border-bottom: 2px solid #222; 
-            margin-bottom: 30px;
             position: relative; 
             overflow: hidden;
         }
+        .workspace-hero { height: 70vh; margin-bottom: 30px; }
+        .modular-breakout-banner { height: 60vh; margin: 35px 0 35px 0; border-top: 2px solid #222; }
 
-        .hero-banner-img { 
+        .banner-bg-img { 
             width: 100%; height: 100%; object-fit: cover; 
-            filter: grayscale(40%) contrast(110%) brightness(50%); 
+            filter: grayscale(40%) contrast(110%) brightness(45%); 
         }
 
-        .hero-text-container { 
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center; 
+        .banner-text-overlay { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
             text-align: center; padding: 0 20px;
             background: linear-gradient(to bottom, rgba(12,12,12,0.3) 0%, rgba(12,12,12,0.6) 100%);
             z-index: 2;
         }
-        
-        .hero-text-container h1 { 
+        .banner-text-overlay h1, .banner-text-overlay h2 { 
             color: #fff; font-size: 2rem; letter-spacing: 4px; margin-bottom: 15px; 
             text-shadow: 0 4px 12px rgba(0,0,0,0.8); 
         }
-        
-        .hero-text-container p { 
+        .banner-text-overlay p { 
             line-height: 1.6; color: #ccc; font-size: 0.95rem; max-width: 800px; 
             text-shadow: 0 2px 8px rgba(0,0,0,0.8);
         }
 
-        /* --- MODULE 2: 60vh CLEAN PROJECT header BANNER OVERLAY --- */
-        #project-header-banner {
-            grid-column: 1 / -1;
-            width: 100vw;
-            height: 60vh; 
-            background-color: #141414;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            margin-bottom: 35px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .proj-banner-bg {
-            width: 100%; height: 100%; object-fit: cover;
-            filter: grayscale(40%) contrast(105%) brightness(35%); 
-        }
-
-        .proj-banner-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: rgba(12, 12, 12, 0.4);
-            z-index: 2;
-        }
-
-        .proj-banner-overlay h2 {
-            color: #fff; font-size: 1.8rem; letter-spacing: 3px; margin-bottom: 10px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.9);
-        }
-
-        .proj-banner-overlay p {
-            font-size: 0.95rem; color: #ccc; line-height: 1.6;
-            max-width: 800px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
-        }
-
-        /* --- MODULE 3: 850px LOCKED ARCHIVE MAIN CONTENT WRAPPER --- */
-        .content-inner-wrap { 
-            grid-column: 2; 
-            padding: 0 20px; 
-        }
-        
-        .section-label { color: #00ffcc; font-size: 0.9rem; margin: 15px 0 20px 0; letter-spacing: 2px; border-bottom: 1px dashed #222; padding-bottom: 6px; }
-        
-        .wide-label {
+        /* --- THE LOG ARCHIVE COLLECTION CARDS (850px Content Column Alignment) --- */
+        .card-inner-alignment-track {
             grid-column: 2;
             padding: 0 20px;
-        }
-
-        /* --- STANDARD DASHBOARD CARD LAYOUT --- */
-        .project-layout-card { 
-            background-color: #121212; border: 1px solid #222; border-radius: 4px; 
-            overflow: hidden; margin-bottom: 25px; 
-            display: flex; 
-            flex-direction: row; 
             width: 100%;
         }
-        
-        /* Thumbnail baselines for the primary Spotlight card layout */
-        .card-thumbnail { 
-            width: 220px; 
-            height: 160px; 
-            object-fit: cover; 
-            border-right: 1px solid #222; 
-            flex-shrink: 0; 
-        }
 
-        /* =========================================================
-           UPDATED: SQUARE THUMBNAIL LAYOUT RULE FOR LOWER COLLECTIONS
-           ========================================================= */
-        #collection-grid-container .card-thumbnail {
-            width: 160px;               /* Fixed structural width channel */
-            height: 160px;              /* Equal vertical boundary track */
-            aspect-ratio: 1 / 1;        /* Locks layout mapping into a perfect square */
-            object-fit: cover;          /* Crops content asset smoothly without warp */
-            border-right: 1px solid #222;
-            flex-shrink: 0;
+        .project-layout-card { 
+            background-color: #121212; border: 1px solid #222; border-radius: 4px; 
+            overflow: hidden; margin-bottom: 25px; display: flex; flex-direction: row; width: 100%;
+        }
+        
+        /* Forces Collection Images to Crop into Perfect Squares */
+        .card-thumbnail { 
+            width: 160px; height: 160px; aspect-ratio: 1 / 1; 
+            object-fit: cover; border-right: 1px solid #222; flex-shrink: 0; 
         }
 
         .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
         .card-details h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
         .card-details p { font-size: 0.85rem; color: #aaa; line-height: 1.5; margin-bottom: 15px; }
-        
-        .meta-tag { font-size: 0.75rem; color: #00ffcc; background: #1a2925; padding: 2px 8px; align-self: flex-start; margin-bottom: 10px; border-radius: 3px; }
-        .card-footer-text { font-size: 0.75rem; color: #555; margin-top: auto; font-style: italic; }
 
-        /* DECK INTERACTION LINKS */
+        /* The Audio Routing Dispatch Trigger Link */
         .route-link {
             align-self: flex-start; background: #1a1a1a; color: #00ffcc; 
             border: 1px solid #00ffcc; padding: 6px 14px; font-size: 0.75rem; 
             font-family: inherit; font-weight: bold; cursor: pointer; text-decoration: none; 
-            border-radius: 3px; transition: all 0.2s; margin-top: auto;
-            letter-spacing: 1px;
+            border-radius: 3px; transition: all 0.2s; margin-top: auto; letter-spacing: 1px;
         }
         .route-link:hover { background: #00ffcc; color: #121212; box-shadow: 0 0 10px rgba(0,255,204,0.3); }
 
-        /* --- FRAME 3: FOOTER MASTER RUNTIME DECK --- */
+        /* --- FRAME 3: THE BOTTOM RUNTIME MEDIA DECK PANEL --- */
         footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100vw; }
         .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; }
         .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 15px; font-family: inherit; font-size: 0.7rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); }
@@ -206,25 +124,16 @@
         .player-wrapper.expanded { height: 360px; }
         iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; }
 
-        /* --- RESPONSIVE PHONE BREAKER TRANSITIONS --- */
+        /* --- RESPONSIVE LAYOUT BREAKPOINTS FOR MOBILE OVERRIDES --- */
         @media (max-width: 768px) {
-            .workspace-hero, #project-header-banner { height: 50vh; } 
-            .hero-text-container h1, .proj-banner-overlay h2 { font-size: 1.4rem; }
-            .hero-text-container p, .proj-banner-overlay p { font-size: 0.85rem; }
+            .workspace-hero { height: 50vh; } 
+            .modular-breakout-banner { height: 45vh; }
+            .banner-text-overlay h1, .banner-text-overlay h2 { font-size: 1.4rem; }
+            .banner-text-overlay p { font-size: 0.85rem; }
 
-            .content-inner-wrap { padding: 0 15px; }
-            
-            /* Stacking overrides for mobile orientation */
+            .card-inner-alignment-track { padding: 0 15px; }
             .project-layout-card { flex-direction: column; }
-            
-            .card-thumbnail,
-            #collection-grid-container .card-thumbnail {
-                width: 100%; 
-                height: auto;
-                aspect-ratio: 1 / 1; /* Retain perfect square geometry on mobile streams */
-                border-right: none; 
-                border-bottom: 1px solid #222;
-            }
+            .card-thumbnail { width: 100%; height: auto; aspect-ratio: 1 / 1; border-right: none; border-bottom: 1px solid #222; }
             .card-details { padding: 15px; }
             .route-link { width: 100%; text-align: center; }
         }
@@ -240,26 +149,14 @@
     <main id="main-scroll-panel">
         
         <section class="workspace-hero">
-            <img id="hero-image" src="" class="hero-banner-img">
-            <div class="hero-text-container">
+            <img id="hero-image" src="" class="banner-bg-img">
+            <div class="banner-text-overlay">
                 <h1 id="hero-title"></h1>
                 <p id="hero-description"></p>
             </div>
         </section>
 
-        <div class="section-label wide-label" id="spotlight-label"></div>
-
-        <div id="project-header-banner"></div>
-
-        <div class="content-inner-wrap">
-            
-            <div class="section-label">FEATURED MODULE SELECTION</div>
-            <div id="featured-card-wrapper"></div>
-
-            <div class="section-label" id="archive-label"></div>
-            <div id="collection-grid-container"></div>
-            
-        </div>
+        <div id="dynamic-stream-canvas" style="display: contents;"></div>
         
     </main>
 
@@ -275,17 +172,13 @@
     <script>
         function bootstrapApplication() {
             if (typeof projectDatabase === 'undefined') return;
-
             const config = projectDatabase.siteConfiguration;
 
             document.getElementById('site-logo').textContent = config.logoTitle;
-            document.getElementById('spotlight-label').textContent = config.sectionLabels.spotlight;
-            document.getElementById('archive-label').textContent = config.sectionLabels.archive;
             document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow;
 
             const navContainer = document.getElementById('nav-filters');
             navContainer.innerHTML = '';
-
             config.navigationMenu.forEach((menuItem, idx) => {
                 const btn = document.createElement('button');
                 btn.textContent = menuItem.label;
@@ -301,59 +194,61 @@
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
-            // Render Title Hero
+            // 1. Process Master Site Title Header Setup Elements
             document.getElementById('hero-image').src = dataBlock.titleBanner.image;
             document.getElementById('hero-title').textContent = dataBlock.titleBanner.title;
             document.getElementById('hero-description').textContent = dataBlock.titleBanner.text;
 
-            // Render 60vh Clean Project Header
-            const projHeaderContainer = document.getElementById('project-header-banner');
-            const feat = dataBlock.featuredProject;
-            
-            projHeaderContainer.innerHTML = `
-                <img src="${feat.image}" class="proj-banner-bg">
-                <div class="proj-banner-overlay">
-                    <h2>${feat.title}</h2>
-                    <p>${feat.description}</p>
-                </div>
-            `;
+            // 2. Wipe clean the dynamic layer canvas
+            const streamCanvas = document.getElementById('dynamic-stream-canvas');
+            streamCanvas.innerHTML = '';
 
-            // Render Primary Spotlight Card (Uses standard rectangle proportions)
-            const featuredCardWrap = document.getElementById('featured-card-wrapper');
-            featuredCardWrap.innerHTML = `
-                <div class="project-layout-card">
-                    <img src="${feat.image}" class="card-thumbnail">
-                    <div class="card-details">
-                        <h3>${feat.title}</h3>
-                        ${feat.location ? `<span class="meta-tag">${feat.location}</span>` : ''}
-                        <p>${feat.description}</p>
-                        ${feat.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${feat.mediaUrl}')">${feat.buttonLabel}</button>` : ''}
-                    </div>
-                </div>
-            `;
+            let currentCardWrapper = null;
 
-            // Render Secondary Archive Cards (SQUARE Overrides Applied automatically via context selector)
-            const collectionContainer = document.getElementById('collection-grid-container');
-            collectionContainer.innerHTML = '';
+            // 3. Process the sequential JSON layout Canvas array loop
+            dataBlock.layoutCanvas.forEach(node => {
+                
+                if (node.type === 'breakoutBanner') {
+                    // Close standard card tracking tracks if open
+                    currentCardWrapper = null;
 
-            dataBlock.collection.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'project-layout-card';
-                card.innerHTML = `
-                    <img src="${item.image}" class="card-thumbnail">
-                    <div class="card-details">
-                        <h3>${item.title}</h3>
-                        <p>${item.description}</p>
-                        ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">${item.buttonLabel}</button>` : ''}
-                        ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
-                    </div>
-                `;
-                collectionContainer.appendChild(card);
+                    const bannerSection = document.createElement('section');
+                    bannerSection.className = 'modular-breakout-banner';
+                    bannerSection.innerHTML = `
+                        <img src="${node.image}" class="banner-bg-img">
+                        <div class="banner-text-overlay">
+                            <h2>${node.title}</h2>
+                            <p>${node.description}</p>
+                        </div>
+                    `;
+                    streamCanvas.appendChild(bannerSection);
+
+                } else if (node.type === 'archiveCard') {
+                    // Open an 850px wide column track if none exists
+                    if (!currentCardWrapper) {
+                        currentCardWrapper = document.createElement('div');
+                        currentCardWrapper.className = 'card-inner-alignment-track';
+                        streamCanvas.appendChild(currentCardWrapper);
+                    }
+
+                    const card = document.createElement('div');
+                    card.className = 'project-layout-card';
+                    card.innerHTML = `
+                        <img src="${node.image}" class="card-thumbnail">
+                        <div class="card-details">
+                            <h3>${node.title}</h3>
+                            <p>${node.description}</p>
+                            ${node.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${node.mediaUrl}')">${node.buttonLabel}</button>` : ''}
+                        </div>
+                    `;
+                    currentCardWrapper.appendChild(card);
+                }
             });
 
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
 
+        // DISPATCHER PIPELINE: Intercepts clicks and injects URLs into Frame 3
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
@@ -372,7 +267,6 @@
             const wrapper = document.getElementById('player-wrapper');
             const button = document.getElementById('tracklist-toggle');
             const labels = projectDatabase.siteConfiguration.sectionLabels;
-
             wrapper.classList.toggle('expanded');
             button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
         }
