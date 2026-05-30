@@ -13,7 +13,7 @@ const projectDatabase = {
   "projects": {
     "titleBanner": {
       "title": "#P1EXP // EXPERIMENTAL MATRIX",
-      "text": "Central engineering node tracking firmware deployment arrays, hardware signal workflows, and sonic loop production modules.",
+      "text": "Central engineering node tracking firmware deployment arrays, hardware signal workflows, and sonic loop production modules. This environment serves as an open log cataloging live multitrack prints, hardware schematic revisions, and generative logic runtime scripts.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQppuRULLHixQSyzf2Fo0bK7H3eEKsRzXY4-LwfJhE4tUwk8iYOe23J8M3RwLP5nRmQIIU87ShamNQR51h1gwo7Gd7vmi3FIzxo57e7ug_Wb-mPiVQDCNNZsaY7IPKBTHFo2C8kR8KA2MMVYSHx019Fr6Al0AU3SJKNjKsjattpLagiA/s400/colorsplash24.jpg"
     },
     "layoutCanvas": [
@@ -21,8 +21,9 @@ const projectDatabase = {
       {
         "type": "breakoutBanner",
         "title": "MACHINEBRAIN // GENERATIVE ERA",
-        "description": "Algorithmic loops, custom micro-sequencer runtime variations, and modular voltage synthesis tracks mapped to active digital audio streams.",
-        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQppuRULLHixQSyzf2Fo0bK7H3eEKsRzXY4-LwfJhE4tUwk8iYOe23J8M3RwLP5nRmQIIU87ShamNQR51h1gwo7Gd7vmi3FIzxo57e7ug_Wb-mPiVQDCNNZsaY7IPKBTHFo2C8kR8KA2MMVYSHx019Fr6Al0AU3SJKNjKsjattpLagiA/s400/colorsplash24.jpg"
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQppuRULLHixQSyzf2Fo0bK7H3eEKsRzXY4-LwfJhE4tUwk8iYOe23J8M3RwLP5nRmQIIU87ShamNQR51h1gwo7Gd7vmi3FIzxo57e7ug_Wb-mPiVQDCNNZsaY7IPKBTHFo2C8kR8KA2MMVYSHx019Fr6Al0AU3SJKNjKsjattpLagiA/s400/colorsplash24.jpg",
+        /* This text block maps cleanly below the breakout banner image */
+        "longDescription": "The Machinebrain project concentrates on creating sound and beats using algorithmic and generative sequences mixed with traditional sequencing. AI tracking systems are utilized in granular audio creation, focusing on loops and stems rather than full compositions. Modular synthesis arrays are integrated with desktop digital computer workstation configurations to achieve multi-genre textures."
       },
       /* --- COLLECTIONS UNDER BANNER 1 --- */
       {
@@ -46,8 +47,8 @@ const projectDatabase = {
       {
         "type": "breakoutBanner",
         "title": "LEGACY TRACKING // AMIGA & HARDWARE ORIGINS",
-        "description": "Historical data archives recovering 8-bit tracking sessions, early workstation sequencers, and multitrack tape prints.",
-        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbzpO0joe0-Lftu8YsP0tQEy5LSfDXUZ6j2OuVe2oP1B4Y4fQYNetuYVL805Ap-7sCGT4expnfNHm4ZAOKgrimUPGqB9xv4NzM5JABhKy3jyTFfx9doT1hd3pMemrOcZEWI495-u6lfJALoPgfhBOJB84patqB5P0lHBaRDoWfWuGxTA/s400/2001acyberspaceoddity.jpg"
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbzpO0joe0-Lftu8YsP0tQEy5LSfDXUZ6j2OuVe2oP1B4Y4fQYNetuYVL805Ap-7sCGT4expnfNHm4ZAOKgrimUPGqB9xv4NzM5JABhKy3jyTFfx9doT1hd3pMemrOcZEWI495-u6lfJALoPgfhBOJB84patqB5P0lHBaRDoWfWuGxTA/s400/2001acyberspaceoddity.jpg",
+        "longDescription": "Historical data archives recovering early tracking sessions. This logs the era when desktop hardware workstations had reached maturity, shifting away from standard retro analog synthesis systems due to reliability variables, relying extensively on heavy sample manipulation."
       },
       /* --- COLLECTIONS UNDER BANNER 2 --- */
       {
