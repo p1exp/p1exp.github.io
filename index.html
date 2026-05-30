@@ -57,32 +57,58 @@
             grid-template-columns: minmax(0, 1fr) minmax(0, 850px) minmax(0, 1fr);
         }
 
-        /* --- FEATURE A: 100vw TITLE BANNER HERO --- */
+        /* --- FEATURE A: UPDATED 70vh TITLE BANNER WITH OVERLAY --- */
         .workspace-hero { 
             grid-column: 1 / -1; 
             width: 100vw; 
+            height: 70vh; /* Set height to 70% of the viewport window height */
             background-color: #111; 
             border-bottom: 2px solid #222; 
             margin-bottom: 30px;
-            display: grid;
-            grid-template-columns: inherit; 
+            position: relative; /* Establish stacking boundary context for the text overlay */
+            overflow: hidden;
         }
 
         .hero-banner-img { 
-            grid-column: 1 / -1;
-            width: 100vw; 
-            height: 260px; 
+            width: 100%; 
+            height: 100%; 
             object-fit: cover; 
-            border-bottom: 1px solid #222; 
-            filter: grayscale(40%) contrast(110%); 
+            filter: grayscale(40%) contrast(110%) brightness(50%); /* Darkened slightly for text pop */
         }
 
+        /* Centered overlay container spanning across the parent frame matrix */
         .hero-text-container { 
-            grid-column: 2; 
-            padding: 25px 20px; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertical centering alignment */
+            align-items: center; /* Horizontal centering alignment */
+            text-align: center;
+            padding: 0 20px;
+            /* Added a safe backdrop gradient layer to guarantee typography readability */
+            background: linear-gradient(to bottom, rgba(12,12,12,0.3) 0%, rgba(12,12,12,0.6) 100%);
+            z-index: 2;
         }
-        .hero-text-container h1 { color: #fff; font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 10px; }
-        .hero-text-container p { line-height: 1.6; color: #999; font-size: 0.9rem; }
+        
+        .hero-text-container h1 { 
+            color: #fff; 
+            font-size: 2rem; 
+            letter-spacing: 4px; 
+            margin-bottom: 15px; 
+            text-shadow: 0 4px 12px rgba(0,0,0,0.8); /* Shadow baseline to lift off background imagery */
+        }
+        
+        .hero-text-container p { 
+            line-height: 1.6; 
+            color: #ccc; 
+            font-size: 0.95rem; 
+            max-width: 800px; /* Clamps text width inside the wide window for clean scan layout */
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
 
         /* --- FEATURE B: 100vw FEATURED PROJECT SPOTLIGHT --- */
         #featured-project-container {
@@ -116,21 +142,19 @@
             padding: 0 20px;
         }
 
-        /* --- MODERN RESPONSIVE FLEX INTERFACE CARDS --- */
+        /* --- RESPONSIVE FLEX INTERFACE CARDS --- */
         .project-layout-card { 
             background-color: #121212; border: 1px solid #222; border-radius: 4px; 
             overflow: hidden; margin-bottom: 25px; 
             display: flex; 
-            flex-direction: row; /* Default: Side-by-side on desktop layouts */
+            flex-direction: row; 
             width: 100%;
         }
 
-        /* Strip desktop card properties when nested inside the 100vw wrap track */
         .featured-wrapper-card .project-layout-card {
             border: none; background: transparent; border-radius: 0; margin-bottom: 0;
         }
         
-        /* Thumbnail baselines for desktop */
         .card-thumbnail { 
             width: 220px; 
             height: 160px; 
@@ -171,38 +195,18 @@
         .player-wrapper.expanded { height: 360px; }
         iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; }
 
-        /* =========================================================
-           NEW: RESPONSIVE MEDIA BREAKPOINT SYSTEM FOR PHONES
-           ========================================================= */
+        /* --- RESPONSIVE PHONE BREAKER TRANSITIONS --- */
         @media (max-width: 768px) {
-            /* 1. Shift card design to stack vertically */
-            .project-layout-card, 
-            .featured-wrapper-card { 
-                flex-direction: column; 
-            }
+            .workspace-hero { height: 50vh; } /* Drop height slightly on phone vertical orientations */
+            .hero-text-container h1 { font-size: 1.5rem; }
+            .hero-text-container p { font-size: 0.85rem; }
 
-            /* 2. Make thumbnail images go full width, sitting ABOVE the text area */
-            .card-thumbnail,
-            .featured-wrapper-card .card-thumbnail {
-                width: 100%;
-                height: 220px; /* Locked height for clean mobile card proportions */
-                border-right: none;
-                border-bottom: 1px solid #222; /* Shifting the border partition to the bottom */
+            .project-layout-card, .featured-wrapper-card { flex-direction: column; }
+            .card-thumbnail, .featured-wrapper-card .card-thumbnail {
+                width: 100%; height: 220px; border-right: none; border-bottom: 1px solid #222;
             }
-
-            /* 3. Handle padding cleanups for smaller screens */
-            .hero-text-container {
-                padding: 20px 15px;
-            }
-            .content-inner-wrap, .wide-label {
-                padding: 0 15px;
-            }
-            
-            /* 4. Let the button snap wide on mobile phone layouts */
-            .route-link {
-                width: 100%;
-                text-align: center;
-            }
+            .card-details { padding: 15px; }
+            .route-link { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -328,7 +332,6 @@
             renderCategory(categoryKey);
         }
 
-        // Drawer UI Toggle Logic
         function toggleTracklist() {
             const wrapper = document.getElementById('player-wrapper');
             const button = document.getElementById('tracklist-toggle');
