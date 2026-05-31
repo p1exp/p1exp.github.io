@@ -100,12 +100,12 @@
         #featured-project-container {
             grid-column: 1 / -1; 
             width: 100vw;
-            height: 60vh; /* Set spotlight height profile to 60% of viewport window */
+            height: 60vh; 
             background-color: #141414;
             border-top: 1px solid #222;
             border-bottom: 1px solid #222;
             margin-bottom: 35px;
-            position: relative; /* Set stacking boundaries for nested absolute layout masks */
+            position: relative; 
             overflow: hidden;
         }
 
@@ -114,30 +114,27 @@
             height: 100%;
         }
 
-        /* Force spotlight card block layout to map edge-to-edge underneath text container overlays */
         .featured-wrapper-card .project-layout-card {
             border: none; background: transparent; border-radius: 0; margin-bottom: 0;
             width: 100%; height: 100%; position: relative;
         }
 
-        /* Background image scales to fill the absolute bounds of the container array */
         .featured-wrapper-card .card-thumbnail { 
             width: 100%; 
             height: 100%; 
             object-fit: cover;
             border-right: none;
-            filter: grayscale(30%) contrast(105%) brightness(40%); /* Dimmed for typography safety */
+            filter: grayscale(30%) contrast(105%) brightness(40%); 
         }
 
-        /* Absolute positioning overlay box layout matching the parent title design */
         .featured-wrapper-card .card-details { 
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             padding: 0 20px;
             display: flex; 
             flex-direction: column; 
-            justify-content: center; /* Vertical alignment center */
-            align-items: center; /* Horizontal alignment center */
+            justify-content: center; 
+            align-items: center; 
             text-align: center;
             background: rgba(12, 12, 12, 0.4);
             z-index: 2;
@@ -155,7 +152,7 @@
         }
         
         .featured-wrapper-card .meta-tag { 
-            align-self: center; /* Forces metadata tag pill layout to center anchor */
+            align-self: center; 
             margin-bottom: 15px; 
         }
 
@@ -219,11 +216,10 @@
         /* --- RESPONSIVE PHONE BREAKER TRANSITIONS --- */
         @media (max-width: 768px) {
             .workspace-hero { height: 50vh; } 
-            #featured-project-container { height: 50vh; } /* Scale spotlight frame down nicely on mobile */
+            #featured-project-container { height: 50vh; } 
             .hero-text-container h1, .featured-wrapper-card .card-details h2 { font-size: 1.4rem; }
             .hero-text-container p, .featured-wrapper-card .card-details p { font-size: 0.85rem; }
 
-            /* Grid Collection layout fallback cards for phone screens */
             .content-inner-wrap .project-layout-card { flex-direction: column; }
             .content-inner-wrap .card-thumbnail {
                 width: 100%; height: 200px; border-right: none; border-bottom: 1px solid #222;
@@ -276,10 +272,10 @@
 
             const config = projectDatabase.siteConfiguration;
 
-            document.getElementById('site-logo').textContent = config.logoTitle;
-            document.getElementById('spotlight-label').textContent = config.sectionLabels.spotlight;
-            document.getElementById('archive-label').textContent = config.sectionLabels.archive;
-            document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow;
+            document.getElementById('site-logo').textContent = config.logoTitle || '';
+            document.getElementById('spotlight-label').textContent = config.sectionLabels.spotlight || '';
+            document.getElementById('archive-label').textContent = config.sectionLabels.archive || '';
+            document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow || '';
 
             const navContainer = document.getElementById('nav-filters');
             navContainer.innerHTML = '';
@@ -299,47 +295,53 @@
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
-            // Render Title Hero
-            document.getElementById('hero-image').src = dataBlock.titleBanner.image;
-            document.getElementById('hero-title').textContent = dataBlock.titleBanner.title;
-            document.getElementById('hero-description').textContent = dataBlock.titleBanner.text;
+            // TRACKING UPDATE: Shifted to .innerHTML to explicitly parse styling tags like <strong>
+            document.getElementById('hero-image').src = dataBlock.titleBanner.image || '';
+            document.getElementById('hero-title').innerHTML = dataBlock.titleBanner.title || '';
+            document.getElementById('hero-description').innerHTML = dataBlock.titleBanner.text || '';
 
-            // Render Dynamic 60vh Spotlight Hero
             const featuredContainer = document.getElementById('featured-project-container');
             const feat = dataBlock.featuredProject;
             
-            featuredContainer.innerHTML = `
-                <div class="featured-wrapper-card">
-                    <div class="project-layout-card">
-                        <img src="${feat.image}" class="card-thumbnail">
-                        <div class="card-details">
-                            <h2>${feat.title}</h2>
-                            ${feat.location ? `<span class="meta-tag">${feat.location}</span>` : ''}
-                            <p>${feat.description}</p>
-                            ${feat.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${feat.mediaUrl}')">${feat.buttonLabel}</button>` : ''}
+            if (feat) {
+                // TRACKING UPDATE: Shifted template contents inside to innerHTML clean strings with || protectors
+                featuredContainer.innerHTML = `
+                    <div class="featured-wrapper-card">
+                        <div class="project-layout-card">
+                            <img src="${feat.image || ''}" class="card-thumbnail">
+                            <div class="card-details">
+                                <h2>${feat.title || ''}</h2>
+                                ${feat.location ? `<span class="meta-tag">${feat.location}</span>` : ''}
+                                <p>${feat.description || ''}</p>
+                                ${feat.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${feat.mediaUrl}')">${feat.buttonLabel || '▶ PLAY'}</button>` : ''}
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
+                `;
+                featuredContainer.style.display = "grid";
+            } else {
+                featuredContainer.style.display = "none";
+            }
 
-            // Render standard 850px text collection lists below
             const collectionContainer = document.getElementById('collection-grid-container');
             collectionContainer.innerHTML = '';
 
-            dataBlock.collection.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'project-layout-card';
-                card.innerHTML = `
-                    <img src="${item.image}" class="card-thumbnail">
-                    <div class="card-details">
-                        <h3>${item.title}</h3>
-                        <p>${item.description}</p>
-                        ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">${item.buttonLabel}</button>` : ''}
-                        ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
-                    </div>
-                `;
-                collectionContainer.appendChild(card);
-            });
+            if (dataBlock.collection && dataBlock.collection.length > 0) {
+                dataBlock.collection.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'project-layout-card';
+                    card.innerHTML = `
+                        <img src="${item.image || ''}" class="card-thumbnail">
+                        <div class="card-details">
+                            <h3>${item.title || ''}</h3>
+                            <p>${item.description || ''}</p>
+                            ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">${item.buttonLabel || '▶ PLAY'}</button>` : ''}
+                            ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
+                        </div>
+                    `;
+                    collectionContainer.appendChild(card);
+                });
+            }
 
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
