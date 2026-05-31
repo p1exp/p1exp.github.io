@@ -19,7 +19,7 @@ const pageLayoutEngine = {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL",
       "text": "#P1EXP is an experiment of sound. Select a category above to explore the timeline archives.",
-      "imageName": "COSP.jpg" 
+      "imageName": "p1_bg.jpg" 
     },
     "sections": [
       {
