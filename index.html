@@ -84,27 +84,27 @@
         }
         .narrow-text-block p { color: #ccc; line-height: 1.6; font-size: 0.95rem; }
 
-        /* --- NEW: CSS GRID FOR SQUARE COLLECTION TILES --- */
+        /* --- 850px COLLECTION LIST WRAPPER --- */
         .collection-grid { 
             grid-column: 2; 
             padding: 0 20px; 
-            display: grid;
-            /* Creates responsive columns that automatically fit as many tiles as possible */
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-            gap: 25px; /* Spacing between tiles */
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Vertical spacing between the rows */
         }
 
-        /* --- NEW: VERTICAL SQUARE TILE STYLING --- */
+        /* --- HORIZONTAL ROW CARDS WITH SQUARE IMAGES --- */
         .project-layout-card { 
             background-color: #121212; border: 1px solid #222; border-radius: 4px; 
-            overflow: hidden; display: flex; flex-direction: column; width: 100%;
+            overflow: hidden; display: flex; flex-direction: row; width: 100%;
         }
         
         .card-thumbnail { 
-            width: 100%; 
-            aspect-ratio: 1 / 1; /* Forces the image to always be a perfect square */
+            width: 200px; 
+            height: 200px; /* Locks the image to a perfect 1:1 square ratio */
             object-fit: cover; 
-            border-bottom: 1px solid #222; 
+            border-right: 1px solid #222; 
+            flex-shrink: 0; /* Prevents the image from squishing if there is a lot of text */
         }
 
         .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -139,7 +139,17 @@
             .banner-heading h1 { font-size: 1.5rem; }
             .banner-heading h2 { font-size: 1.3rem; }
             .narrow-text-block { padding: 30px 15px; }
-            .collection-grid { padding: 0 15px; grid-template-columns: 1fr; /* Stacks tiles 1-wide on phones */ }
+            
+            /* Stacks the row into a column on phone screens while keeping image square */
+            .project-layout-card { flex-direction: column; }
+            .card-thumbnail { 
+                width: 100%; 
+                height: auto; 
+                aspect-ratio: 1 / 1; 
+                border-right: none; 
+                border-bottom: 1px solid #222; 
+            }
+            .collection-grid { padding: 0 15px; }
             .route-link { width: 100%; text-align: center; }
         }
     </style>
@@ -224,7 +234,7 @@
                         `;
                     }
 
-                    // C. Associated Collection Array Grid Loop (Now lays out as CSS Grid tiles)
+                    // C. Associated Collection Array Loop
                     layoutHtml += `<div class="collection-grid">`;
                     if (section.archiveKeys && section.archiveKeys.length > 0) {
                         section.archiveKeys.forEach(catNo => {
