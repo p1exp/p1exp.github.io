@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1EXP // Platform-1 Experimental</title>
     
+    <!-- CENTRAL DATA STREAM NODE LINK -->
     <script src="./database.js"></script>
 
     <style>
@@ -57,7 +58,7 @@
             grid-template-columns: minmax(0, 1fr) minmax(0, 850px) minmax(0, 1fr);
         }
 
-        /* --- FEATURE A: 70vh TITLE BANNER WITH OVERLAY --- */
+        /* --- FEATURE A: 70vh TITLE BANNER WITH CENTRED OVERLAY --- */
         .workspace-hero { 
             grid-column: 1 / -1; 
             width: 100vw; 
@@ -96,7 +97,7 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.8);
         }
 
-        /* --- FEATURE B: 60vh FEATURED PROJECT OVERLAY BANNER --- */
+        /* --- FEATURE B: FIXED 60vh FEATURED PROJECT OVERLAY BANNER --- */
         #featured-project-container {
             grid-column: 1 / -1; 
             width: 100vw;
@@ -105,13 +106,17 @@
             border-top: 1px solid #222;
             border-bottom: 1px solid #222;
             margin-bottom: 35px;
+            display: grid;
+            grid-template-columns: inherit; /* Inherits the 3-column tracking system from main */
             position: relative; 
             overflow: hidden;
         }
 
         .featured-wrapper-card {
+            grid-column: 2; /* Locks the spotlight text elements cleanly back into the central 850px tracking guide */
             width: 100%;
             height: 100%;
+            position: relative;
         }
 
         .featured-wrapper-card .project-layout-card {
@@ -119,24 +124,28 @@
             width: 100%; height: 100%; position: relative;
         }
 
+        /* Fullscreen background image behavior inside the box layout */
         .featured-wrapper-card .card-thumbnail { 
+            position: absolute;
+            top: 0; left: 0;
             width: 100%; 
             height: 100%; 
             object-fit: cover;
             border-right: none;
+            z-index: 1;
             filter: grayscale(30%) contrast(105%) brightness(40%); 
         }
 
+        /* Centralizes the overlay text blocks inside the 850px central track layout bounds */
         .featured-wrapper-card .card-details { 
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: relative;
+            width: 100%; height: 100%;
             padding: 0 20px;
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             align-items: center; 
             text-align: center;
-            background: rgba(12, 12, 12, 0.4);
             z-index: 2;
         }
 
@@ -231,13 +240,16 @@
 </head>
 <body>
 
+    <!-- FRAME 1: SYSTEM NAVBAR -->
     <header>
         <div class="logo" id="site-logo"></div>
         <nav id="nav-filters"></nav>
     </header>
 
+    <!-- FRAME 2: SCROLLING WORKSPACE -->
     <main id="main-scroll-panel">
         
+        <!-- MODULE 1: 70vh FULL-WIDTH BANNER WITH OVERLAY -->
         <section class="workspace-hero">
             <img id="hero-image" src="" class="hero-banner-img">
             <div class="hero-text-container">
@@ -248,8 +260,10 @@
 
         <div class="section-label wide-label" id="spotlight-label"></div>
 
+        <!-- MODULE 2: 60vh FULL-WIDTH SPOTLIGHT WITH CORRECT 850px CENTER CORE TRACKING -->
         <div id="featured-project-container"></div>
 
+        <!-- MODULE 3: 850px ARCHIVE COLLECTION STACK -->
         <div class="content-inner-wrap">
             <div class="section-label" id="archive-label"></div>
             <div id="collection-grid-container"></div>
@@ -257,6 +271,7 @@
         
     </main>
 
+    <!-- FRAME 3: ANCHORED TARGET PLAYER DECK -->
     <footer>
         <div class="toggle-btn-container">
             <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
@@ -266,19 +281,19 @@
         </div>
     </footer>
 
+    <!-- ENGINE SYSTEM RUNTIME PIPELINE CONTROLLER -->
     <script>
+        // Setup static layout and navigation structure from central script configurations
         function bootstrapApplication() {
             if (typeof projectDatabase === 'undefined') return;
 
             const config = projectDatabase.siteConfiguration;
 
-            // Map layout text structures
             document.getElementById('site-logo').textContent = config.logoTitle || '';
             document.getElementById('spotlight-label').textContent = config.sectionLabels.spotlight || '';
             document.getElementById('archive-label').textContent = config.sectionLabels.archive || '';
             document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow || '';
 
-            // Dynamic filter generation loops
             const navContainer = document.getElementById('nav-filters');
             navContainer.innerHTML = '';
 
@@ -293,16 +308,17 @@
             renderCategory(config.navigationMenu[0].id);
         }
 
+        // Processing loop mapping variable objects seamlessly into layout components
         function renderCategory(categoryKey) {
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
-            // Render Core 70vh Header utilizing innerHTML to honor data styles
+            // Render Title Hero Banner Text channels
             document.getElementById('hero-image').src = dataBlock.titleBanner.image || '';
             document.getElementById('hero-title').innerHTML = dataBlock.titleBanner.title || '';
             document.getElementById('hero-description').innerHTML = dataBlock.titleBanner.text || '';
 
-            // Render Dynamic 60vh Spotlight Block
+            // Render Dynamic 60vh Spotlight Hero Layout Components
             const featuredContainer = document.getElementById('featured-project-container');
             const feat = dataBlock.featuredProject;
             
@@ -325,7 +341,7 @@
                 featuredContainer.style.display = "none";
             }
 
-            // Render 850px Archive Collections
+            // Render 850px Secondary Archive List Card Arrays
             const collectionContainer = document.getElementById('collection-grid-container');
             collectionContainer.innerHTML = '';
 
@@ -349,6 +365,7 @@
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
 
+        // Direct stream router executing injection hooks to structural master footer pane
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
@@ -372,7 +389,6 @@
             button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
         }
 
-        // Initialize execution sequence
         bootstrapApplication();
     </script>
 </body>
