@@ -84,27 +84,27 @@
         }
         .narrow-text-block p { color: #ccc; line-height: 1.6; font-size: 0.95rem; }
 
-        /* --- 850px COLLECTION LIST WRAPPER --- */
+        /* --- NEW: CSS GRID FOR SQUARE COLLECTION TILES --- */
         .collection-grid { 
             grid-column: 2; 
             padding: 0 20px; 
-            display: flex;
-            flex-direction: column;
-            gap: 25px; /* Vertical spacing between the rows */
+            display: grid;
+            /* Creates responsive columns that automatically fit as many tiles as possible */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 25px; /* Spacing between tiles */
         }
 
-        /* --- HORIZONTAL ROW CARDS WITH SQUARE IMAGES --- */
+        /* --- NEW: VERTICAL SQUARE TILE STYLING --- */
         .project-layout-card { 
             background-color: #121212; border: 1px solid #222; border-radius: 4px; 
-            overflow: hidden; display: flex; flex-direction: row; width: 100%;
+            overflow: hidden; display: flex; flex-direction: column; width: 100%;
         }
         
         .card-thumbnail { 
-            width: 200px; 
-            height: 200px; /* Locks the image to a perfect 1:1 square ratio */
+            width: 100%; 
+            aspect-ratio: 1 / 1; /* Forces the image to always be a perfect square */
             object-fit: cover; 
-            border-right: 1px solid #222; 
-            flex-shrink: 0; /* Prevents the image from squishing if there is a lot of text */
+            border-bottom: 1px solid #222; 
         }
 
         .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -139,15 +139,144 @@
             .banner-heading h1 { font-size: 1.5rem; }
             .banner-heading h2 { font-size: 1.3rem; }
             .narrow-text-block { padding: 30px 15px; }
-            
-            /* Stacks the row into a column on phone screens while keeping image square */
-            .project-layout-card { flex-direction: column; }
-            .card-thumbnail { 
-                width: 100%; 
-                height: auto; 
-                aspect-ratio: 1 / 1; 
-                border-right: none; 
-                border-bottom: 1px solid #222; 
+            .collection-grid { padding: 0 15px; grid-template-columns: 1fr; /* Stacks tiles 1-wide on phones */ }
+            .route-link { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" id="site-logo"></div>
+        <nav id="nav-filters"></nav>
+    </header>
+
+    <main id="main-scroll-panel"></main>
+
+    <footer>
+        <div class="toggle-btn-container">
+            <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
+        </div>
+        <div class="player-wrapper" id="player-wrapper">
+            <iframe id="master-deck-frame" src="https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/" allow="autoplay; encrypted-media; fullscreen"></iframe>
+        </div>
+    </footer>
+
+    <script>
+        function bootstrapApplication() {
+            if (typeof masterCollectionRegistry === 'undefined') return;
+            const config = siteConfiguration;
+
+            document.getElementById('site-logo').textContent = config.logoTitle || '';
+            document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow || '';
+
+            const navContainer = document.getElementById('nav-filters');
+            navContainer.innerHTML = '';
+
+            config.navigationMenu.forEach((menuItem, idx) => {
+                const btn = document.createElement('button');
+                btn.textContent = menuItem.label;
+                if (idx === 0) btn.className = 'active'; 
+                btn.onclick = function() { switchCategory(menuItem.id, this); };
+                navContainer.appendChild(btn);
+            });
+
+            loadPageView(config.navigationMenu[0].id);
+        }
+
+        function loadPageView(pageKey) {
+            const pageMap = pageLayoutEngine[pageKey];
+            if (!pageMap) return;
+
+            let layoutHtml = '';
+
+            // 1. GENERATE THE TOP 70vh TITLE BANNER + TEXT
+            layoutHtml += `
+                <div class="full-banner banner-70">
+                    <img src="./img_bg/${pageMap.titleBanner.imageName || ''}" class="banner-img">
+                    <div class="banner-heading">
+                        <h1>${pageMap.titleBanner.title || ''}</h1>
+                    </div>
+                </div>
+                <div class="narrow-text-block">
+                    <p>${pageMap.titleBanner.text || ''}</p>
+                </div>
+            `;
+
+            // 2. LOOP THROUGH AND GENERATE EACH 60vh PROJECT SECTION + TEXT + COLLECTIONS
+            if (pageMap.sections && pageMap.sections.length > 0) {
+                pageMap.sections.forEach(section => {
+                    
+                    layoutHtml += `
+                        <div class="full-banner banner-60">
+                            <img src="./img_bg/${section.imageName || ''}" class="banner-img">
+                            <div class="banner-heading">
+                                <h2>${section.title || ''}</h2>
+                            </div>
+                        </div>
+                    `;
+
+                    if (section.text) {
+                        layoutHtml += `
+                            <div class="narrow-text-block">
+                                <p>${section.text}</p>
+                            </div>
+                        `;
+                    }
+
+                    // C. Associated Collection Array Grid Loop (Now lays out as CSS Grid tiles)
+                    layoutHtml += `<div class="collection-grid">`;
+                    if (section.archiveKeys && section.archiveKeys.length > 0) {
+                        section.archiveKeys.forEach(catNo => {
+                            const item = masterCollectionRegistry[catNo];
+                            if (!item) return;
+
+                            layoutHtml += `
+                                <div class="project-layout-card">
+                                    <img src="./img_coll/${catNo}.jpg" class="card-thumbnail">
+                                    <div class="card-details">
+                                        <h3>${item.title || ''}</h3>
+                                        <span class="meta-tag">P1-${catNo} // ${item.date || ''}</span>
+                                        <p>${item.description || ''}</p>
+                                        ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">▶ PLAY ARCHIVE DECK</button>` : ''}
+                                        ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+                    layoutHtml += `</div>`; 
+                });
             }
-            .collection-grid { padding: 0 15px; }
-            .route-link { width: 100%; text-align: center
+
+            document.getElementById('main-scroll-panel').innerHTML = layoutHtml;
+            document.getElementById('main-scroll-panel').scrollTop = 0;
+        }
+
+        function routeToDeck(targetUrl) {
+            const deckFrame = document.getElementById('master-deck-frame');
+            const wrapper = document.getElementById('player-wrapper');
+            deckFrame.src = targetUrl;
+            wrapper.classList.add('expanded');
+            document.getElementById('tracklist-toggle').innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
+        }
+
+        function switchCategory(categoryKey, buttonElement) {
+            document.querySelectorAll('#nav-filters button').forEach(btn => btn.classList.remove('active'));
+            buttonElement.classList.add('active');
+            loadPageView(categoryKey);
+        }
+
+        function toggleTracklist() {
+            const wrapper = document.getElementById('player-wrapper');
+            const button = document.getElementById('tracklist-toggle');
+            const labels = siteConfiguration.sectionLabels;
+
+            wrapper.classList.toggle('expanded');
+            button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
+        }
+
+        bootstrapApplication();
+    </script>
+</body>
+</html>
