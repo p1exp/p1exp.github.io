@@ -1,6 +1,6 @@
 // 1. GLOBAL UI CORE CONFIGURATION
 const siteConfiguration = {
-  "logoTitle": "P1EXP // DECK MATRIX",
+  "logoTitle": "#P1EXP",
   "navigationMenu": [
     { "id": "p1exp", "label": "P1EXP" },         // <-- NEW FRONT PAGE ADDED HERE
     { "id": "projects", "label": "Projects" },
@@ -61,7 +61,7 @@ const pageLayoutEngine = {
     "titleBanner": {
       "title": "SESSION RECORDINGS // LIVE LABS",
       "text": "Recordings of live sets and studio jam sessions from current and historical collaboration configurations.",
-      "imageName": "interloper_bg.jpg"
+      "imageName": "interlooper_bg.jpg"
     },
     "sections": [
       {
