@@ -34,7 +34,7 @@ const pageLayoutEngine = {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> // PROJECTS",
       "text": "A discography of current projects are listed below to hear and download. The projects are listed in release order. Collections are hosted on YouTube and Bandcamp.",
-      "imageName": "COSP.jpg" 
+      "imageName": "project_bg.jpg" 
     },
     "sections": [
       {
@@ -46,7 +46,7 @@ const pageLayoutEngine = {
       {
         "title": "ELECTRIC ABUSE",
         "text": "This project represents a time when computer systems running DAW software had come of age. A vast array of multigenre samples were mixed and manipulated.",
-        "imageName": "BREL.jpg",
+        "imageName": "electricabuse_bg.jpg",
         "archiveKeys": ["BREL", "EXCP", "STRA"]
       },
       {
@@ -61,7 +61,7 @@ const pageLayoutEngine = {
     "titleBanner": {
       "title": "SESSION RECORDINGS // LIVE LABS",
       "text": "Recordings of live sets and studio jam sessions from current and historical collaboration configurations.",
-      "imageName": "ILS2.jpg"
+      "imageName": "interloper_bg.jpg"
     },
     "sections": [
       {
