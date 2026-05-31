@@ -65,13 +65,13 @@ const pageLayoutEngine = {
     },
     "sections": [
       {
-        "title": "INTERLOOPER SESSIONS",
+        "title": "INTERLOOPER LIVE GIGS",
         "text": "Live experimental improvised collaboration jam sessions with RmS, which are raw and unedited. Predominantly dawless setups with modular synthesis racks.",
         "imageName": "interlooperlive_bg.jpg",
         "archiveKeys": ["ILS2", "ILS1", "INS2", "INS1"]
       },
       {
-        "title": "LEGACY JAMS",
+        "title": "INTERLOOPER SESSION LABS",
         "text": "Multi user session live jams recorded onto historical tape formats during structural analogue studio experiments.",
         "imageName": "interloopersessions_bg.jpg",
         "archiveKeys": ["SYPS", "JAMB"]
