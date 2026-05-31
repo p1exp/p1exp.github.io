@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1EXP // Platform-1 Experimental</title>
     
-    <!-- CENTRAL DATA STREAM NODE LINK -->
     <script src="./database.js"></script>
 
     <style>
@@ -58,111 +57,49 @@
             grid-template-columns: minmax(0, 1fr) minmax(0, 850px) minmax(0, 1fr);
         }
 
-        /* --- FEATURE A: 70vh TITLE BANNER WITH CENTRED OVERLAY --- */
-        .workspace-hero { 
+        /* --- CLEAN 100vw HERO ROW MATRIX STYLES --- */
+        .workspace-hero, .project-hero-banner { 
             grid-column: 1 / -1; 
             width: 100vw; 
-            height: 70vh; 
             background-color: #111; 
             border-bottom: 2px solid #222; 
-            margin-bottom: 30px;
             position: relative; 
             overflow: hidden;
         }
+        
+        /* Specific height tracks */
+        .workspace-hero { height: 70vh; margin-bottom: 30px; }
+        .project-hero-banner { height: 60vh; border-top: 1px solid #222; margin-bottom: 35px; }
 
-        .hero-banner-img { 
+        /* Full-bleed background graphics engines */
+        .banner-bg-img { 
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            filter: grayscale(40%) contrast(110%) brightness(50%); 
+            filter: grayscale(40%) contrast(110%) brightness(40%); 
         }
 
-        .hero-text-container { 
+        /* Perfectly centralized absolute overlay alignments */
+        .hero-overlay-container { 
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center; 
             text-align: center; padding: 0 20px;
-            background: linear-gradient(to bottom, rgba(12,12,12,0.3) 0%, rgba(12,12,12,0.6) 100%);
+            background: linear-gradient(to bottom, rgba(12,12,12,0.4) 0%, rgba(12,12,12,0.7) 100%);
             z-index: 2;
         }
         
-        .hero-text-container h1 { 
+        .hero-overlay-container h1, .hero-overlay-container h2 { 
             color: #fff; font-size: 2rem; letter-spacing: 4px; margin-bottom: 15px; 
-            text-shadow: 0 4px 12px rgba(0,0,0,0.8); 
+            text-shadow: 0 4px 12px rgba(0,0,0,0.9); 
         }
+
+        .hero-overlay-container h2 { font-size: 1.8rem; letter-spacing: 3px; margin-bottom: 10px; }
         
-        .hero-text-container p { 
+        .hero-overlay-container p { 
             line-height: 1.6; color: #ccc; font-size: 0.95rem; max-width: 800px; 
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-        }
-
-        /* --- FEATURE B: FIXED 60vh FEATURED PROJECT OVERLAY BANNER --- */
-        #featured-project-container {
-            grid-column: 1 / -1; 
-            width: 100vw;
-            height: 60vh; 
-            background-color: #141414;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            margin-bottom: 35px;
-            display: grid;
-            grid-template-columns: inherit; /* Inherits the 3-column tracking system from main */
-            position: relative; 
-            overflow: hidden;
-        }
-
-        .featured-wrapper-card {
-            grid-column: 2; /* Locks the spotlight text elements cleanly back into the central 850px tracking guide */
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .featured-wrapper-card .project-layout-card {
-            border: none; background: transparent; border-radius: 0; margin-bottom: 0;
-            width: 100%; height: 100%; position: relative;
-        }
-
-        /* Fullscreen background image behavior inside the box layout */
-        .featured-wrapper-card .card-thumbnail { 
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover;
-            border-right: none;
-            z-index: 1;
-            filter: grayscale(30%) contrast(105%) brightness(40%); 
-        }
-
-        /* Centralizes the overlay text blocks inside the 850px central track layout bounds */
-        .featured-wrapper-card .card-details { 
-            position: relative;
-            width: 100%; height: 100%;
-            padding: 0 20px;
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center;
-            z-index: 2;
-        }
-
-        .featured-wrapper-card .card-details h2 { 
-            color: #fff; font-size: 1.8rem; letter-spacing: 3px; margin-bottom: 10px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.9);
-        }
-        
-        .featured-wrapper-card .card-details p { 
-            font-size: 0.95rem; color: #ccc; line-height: 1.6; 
-            max-width: 800px; margin-bottom: 20px;
             text-shadow: 0 2px 8px rgba(0,0,0,0.9);
-        }
-        
-        .featured-wrapper-card .meta-tag { 
-            align-self: center; 
-            margin-bottom: 15px; 
         }
 
         /* --- FEATURE C: 850px FIXED WIDTH ARCHIVE WRAPPER --- */
@@ -178,7 +115,7 @@
             padding: 0 20px;
         }
 
-        /* --- ARCHIVE LAYER LIST CARD DESIGN --- */
+        /* --- ARCHIVE LAYER LIST CARD DESIGN (850px Tracking Column) --- */
         .project-layout-card { 
             background-color: #121212; border: 1px solid #222; border-radius: 4px; 
             overflow: hidden; margin-bottom: 25px; 
@@ -226,8 +163,8 @@
         @media (max-width: 768px) {
             .workspace-hero { height: 50vh; } 
             #featured-project-container { height: 50vh; } 
-            .hero-text-container h1, .featured-wrapper-card .card-details h2 { font-size: 1.4rem; }
-            .hero-text-container p, .featured-wrapper-card .card-details p { font-size: 0.85rem; }
+            .hero-overlay-container h1, .hero-overlay-container h2 { font-size: 1.4rem; }
+            .hero-overlay-container p { font-size: 0.85rem; }
 
             .content-inner-wrap .project-layout-card { flex-direction: column; }
             .content-inner-wrap .card-thumbnail {
@@ -240,19 +177,16 @@
 </head>
 <body>
 
-    <!-- FRAME 1: SYSTEM NAVBAR -->
     <header>
         <div class="logo" id="site-logo"></div>
         <nav id="nav-filters"></nav>
     </header>
 
-    <!-- FRAME 2: SCROLLING WORKSPACE -->
     <main id="main-scroll-panel">
         
-        <!-- MODULE 1: 70vh FULL-WIDTH BANNER WITH OVERLAY -->
         <section class="workspace-hero">
-            <img id="hero-image" src="" class="hero-banner-img">
-            <div class="hero-text-container">
+            <img id="hero-image" src="" class="banner-bg-img">
+            <div class="hero-overlay-container">
                 <h1 id="hero-title"></h1>
                 <p id="hero-description"></p>
             </div>
@@ -260,10 +194,8 @@
 
         <div class="section-label wide-label" id="spotlight-label"></div>
 
-        <!-- MODULE 2: 60vh FULL-WIDTH SPOTLIGHT WITH CORRECT 850px CENTER CORE TRACKING -->
-        <div id="featured-project-container"></div>
+        <div id="featured-project-container" class="project-hero-banner"></div>
 
-        <!-- MODULE 3: 850px ARCHIVE COLLECTION STACK -->
         <div class="content-inner-wrap">
             <div class="section-label" id="archive-label"></div>
             <div id="collection-grid-container"></div>
@@ -271,7 +203,6 @@
         
     </main>
 
-    <!-- FRAME 3: ANCHORED TARGET PLAYER DECK -->
     <footer>
         <div class="toggle-btn-container">
             <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
@@ -281,9 +212,7 @@
         </div>
     </footer>
 
-    <!-- ENGINE SYSTEM RUNTIME PIPELINE CONTROLLER -->
     <script>
-        // Setup static layout and navigation structure from central script configurations
         function bootstrapApplication() {
             if (typeof projectDatabase === 'undefined') return;
 
@@ -308,32 +237,26 @@
             renderCategory(config.navigationMenu[0].id);
         }
 
-        // Processing loop mapping variable objects seamlessly into layout components
         function renderCategory(categoryKey) {
             const dataBlock = projectDatabase[categoryKey];
             if (!dataBlock) return;
 
-            // Render Title Hero Banner Text channels
+            // 1. Process 70vh Header Row
             document.getElementById('hero-image').src = dataBlock.titleBanner.image || '';
             document.getElementById('hero-title').innerHTML = dataBlock.titleBanner.title || '';
             document.getElementById('hero-description').innerHTML = dataBlock.titleBanner.text || '';
 
-            // Render Dynamic 60vh Spotlight Hero Layout Components
+            // 2. Process 60vh Project Spotlight Row (Pure 100vw Overlay - No Route Action Trigger Links)
             const featuredContainer = document.getElementById('featured-project-container');
             const feat = dataBlock.featuredProject;
             
             if (feat) {
                 featuredContainer.innerHTML = `
-                    <div class="featured-wrapper-card">
-                        <div class="project-layout-card">
-                            <img src="${feat.image || ''}" class="card-thumbnail">
-                            <div class="card-details">
-                                <h2>${feat.title || ''}</h2>
-                                ${feat.location ? `<span class="meta-tag">${feat.location}</span>` : ''}
-                                <p>${feat.description || ''}</p>
-                                ${feat.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${feat.mediaUrl}')">${feat.buttonLabel || '▶ PLAY'}</button>` : ''}
-                            </div>
-                        </div>
+                    <img src="${feat.image || ''}" class="banner-bg-img">
+                    <div class="hero-overlay-container">
+                        ${feat.location ? `<span class="meta-tag">${feat.location}</span>` : ''}
+                        <h2>${feat.title || ''}</h2>
+                        <p>${feat.description || ''}</p>
                     </div>
                 `;
                 featuredContainer.style.display = "grid";
@@ -341,7 +264,7 @@
                 featuredContainer.style.display = "none";
             }
 
-            // Render 850px Secondary Archive List Card Arrays
+            // 3. Process 850px Archive Collections
             const collectionContainer = document.getElementById('collection-grid-container');
             collectionContainer.innerHTML = '';
 
@@ -365,7 +288,6 @@
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
 
-        // Direct stream router executing injection hooks to structural master footer pane
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
