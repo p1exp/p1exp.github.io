@@ -50,9 +50,9 @@
             grid-template-columns: minmax(0, 1fr) minmax(0, 850px) minmax(0, 1fr);
         }
 
-        /* --- DIAGRAM ALIGNMENT: 100vw FULL BLEED BANNERS --- */
+        /* --- 100vw FULL BLEED BANNERS --- */
         .full-banner { 
-            grid-column: 1 / -1; /* Forces wide screen breakout */
+            grid-column: 1 / -1; 
             width: 100vw; 
             position: relative; 
             display: flex; 
@@ -64,13 +64,11 @@
         .banner-70 { height: 70vh; border-bottom: 2px solid #222; }
         .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 40px; }
 
-        /* Background image sizing inside the wide banners */
         .banner-img { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             object-fit: cover; filter: grayscale(40%) contrast(110%) brightness(40%); z-index: 1; 
         }
 
-        /* The floating text directly overlaid inside the middle of the banners */
         .banner-heading { 
             position: relative; z-index: 2; color: #fff; text-align: center; 
             text-shadow: 0 4px 12px rgba(0,0,0,0.9); padding: 0 20px; 
@@ -78,33 +76,45 @@
         .banner-heading h1 { font-size: 2.2rem; letter-spacing: 4px; }
         .banner-heading h2 { font-size: 1.8rem; letter-spacing: 3px; }
 
-        /* --- DIAGRAM ALIGNMENT: 850px NARROW TEXT BLOCKS BELOW BANNERS --- */
+        /* --- 850px NARROW TEXT BLOCKS BELOW BANNERS --- */
         .narrow-text-block { 
-            grid-column: 2; /* Locks perfectly to the 850px center track */
+            grid-column: 2; 
             padding: 40px 20px; 
             text-align: center; 
         }
         .narrow-text-block p { color: #ccc; line-height: 1.6; font-size: 0.95rem; }
 
-        /* --- DIAGRAM ALIGNMENT: 850px COLLECTION GRID WRAPPERS --- */
+        /* --- NEW: CSS GRID FOR SQUARE COLLECTION TILES --- */
         .collection-grid { 
             grid-column: 2; 
             padding: 0 20px; 
+            display: grid;
+            /* Creates responsive columns that automatically fit as many tiles as possible */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 25px; /* Spacing between tiles */
         }
 
-        /* Interface Card Styling */
+        /* --- NEW: VERTICAL SQUARE TILE STYLING --- */
         .project-layout-card { 
             background-color: #121212; border: 1px solid #222; border-radius: 4px; 
-            overflow: hidden; margin-bottom: 25px; display: flex; flex-direction: row; width: 100%;
+            overflow: hidden; display: flex; flex-direction: column; width: 100%;
         }
-        .card-thumbnail { width: 220px; height: 160px; object-fit: cover; border-right: 1px solid #222; flex-shrink: 0; }
+        
+        .card-thumbnail { 
+            width: 100%; 
+            aspect-ratio: 1 / 1; /* Forces the image to always be a perfect square */
+            object-fit: cover; 
+            border-bottom: 1px solid #222; 
+        }
+
         .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
         .card-details h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
         .card-details p { font-size: 0.85rem; color: #aaa; line-height: 1.5; margin-bottom: 15px; }
+        
         .meta-tag { font-size: 0.75rem; color: #00ffcc; background: #1a2925; padding: 2px 8px; align-self: flex-start; margin-bottom: 10px; border-radius: 3px; }
         .card-footer-text { font-size: 0.75rem; color: #555; margin-top: auto; font-style: italic; }
 
-        /* Play Button Links */
+        /* ACTION ROUTING BUTTONS */
         .route-link {
             align-self: flex-start; background: #1a1a1a; color: #00ffcc; 
             border: 1px solid #00ffcc; padding: 6px 14px; font-size: 0.75rem; 
@@ -125,14 +135,11 @@
 
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
-            .banner-70, .banner-60 { height: 45vh; } /* Scale giant banners down on small phone screens */
+            .banner-70, .banner-60 { height: 45vh; } 
             .banner-heading h1 { font-size: 1.5rem; }
             .banner-heading h2 { font-size: 1.3rem; }
             .narrow-text-block { padding: 30px 15px; }
-            
-            .project-layout-card { flex-direction: column; }
-            .card-thumbnail { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid #222; }
-            .collection-grid { padding: 0 15px; }
+            .collection-grid { padding: 0 15px; grid-template-columns: 1fr; /* Stacks tiles 1-wide on phones */ }
             .route-link { width: 100%; text-align: center; }
         }
     </style>
@@ -200,7 +207,6 @@
             if (pageMap.sections && pageMap.sections.length > 0) {
                 pageMap.sections.forEach(section => {
                     
-                    // A. Project Banner (60vh)
                     layoutHtml += `
                         <div class="full-banner banner-60">
                             <img src="./img_bg/${section.imageName || ''}" class="banner-img">
@@ -210,7 +216,6 @@
                         </div>
                     `;
 
-                    // B. Project Details Text
                     if (section.text) {
                         layoutHtml += `
                             <div class="narrow-text-block">
@@ -219,7 +224,7 @@
                         `;
                     }
 
-                    // C. Associated Collection Array Grid Loop
+                    // C. Associated Collection Array Grid Loop (Now lays out as CSS Grid tiles)
                     layoutHtml += `<div class="collection-grid">`;
                     if (section.archiveKeys && section.archiveKeys.length > 0) {
                         section.archiveKeys.forEach(catNo => {
@@ -240,11 +245,10 @@
                             `;
                         });
                     }
-                    layoutHtml += `</div>`; // Close collection grid container
+                    layoutHtml += `</div>`; 
                 });
             }
 
-            // Inject the fully built architectural stack into the main engine display
             document.getElementById('main-scroll-panel').innerHTML = layoutHtml;
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
