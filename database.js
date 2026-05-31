@@ -59,7 +59,7 @@ const pageLayoutEngine = {
   },
   "sessions": {
     "titleBanner": {
-      "title": "INTERLOOPER SESSIONS // LIVE LABS",
+      "title": "INTERLOOPER LIVE // SESSION LABS",
       "text": "Recordings of live sets and studio jam sessions from current and historical collaboration configurations.",
       "imageName": "interlooper_bg.jpg"
     },
