@@ -2,6 +2,7 @@
 const siteConfiguration = {
   "logoTitle": "P1EXP // DECK MATRIX",
   "navigationMenu": [
+    { "id": "p1exp", "label": "P1EXP" },         // <-- NEW FRONT PAGE ADDED HERE
     { "id": "projects", "label": "Projects" },
     { "id": "sessions", "label": "Sessions" },
     { "id": "legacy", "label": "Legacy" }
@@ -14,6 +15,21 @@ const siteConfiguration = {
 
 // 2. PORTAL LAYOUT ENGINE (Maps out unlimited sections per page)
 const pageLayoutEngine = {
+  "p1exp": {
+    "titleBanner": {
+      "title": "<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL",
+      "text": "#P1EXP is an experiment of sound. Select a category above to explore the timeline archives.",
+      "imageName": "COSP.jpg" 
+    },
+    "sections": [
+      {
+        "title": "FEATURED TRANSMISSIONS",
+        "text": "Latest dispatches and highlighted archives from the Platform-1 tracking matrix.",
+        "imageName": "NUER.jpg", 
+        "archiveKeys": ["NUER", "ILS2", "INMA"] // Pulls a highlight from Projects, Sessions, and Legacy
+      }
+    ]
+  },
   "projects": {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> // PROJECTS",
@@ -25,12 +41,12 @@ const pageLayoutEngine = {
         "title": "MACHINEBRAIN",
         "text": "The Machinebrain project concentrates on creating sound and beats using algorithmic and generative sequences mixed with traditional sequencing. Modular synthesis is also used with computer DAW technology.",
         "imageName": "COSP.jpg", 
-        "archiveKeys": ["COSP", "COVI"] // Catalog items belonging to this specific project
+        "archiveKeys": ["NUER", "COSP", "COVI"] 
       },
       {
         "title": "ELECTRIC ABUSE",
         "text": "This project represents a time when computer systems running DAW software had come of age. A vast array of multigenre samples were mixed and manipulated.",
-        "imageName": "electricabuse_bg.jpg",
+        "imageName": "BREL.jpg",
         "archiveKeys": ["BREL", "EXCP", "STRA"]
       },
       {
