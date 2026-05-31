@@ -80,7 +80,7 @@ const pageLayoutEngine = {
   },
   "legacy": {
     "titleBanner": {
-      "title": "LEGACY ARCHIVE // 1994 - 2006",
+      "title": "LEGACY ARCHIVE // 1992 - 2006",
       "text": "Collections, tracker modules, and live operational tape mixdowns from earlier foundational projects.",
       "imageName": "legacy_bg.jpg"
     },
