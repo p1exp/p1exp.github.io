@@ -34,7 +34,7 @@ const pageLayoutEngine = {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> // PROJECTS",
       "text": "A discography of current projects are listed below to hear and download. The projects are listed in release order. Collections are hosted on YouTube and Bandcamp.",
-      "imageName": "project_bg.jpg" 
+      "imageName": "projects_bg.jpg" 
     },
     "sections": [
       {
@@ -67,13 +67,13 @@ const pageLayoutEngine = {
       {
         "title": "INTERLOOPER SESSIONS",
         "text": "Live experimental improvised collaboration jam sessions with RmS, which are raw and unedited. Predominantly dawless setups with modular synthesis racks.",
-        "imageName": "ILS2.jpg",
+        "imageName": "interlooperlive_bg.jpg",
         "archiveKeys": ["ILS2", "ILS1", "INS2", "INS1"]
       },
       {
         "title": "LEGACY JAMS",
         "text": "Multi user session live jams recorded onto historical tape formats during structural analogue studio experiments.",
-        "imageName": "SYPS.jpg",
+        "imageName": "interloopersessions_bg.jpg",
         "archiveKeys": ["SYPS", "JAMB"]
       }
     ]
