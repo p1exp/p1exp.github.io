@@ -32,7 +32,7 @@ const pageLayoutEngine = {
   },
   "projects": {
     "titleBanner": {
-      "title": "<strong>#P1EXP</strong> // PROJECTS",
+      "title": "<strong>#P1EXP</strong> PROJECTS // 2007 - PRESENT",
       "text": "A discography of current projects are listed below to hear and download. The projects are listed in release order. Collections are hosted on YouTube and Bandcamp.",
       "imageName": "projects_bg.jpg" 
     },
