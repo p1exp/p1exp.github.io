@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1EXP // Platform-1 Experimental</title>
     
-    <!-- CENTRAL CORE DATA REGISTRY LINK -->
     <script src="./database.js"></script>
 
     <style>
@@ -28,16 +27,11 @@
         main::-webkit-scrollbar-thumb { background: #222; border: 1px solid #333; border-radius: 4px; }
         main::-webkit-scrollbar-thumb:hover { background: #00ffcc; }
 
-        /* --- FRAME 1: TOP NAV BAR ($100vw Edge-to-Edge) --- */
+        /* --- FRAME 1: TOP NAV BAR (100vw Edge-to-Edge) --- */
         header {
-            background-color: #121212;
-            border-bottom: 2px solid #252525;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            z-index: 10;
-            width: 100vw;
+            background-color: #121212; border-bottom: 2px solid #252525;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 20px; z-index: 10; width: 100vw;
         }
 
         header .logo { font-weight: bold; font-size: 1.1rem; color: #00ffcc; letter-spacing: 2px; }
@@ -49,102 +43,73 @@
         }
         nav button:hover, nav button.active { color: #00ffcc; border-bottom: 2px solid #00ffcc; }
 
-        /* --- FRAME 2: SCROLLING CENTER ENGINE (Sub-Grid Tracking) --- */
+        /* --- FRAME 2: SCROLLING CENTER ENGINE --- */
         main {
-            overflow-y: auto;
-            padding-bottom: 40px;
-            width: 100vw;
+            overflow-y: auto; padding-bottom: 40px; width: 100vw;
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 850px) minmax(0, 1fr);
         }
 
-        /* --- FEATURE A: 100vw TITLE BANNER HERO --- */
-        .workspace-hero { 
-            grid-column: 1 / -1; 
+        /* --- DIAGRAM ALIGNMENT: 100vw FULL BLEED BANNERS --- */
+        .full-banner { 
+            grid-column: 1 / -1; /* Forces wide screen breakout */
             width: 100vw; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
             background-color: #111; 
-            border-bottom: 2px solid #222; 
-            margin-bottom: 30px;
-            display: grid;
-            grid-template-columns: inherit; 
+        }
+        .banner-70 { height: 70vh; border-bottom: 2px solid #222; }
+        .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 40px; }
+
+        /* Background image sizing inside the wide banners */
+        .banner-img { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            object-fit: cover; filter: grayscale(40%) contrast(110%) brightness(40%); z-index: 1; 
         }
 
-        .hero-banner-img { 
-            grid-column: 1 / -1;
-            width: 100vw; 
-            height: 260px; 
-            object-fit: cover; 
-            border-bottom: 1px solid #222; 
-            filter: grayscale(40%) contrast(110%); 
+        /* The floating text directly overlaid inside the middle of the banners */
+        .banner-heading { 
+            position: relative; z-index: 2; color: #fff; text-align: center; 
+            text-shadow: 0 4px 12px rgba(0,0,0,0.9); padding: 0 20px; 
         }
+        .banner-heading h1 { font-size: 2.2rem; letter-spacing: 4px; }
+        .banner-heading h2 { font-size: 1.8rem; letter-spacing: 3px; }
 
-        .hero-text-container { 
-            grid-column: 2; 
-            padding: 25px 20px; 
+        /* --- DIAGRAM ALIGNMENT: 850px NARROW TEXT BLOCKS BELOW BANNERS --- */
+        .narrow-text-block { 
+            grid-column: 2; /* Locks perfectly to the 850px center track */
+            padding: 40px 20px; 
+            text-align: center; 
         }
-        .hero-text-container h1 { color: #fff; font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 10px; }
-        .hero-text-container p { line-height: 1.6; color: #999; font-size: 0.9rem; }
+        .narrow-text-block p { color: #ccc; line-height: 1.6; font-size: 0.95rem; }
 
-        /* --- FEATURE B: 100vw FEATURED PROJECT SPOTLIGHT --- */
-        #featured-project-container {
-            grid-column: 1 / -1; 
-            width: 100vw;
-            background-color: #141414;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            margin-bottom: 35px;
-            display: grid;
-            grid-template-columns: inherit; 
-        }
-
-        .featured-wrapper-card {
-            grid-column: 2; 
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-        }
-
-        /* --- FEATURE C: 850px FIXED WIDTH ARCHIVE WRAPPER --- */
-        .content-inner-wrap { 
+        /* --- DIAGRAM ALIGNMENT: 850px COLLECTION GRID WRAPPERS --- */
+        .collection-grid { 
             grid-column: 2; 
             padding: 0 20px; 
         }
-        
-        .section-label { color: #00ffcc; font-size: 0.9rem; margin: 15px 0 20px 0; letter-spacing: 2px; border-bottom: 1px dashed #222; padding-bottom: 6px; }
-        
-        .wide-label {
-            grid-column: 2;
-            padding: 0 20px;
-        }
 
-        /* --- DISCOGRAPHY INTERFACE LAYOUT CARDS --- */
+        /* Interface Card Styling */
         .project-layout-card { 
             background-color: #121212; border: 1px solid #222; border-radius: 4px; 
-            overflow: hidden; margin-bottom: 25px; display: flex; flex-direction: row;
-            width: 100%;
+            overflow: hidden; margin-bottom: 25px; display: flex; flex-direction: row; width: 100%;
         }
-
-        .featured-wrapper-card .project-layout-card {
-            border: none; background: transparent; border-radius: 0; margin-bottom: 0;
-        }
-        
         .card-thumbnail { width: 220px; height: 160px; object-fit: cover; border-right: 1px solid #222; flex-shrink: 0; }
-        .featured-wrapper-card .card-thumbnail { width: 300px; height: 200px; }
-
         .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-details h2, .card-details h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
+        .card-details h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
         .card-details p { font-size: 0.85rem; color: #aaa; line-height: 1.5; margin-bottom: 15px; }
-        
         .meta-tag { font-size: 0.75rem; color: #00ffcc; background: #1a2925; padding: 2px 8px; align-self: flex-start; margin-bottom: 10px; border-radius: 3px; }
         .card-footer-text { font-size: 0.75rem; color: #555; margin-top: auto; font-style: italic; }
 
-        /* ACTION ROUTING INTERFACE BUTTONS */
+        /* Play Button Links */
         .route-link {
             align-self: flex-start; background: #1a1a1a; color: #00ffcc; 
             border: 1px solid #00ffcc; padding: 6px 14px; font-size: 0.75rem; 
-            font-family: inherit; font-weight: bold; cursor: pointer; text-decoration: none; 
-            border-radius: 3px; transition: all 0.2s; margin-top: auto;
-            letter-spacing: 1px;
+            font-family: inherit; font-weight: bold; cursor: pointer; border-radius: 3px; 
+            transition: all 0.2s; margin-top: auto; letter-spacing: 1px;
         }
         .route-link:hover { background: #00ffcc; color: #121212; box-shadow: 0 0 10px rgba(0,255,204,0.3); }
 
@@ -160,50 +125,27 @@
 
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
-            .project-layout-card, .featured-wrapper-card { flex-direction: column; }
-            .card-thumbnail, .featured-wrapper-card .card-thumbnail {
-                width: 100%; height: 220px; border-right: none; border-bottom: 1px solid #222;
-            }
-            .hero-text-container { padding: 20px 15px; }
-            .content-inner-wrap, .wide-label { padding: 0 15px; }
+            .banner-70, .banner-60 { height: 45vh; } /* Scale giant banners down on small phone screens */
+            .banner-heading h1 { font-size: 1.5rem; }
+            .banner-heading h2 { font-size: 1.3rem; }
+            .narrow-text-block { padding: 30px 15px; }
+            
+            .project-layout-card { flex-direction: column; }
+            .card-thumbnail { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid #222; }
+            .collection-grid { padding: 0 15px; }
             .route-link { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- FRAME 1: TOP NAVIGATION NODE -->
     <header>
         <div class="logo" id="site-logo"></div>
         <nav id="nav-filters"></nav>
     </header>
 
-    <!-- FRAME 2: MAIN ENGINE CORE LAYER -->
-    <main id="main-scroll-panel">
-        
-        <!-- ELEMENT A: TOP BANNER SPLIT CHASSIS -->
-        <section class="workspace-hero">
-            <img id="hero-image" src="" class="hero-banner-img">
-            <div class="hero-text-container">
-                <h1 id="hero-title"></h1>
-                <p id="hero-description"></p>
-            </div>
-        </section>
+    <main id="main-scroll-panel"></main>
 
-        <div class="section-label wide-label" id="spotlight-label"></div>
-
-        <!-- ELEMENT B: EDGE TO EDGE DYNAMIC SPOTLIGHT LAYER -->
-        <div id="featured-project-container"></div>
-
-        <!-- ELEMENT C: LOCKED 850px CATALOG WRAPPER ARCHIVE -->
-        <div class="content-inner-wrap">
-            <div class="section-label" id="archive-label"></div>
-            <div id="collection-grid-container"></div>
-        </div>
-        
-    </main>
-
-    <!-- FRAME 3: ANCHORED STREAM INTERFACE DECK -->
     <footer>
         <div class="toggle-btn-container">
             <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
@@ -213,19 +155,14 @@
         </div>
     </footer>
 
-    <!-- SYSTEM RUNTIME CONTEXT ENGINE -->
     <script>
         function bootstrapApplication() {
             if (typeof masterCollectionRegistry === 'undefined') return;
             const config = siteConfiguration;
 
-            // Map standard static config items
             document.getElementById('site-logo').textContent = config.logoTitle || '';
-            document.getElementById('spotlight-label').textContent = config.sectionLabels.spotlight || '';
-            document.getElementById('archive-label').textContent = config.sectionLabels.archive || '';
             document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow || '';
 
-            // Generate category filter selectors dynamically
             const navContainer = document.getElementById('nav-filters');
             navContainer.innerHTML = '';
 
@@ -237,7 +174,6 @@
                 navContainer.appendChild(btn);
             });
 
-            // Initial view injection loop
             loadPageView(config.navigationMenu[0].id);
         }
 
@@ -245,64 +181,74 @@
             const pageMap = pageLayoutEngine[pageKey];
             if (!pageMap) return;
 
-            // 1. Process 100vw Header Hero Block Text fields using innerHTML
-            document.getElementById('hero-image').src = pageMap.titleBanner.image || '';
-            document.getElementById('hero-title').innerHTML = pageMap.titleBanner.title || '';
-            document.getElementById('hero-description').innerHTML = pageMap.titleBanner.text || '';
+            let layoutHtml = '';
 
-            // 2. Query data for the 60vh Spotlight Module from Cat No references
-            const featuredContainer = document.getElementById('featured-project-container');
-            const fKey = pageMap.featuredKey;
-            const feat = masterCollectionRegistry[fKey];
-            
-            if (feat) {
-                featuredContainer.innerHTML = `
-                    <div class="featured-wrapper-card">
-                        <div class="project-layout-card">
-                            <img src="${feat.image || ''}" class="card-thumbnail">
-                            <div class="card-details">
-                                <h2>${feat.title || ''}</h2>
-                                <span class="meta-tag">P1-${fKey} // ${feat.date || ''}</span>
-                                <p>${feat.description || ''}</p>
-                                ${feat.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${feat.mediaUrl}')">▶ PLAY ARCHIVE DECK</button>` : ''}
+            // 1. GENERATE THE TOP 70vh TITLE BANNER + TEXT
+            layoutHtml += `
+                <div class="full-banner banner-70">
+                    <img src="./img_bg/${pageMap.titleBanner.imageName || ''}" class="banner-img">
+                    <div class="banner-heading">
+                        <h1>${pageMap.titleBanner.title || ''}</h1>
+                    </div>
+                </div>
+                <div class="narrow-text-block">
+                    <p>${pageMap.titleBanner.text || ''}</p>
+                </div>
+            `;
+
+            // 2. LOOP THROUGH AND GENERATE EACH 60vh PROJECT SECTION + TEXT + COLLECTIONS
+            if (pageMap.sections && pageMap.sections.length > 0) {
+                pageMap.sections.forEach(section => {
+                    
+                    // A. Project Banner (60vh)
+                    layoutHtml += `
+                        <div class="full-banner banner-60">
+                            <img src="./img_bg/${section.imageName || ''}" class="banner-img">
+                            <div class="banner-heading">
+                                <h2>${section.title || ''}</h2>
                             </div>
                         </div>
-                    </div>
-                `;
-                featuredContainer.style.display = "grid";
-            } else {
-                featuredContainer.style.display = "none";
-            }
-
-            // 3. Process ordered catalog list grids down below cleanly inside the 850px constraint
-            const collectionContainer = document.getElementById('collection-grid-container');
-            collectionContainer.innerHTML = '';
-
-            if (pageMap.archiveKeys && pageMap.archiveKeys.length > 0) {
-                pageMap.archiveKeys.forEach(key => {
-                    const item = masterCollectionRegistry[key];
-                    if (!item) return; 
-
-                    const card = document.createElement('div');
-                    card.className = 'project-layout-card';
-                    card.innerHTML = `
-                        <img src="${item.image || ''}" class="card-thumbnail">
-                        <div class="card-details">
-                            <h3>${item.title || ''}</h3>
-                            <span class="meta-tag">P1-${key} // ${item.date || ''}</span>
-                            <p>${item.description || ''}</p>
-                            ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">▶ PLAY ARCHIVE DECK</button>` : ''}
-                            ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
-                        </div>
                     `;
-                    collectionContainer.appendChild(card);
+
+                    // B. Project Details Text
+                    if (section.text) {
+                        layoutHtml += `
+                            <div class="narrow-text-block">
+                                <p>${section.text}</p>
+                            </div>
+                        `;
+                    }
+
+                    // C. Associated Collection Array Grid Loop
+                    layoutHtml += `<div class="collection-grid">`;
+                    if (section.archiveKeys && section.archiveKeys.length > 0) {
+                        section.archiveKeys.forEach(catNo => {
+                            const item = masterCollectionRegistry[catNo];
+                            if (!item) return;
+
+                            layoutHtml += `
+                                <div class="project-layout-card">
+                                    <img src="./img_coll/${catNo}.jpg" class="card-thumbnail">
+                                    <div class="card-details">
+                                        <h3>${item.title || ''}</h3>
+                                        <span class="meta-tag">P1-${catNo} // ${item.date || ''}</span>
+                                        <p>${item.description || ''}</p>
+                                        ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">▶ PLAY ARCHIVE DECK</button>` : ''}
+                                        ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+                    layoutHtml += `</div>`; // Close collection grid container
                 });
             }
 
+            // Inject the fully built architectural stack into the main engine display
+            document.getElementById('main-scroll-panel').innerHTML = layoutHtml;
             document.getElementById('main-scroll-panel').scrollTop = 0;
         }
 
-        // Send embedded links down cleanly into the locked master player footer deck
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
@@ -326,7 +272,6 @@
             button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
         }
 
-        // Initialize execution stack pipelines
         bootstrapApplication();
     </script>
 </body>
