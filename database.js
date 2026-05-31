@@ -38,9 +38,9 @@ const pageLayoutEngine = {
     },
     "sections": [
       {
-        "title": "MACHINEBRAIN",
+        "title": "TRICHROMAT SERIES",
         "text": "The Machinebrain project concentrates on creating sound and beats using algorithmic and generative sequences mixed with traditional sequencing. Modular synthesis is also used with computer DAW technology.",
-        "imageName": "COSP.jpg", 
+        "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NUER", "COSP", "COVI"] 
       },
       {
