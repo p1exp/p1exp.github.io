@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1EXP // Platform-1 Experimental</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;700&display=swap" rel="stylesheet">
+
     <script src="./database.js"></script>
 
     <style>
@@ -12,7 +16,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'jura', 'Courier New', Courier, monospace;
+            font-family: 'Jura', sans-serif; /* Swapped to Jura globally */
             background-color: #0c0c0c;
             color: #e0e0e0;
             height: 100vh;
@@ -34,12 +38,12 @@
             padding: 0 20px; z-index: 10; width: 100vw;
         }
 
-        header .logo { font-weight: bold; font-size: 1.1rem; color: #00ffcc; letter-spacing: 2px; }
+        header .logo { font-weight: 700; font-size: 1.2rem; color: #00ffcc; letter-spacing: 2px; }
 
         nav button {
             background: none; border: none; font-family: inherit; color: #888;
-            margin-left: 20px; font-size: 0.85rem; text-transform: uppercase;
-            letter-spacing: 1px; cursor: pointer; transition: color 0.2s; padding: 5px 0;
+            margin-left: 25px; font-size: 0.9rem; text-transform: uppercase;
+            font-weight: 500; letter-spacing: 1.5px; cursor: pointer; transition: color 0.2s; padding: 5px 0;
         }
         nav button:hover, nav button.active { color: #00ffcc; border-bottom: 2px solid #00ffcc; }
 
@@ -73,8 +77,8 @@
             position: relative; z-index: 2; color: #fff; text-align: center; 
             text-shadow: 0 4px 12px rgba(0,0,0,0.9); padding: 0 20px; 
         }
-        .banner-heading h1 { font-size: 2.2rem; letter-spacing: 4px; }
-        .banner-heading h2 { font-size: 1.8rem; letter-spacing: 3px; }
+        .banner-heading h1 { font-size: 2.5rem; letter-spacing: 5px; font-weight: 700; }
+        .banner-heading h2 { font-size: 2rem; letter-spacing: 4px; font-weight: 700; }
 
         /* --- 850px NARROW TEXT BLOCKS BELOW BANNERS --- */
         .narrow-text-block { 
@@ -82,7 +86,7 @@
             padding: 40px 20px; 
             text-align: center; 
         }
-        .narrow-text-block p { color: #ccc; line-height: 1.6; font-size: 0.95rem; }
+        .narrow-text-block p { color: #ccc; line-height: 1.7; font-size: 1rem; letter-spacing: 0.5px; }
 
         /* --- 850px COLLECTION LIST WRAPPER --- */
         .collection-grid { 
@@ -90,7 +94,7 @@
             padding: 0 20px; 
             display: flex;
             flex-direction: column;
-            gap: 25px; /* Vertical spacing between the rows */
+            gap: 25px; 
         }
 
         /* --- HORIZONTAL ROW CARDS WITH SQUARE IMAGES --- */
@@ -101,32 +105,32 @@
         
         .card-thumbnail { 
             width: 200px; 
-            height: 200px; /* Locks the image to a perfect 1:1 square ratio */
+            height: 200px; 
             object-fit: cover; 
             border-right: 1px solid #222; 
-            flex-shrink: 0; /* Prevents the image from squishing if there is a lot of text */
+            flex-shrink: 0; 
         }
 
-        .card-details { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-details h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
-        .card-details p { font-size: 0.85rem; color: #aaa; line-height: 1.5; margin-bottom: 15px; }
+        .card-details { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-details h3 { color: #fff; font-size: 1.3rem; margin-bottom: 8px; font-weight: 700; letter-spacing: 1px; }
+        .card-details p { font-size: 0.95rem; color: #aaa; line-height: 1.6; margin-bottom: 15px; }
         
-        .meta-tag { font-size: 0.75rem; color: #00ffcc; background: #1a2925; padding: 2px 8px; align-self: flex-start; margin-bottom: 10px; border-radius: 3px; }
-        .card-footer-text { font-size: 0.75rem; color: #555; margin-top: auto; font-style: italic; }
+        .meta-tag { font-size: 0.8rem; color: #00ffcc; background: #1a2925; padding: 3px 10px; align-self: flex-start; margin-bottom: 12px; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px; }
+        .card-footer-text { font-size: 0.8rem; color: #555; margin-top: auto; font-style: italic; font-weight: 400; }
 
         /* ACTION ROUTING BUTTONS */
         .route-link {
             align-self: flex-start; background: #1a1a1a; color: #00ffcc; 
-            border: 1px solid #00ffcc; padding: 6px 14px; font-size: 0.75rem; 
-            font-family: inherit; font-weight: bold; cursor: pointer; border-radius: 3px; 
-            transition: all 0.2s; margin-top: auto; letter-spacing: 1px;
+            border: 1px solid #00ffcc; padding: 7px 16px; font-size: 0.8rem; 
+            font-family: inherit; font-weight: 700; cursor: pointer; border-radius: 3px; 
+            transition: all 0.2s; margin-top: auto; letter-spacing: 1.5px; text-transform: uppercase;
         }
         .route-link:hover { background: #00ffcc; color: #121212; box-shadow: 0 0 10px rgba(0,255,204,0.3); }
 
         /* --- FRAME 3: FOOTER RUNTIME MEDIA DECK --- */
         footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100vw; }
         .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; }
-        .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 15px; font-family: inherit; font-size: 0.7rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); }
+        .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 18px; font-family: inherit; font-size: 0.75rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); letter-spacing: 1px; }
         .toggle-btn:hover { background-color: #00ffcc; color: #121212; border-color: #00ffcc; }
         
         .player-wrapper { width: 100%; max-width: 700px; height: 140px; overflow: hidden; transition: height 0.3s ease-in-out; padding: 10px 0; }
@@ -136,11 +140,10 @@
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
             .banner-70, .banner-60 { height: 45vh; } 
-            .banner-heading h1 { font-size: 1.5rem; }
-            .banner-heading h2 { font-size: 1.3rem; }
+            .banner-heading h1 { font-size: 1.8rem; }
+            .banner-heading h2 { font-size: 1.5rem; }
             .narrow-text-block { padding: 30px 15px; }
             
-            /* Stacks the row into a column on phone screens while keeping image square */
             .project-layout-card { flex-direction: column; }
             .card-thumbnail { 
                 width: 100%; 
