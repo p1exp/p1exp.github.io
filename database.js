@@ -4,7 +4,7 @@ const siteConfiguration = {
   "navigationMenu": [
     { "id": "p1exp", "label": "P1EXP" },         // <-- NEW FRONT PAGE ADDED HERE
     { "id": "projects", "label": "Projects" },
-    { "id": "sessions", "label": "Sessions" },
+    { "id": "sessions", "label": "Interlooper" },
     { "id": "legacy", "label": "Legacy" }
   ],
   "sectionLabels": {
