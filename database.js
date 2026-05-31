@@ -15,7 +15,7 @@ const projectDatabase = {
   },
   "projects": {
     "titleBanner": {
-      "title": "<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL",
+      "title": "#P1EXP // PLATFORM-1 EXPERIMENTAL",
       "text": "#P1EXP is an experiment of sound. A discography of current projects are listed below to hear and download in release order. Collections are hosted on YouTube and Bandcamp.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQppuRULLHixQSyzf2Fo0bK7H3eEKsRzXY4-LwfJhE4tUwk8iYOe23J8M3RwLP5nRmQIIU87ShamNQR51h1gwo7Gd7vmi3FIzxo57e7ug_Wb-mPiVQDCNNZsaY7IPKBTHFo2C8kR8KA2MMVYSHx019Fr6Al0AU3SJKNjKsjattpLagiA/s400/colorsplash24.jpg"
     },
