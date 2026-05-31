@@ -30,7 +30,7 @@ const pageLayoutEngine = {
       {
         "title": "ELECTRIC ABUSE",
         "text": "This project represents a time when computer systems running DAW software had come of age. A vast array of multigenre samples were mixed and manipulated.",
-        "imageName": "BREL.jpg",
+        "imageName": "electricabuse_bg.jpg",
         "archiveKeys": ["BREL", "EXCP", "STRA"]
       },
       {
