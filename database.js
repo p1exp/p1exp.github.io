@@ -1,4 +1,4 @@
-// 1. GLOBAL UI CORE CONFIGURATION
+// 1. GLOBAL UI MOCK CONFIGURATION
 const siteConfiguration = {
   "logoTitle": "P1EXP // DECK MATRIX",
   "navigationMenu": [
@@ -14,7 +14,7 @@ const siteConfiguration = {
   }
 };
 
-// 2. SIMULATED PAGES RELATION DATABASE (Controls layout order per menu selection)
+// 2. PORTAL LAYOUT ENGINE (Simulates dynamic listing orders via Cat No references)
 const pageLayoutEngine = {
   "projects": {
     "titleBanner": {
@@ -22,8 +22,8 @@ const pageLayoutEngine = {
       "text": "A discography of current projects are listed below to hear and download. The projects are listed in release order. Collections are hosted on YouTube and Bandcamp.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQppuRULLHixQSyzf2Fo0bK7H3eEKsRzXY4-LwfJhE4tUwk8iYOe23J8M3RwLP5nRmQIIU87ShamNQR51h1gwo7Gd7vmi3FIzxo57e7ug_Wb-mPiVQDCNNZsaY7IPKBTHFo2C8kR8KA2MMVYSHx019Fr6Al0AU3SJKNjKsjattpLagiA/s400/colorsplash24.jpg"
     },
-    "featuredKey": "cosp", // Pulls COLORSPLASH24 as the 60vh Main Spotlight
-    "archiveKeys": ["covi", "brel", "scdo", "ttlg", "clen", "excp", "stra", "intl"]
+    "featuredKey": "COSP", // Main Spotlight Project Cat No
+    "archiveKeys": ["COVI", "BREL", "SCDO", "TTLG", "CLEN", "EXCP", "STRA", "INTL"]
   },
   "sessions": {
     "titleBanner": {
@@ -31,8 +31,8 @@ const pageLayoutEngine = {
       "text": "Recordings of live sets and studio jam sessions from current and historical collaboration configurations.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK4z1aVRJatxwcBIittZV_T-Sfi111Yy4NCVX7Jg-Dgse5rLJuX3g9YVgTF084Gyff9mjNxaDTqEeI37PUhjFSEKwldLCA4HpVMTfNl8CqyGJx5zR8DjOaprn4g_6Hqq2I4Cmsone7J-nj34iaDT1CUXDbhay9SMbkcSj6kSPLVkyIDQ/s400/interlopersessions1.jpg"
     },
-    "featuredKey": "ils2", // Pulls INTERLOOPER LIVE SET - LAKEFEST 2025 as the Spotlight
-    "archiveKeys": ["ils1", "ins2", "ins1", "syps", "jamb", "cosp"] // Crossover: cosp displays here too!
+    "featuredKey": "ILS2", // Main Spotlight Session Cat No
+    "archiveKeys": ["ILS1", "INS2", "INS1", "SYPS", "JAMB", "COSP"] // Crossover: COSP cross-referenced here!
   },
   "legacy": {
     "titleBanner": {
@@ -40,14 +40,14 @@ const pageLayoutEngine = {
       "text": "Collections, tracker modules, and live operational tape mixdowns from earlier foundational projects.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbzpO0joe0-Lftu8YsP0tQEy5LSfDXUZ6j2OuVe2oP1B4Y4fQYNetuYVL805Ap-7sCGT4expnfNHm4ZAOKgrimUPGqB9xv4NzM5JABhKy3jyTFfx9doT1hd3pMemrOcZEWI495-u6lfJALoPgfhBOJB84patqB5P0lHBaRDoWfWuGxTA/s400/2001acyberspaceoddity.jpg"
     },
-    "featuredKey": "inma", // Pulls INFERNAL MACHINE as the Spotlight
-    "archiveKeys": ["tcso", "syno", "algo", "xtfu", "jobj", "mhth", "knsl", "inno", "infa", "elem", "guru"]
+    "featuredKey": "INMA", // Main Spotlight Legacy Cat No
+    "archiveKeys": ["TCSO", "SYNO", "ALGO", "XTFU", "JOBJ", "MHTH", "KNSL", "INNO", "INFA", "ELEM", "GURU"]
   }
 };
 
-// 3. MASTER FLAT CORE HISTORICAL REGISTRY (Your direct data mapping)
+// 3. MASTER PLATFORM-1 FLAT REGISTRY INDEXED BY UNIQUE CATALOG KEY NUMBER
 const masterCollectionRegistry = {
-  "nuer": {
+  "NUER": {
     "title": "NEUROFLUX25",
     "date": "2024 - Composed @ Blueroom",
     "description": "The Colorsplash24 project is a series of experimental live jam sessions recorded from 2021 - 2024. The live jams were created on eurorack with MPC One.",
@@ -55,7 +55,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF",
     "footer": "Status: Finished"
   },
-  "cosp": {
+  "COSP": {
     "title": "COLORSPLASH24",
     "date": "2024 - Composed @ Blueroom",
     "description": "Experimental live jam sessions recorded from 2021 - 2024 on eurorack with MPC One and other synths captured live into OBS with blended generative video overlays managed in Premiere.",
@@ -63,7 +63,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF",
     "footer": "Format: YouTube Video Playlist"
   },
-  "covi": {
+  "COVI": {
     "title": "THE CO:VIDZ",
     "date": "2021 - Composed @ Ermin",
     "description": "Composed on real electronic music gear without a computer: MPC One, Eurorack, 0-Coast, MB33, TD3. Loop jammed live with no pre-written sequences direct into OBS Studio with randomly sequenced video clips.",
@@ -71,7 +71,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://www.youtube.com/embed/videoseries?si=OEJasDLnXC8gD7uV&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m",
     "footer": "Format: YouTube Video Playlist"
   },
-  "brel": {
+  "BREL": {
     "title": "BROKEN ELECTRIC",
     "date": "2020 - Composed @ Ermin",
     "description": "Group of DAW loops and sessions composed between 2007 – 2014 and used for live sessions during the ELECTRIC ABUSE project, arranged into full tracks.",
@@ -79,7 +79,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1131803323/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Status: Incomplete/Awaiting final remaster"
   },
-  "scdo": {
+  "SCDO": {
     "title": "SCHRODINGER'S DOG",
     "date": "2019 - Composed @ Ermin",
     "description": "Arranged tracks of experimental loop compositions, recorded during earlier modular synth experimentation. Imported into a DAW and arranged with added percussion.",
@@ -87,7 +87,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1568662603/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "ttlg": {
+  "TTLG": {
     "title": "THROUGH THE LOOKING GLASS",
     "date": "2018 - Composed @ Ermin",
     "description": "Unedited experimental dawless ambient session. This session was an exploration of generative modular synthesis with no fixed BPM clock.",
@@ -95,7 +95,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1510586443/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "clen": {
+  "CLEN": {
     "title": "CLOSE ENCOUNTERS",
     "date": "2018 - Composed @ Ermin",
     "description": "Unedited experimental dawless ambient session. Exploration of generative modular synthesis with parts captured to be organized at a later date.",
@@ -103,7 +103,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=2494523694/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "excp": {
+  "EXCP": {
     "title": "EXCEPTION",
     "date": "2012 - Composed @ Lloyds",
     "description": "Solo project created on a DAW with loops and samples between 2008 - 2012. It features a breakbeat trip hop techno flavor with an added touch of hardware distortion.",
@@ -111,7 +111,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "stra": {
+  "STRA": {
     "title": "STRANGELET",
     "date": "2010 - Composed @ Lloyds",
     "description": "Collaboration project of sessions with an electronic downtempo dub sound. Tracks were composed on a DAW with some featuring lead and bass guitars.",
@@ -119,7 +119,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "",
     "footer": "Status: Archived set"
   },
-  "intl": {
+  "INTL": {
     "title": "INTERLOPER",
     "date": "2009 - Composed @ Lloyds",
     "description": "Collab collection composed and arranged with RmS between 2007 and 2009. It has a breakbeat trip hop techno flavor with a bit of added distortion.",
@@ -127,7 +127,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=4116788522/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "ils2": {
+  "ILS2": {
     "title": "INTERLOOPER LIVE SET - LAKEFEST 2025",
     "date": "2025 - Recorded @ Lakefest Festival - August 2025",
     "description": "Recorded onto cassette during collaborative jam sessions. Arranged on a Korg 01/WFD workstation and complemented by retro analog gear including SH101s and a PolySix.",
@@ -135,7 +135,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-lakefest-2025%2F",
     "footer": "Live Performance Recording Feed"
   },
-  "ils1": {
+  "ILS1": {
     "title": "INTERLOOPER LIVE SET - LOWER LODE 2025",
     "date": "2025 - Recorded @ Carry on up the Lode Festival - April 2025",
     "description": "Live hardware arrangements captured onto tape format streams. Arranged using a hybrid digital workstation and legacy analog components.",
@@ -143,7 +143,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-carry-on-up-the-lode-live-jam-april-25%2F",
     "footer": "Live Performance Recording Feed"
   },
-  "ins2": {
+  "INS2": {
     "title": "INTERLOPER SESSIONS #2",
     "date": "2021 - Recorded @ Blueroom",
     "description": "Live experimental improvised collaboration jam sessions with RmS, which are raw and unedited. Predominantly dawless setups with modular synthesis racks.",
@@ -151,7 +151,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "",
     "footer": null
   },
-  "ins1": {
+  "INS1": {
     "title": "INTERLOPER SESSIONS #1",
     "date": "2017 - Recorded @ Ermin",
     "description": "Live improvised collab sessions with RmS, raw and unedited. Handled using discrete hardware modules and hardware analog tracking nodes.",
@@ -159,7 +159,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "",
     "footer": null
   },
-  "inma": {
+  "INMA": {
     "title": "INFERNAL MACHINE",
     "date": "2006 - Composed @ Boverton & Astor",
     "description": "Distorted experimental industrial hardcore with some bpms reaching beyond the 200 mark. Composed entirely inside a DAW environment with loops and samples.",
@@ -167,7 +167,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=2012227265/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "tcso": {
+  "TCSO": {
     "title": "2001: A CYBERSPACE ODDITY",
     "date": "2001 - Composed @ Astor",
     "description": "Crossover archive representing transition from retro hardware to computer WAV tracking array. Shifts styles from trance to harder techno streams.",
@@ -175,7 +175,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=3659035163/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "syno": {
+  "SYNO": {
     "title": "SYNOPSIS",
     "date": "1997 - Composed @ Staplins",
     "description": "Best selections from the Quanta solo project. Programmed on an Atari ST tracking engine and printed direct to DAT tape streams.",
@@ -183,7 +183,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=2512928884/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "algo": {
+  "ALGO": {
     "title": "ALGORHYTHM",
     "date": "1997 - Recorded @ Staplins",
     "description": "This collection features experimental trance tech session jams recorded on both DAT and cassette. Vintage analogue gear sequenced using an Atari ST tracking link.",
@@ -191,7 +191,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=2017899892/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "xtfu": {
+  "XTFU": {
     "title": "XTAL FUNGII",
     "date": "1997 - Recorded @ Staplins",
     "description": "Experimental psychedelic trance tech sessions recorded onto tape cassette tracks, sequenced seamlessly via Atari hardware systems.",
@@ -199,7 +199,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=634481990/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "jobj": {
+  "JOBJ": {
     "title": "JOIN OR BE JOINED",
     "date": "1996 - Recorded @ Staplins & Bertie Towers",
     "description": "Ambient electronic collaboration setups featuring instruments from guest sound engineers. Whistle by Becky, Didj by Jase, Flute by Mark, Vocals by Anthony.",
@@ -207,7 +207,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=2619486285/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "mhth": {
+  "MHTH": {
     "title": "MAINS HUM AND TAPE HISS",
     "date": "1996 - Recorded @ Staplins",
     "description": "Unreleased album tracks. Experimental trance tech session tracks recorded direct to audio cassette links via Atari sequencing configurations.",
@@ -215,7 +215,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1546770038/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "knsl": {
+  "KNSL": {
     "title": "KNOBS & SLIDERS",
     "date": "1995 - Composed @ Bertie Towers",
     "description": "Finest selections from the Alcheringga tracking modules recorded direct to DAT. Arranged using workstation disk engines alongside real vintage synthesis hardware layers.",
@@ -223,7 +223,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=2532253640/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "inno": {
+  "INNO": {
     "title": "INNOVATION",
     "date": "1995 - Composed @ Bertie Towers",
     "description": "Recorded onto cassette tape layers during collaborative jam tracking configurations under the Alcheringga project. Minimum studio hardware layers printed live.",
@@ -231,7 +231,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=271905516/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "infa": {
+  "INFA": {
     "title": "INFANCY",
     "date": "1994 - Recorded @ Bertie Towers",
     "description": "The initial hardware tracking operations under the Alcheringga collaborative lineage. Restored and compiled from legacy cassette data modules.",
@@ -239,15 +239,15 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1071539434/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "elem": {
+  "ELEM": {
     "title": "CROWHAWK - ELEMENTS",
     "date": "1993 - Recorded @ Pagan Media, Runcorn",
     "description": "New age-style composition configurations combining didgeridoo tracks and organic tracking tribal percussion, captured over 24-channel ADAT tape infrastructure.",
-    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbZekAtt4tY0ykO4lMSzytMKfkS8SOLg92qahHD2QyyY6vBOGjzs-ttBM8EBu3WhR5ghyphenhyphen35fRWwbsqeMyy7yxOgD0bSZJpgZpxUp-oJrZF5UvQ3y_K6w-smdXMBEkK1l0H-B9cqL13ihZmYzZfvWP6H1tfRcXloCqkd_ePQTED6lTxAQ/s400/crowhawk.jpg",
+    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbzekAtt4tY0ykO4lMSzytMKfkS8SOLg92qahHD2QyyY6vBOGjzs-ttBM8EBu3WhR5ghyphenhyphen35fRWwbsqeMyy7yxOgD0bSZJpgZpxUp-oJrZF5UvQ3y_K6w-smdXMBEkK1l0H-B9cqL13ihZmYzZfvWP6H1tfRcXloCqkd_ePQTED6lTxAQ/s400/crowhawk.jpg",
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=433899581/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "guru": {
+  "GURU": {
     "title": "E/LIT/R8 - GURUS OF HIGH SIGNIFICANCE",
     "date": "1992 - Recorded @ Steel City",
     "description": "Collaborative tracking project showcasing early workspace rave arrays generated by engineering students at Sheffield Hallam using legacy tracking systems and Amiga systems.",
@@ -255,7 +255,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1972960043/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
     "footer": "Download from BANDCAMP for free"
   },
-  "syps": {
+  "SYPS": {
     "title": "SYNTHEPSYCHOSIS",
     "date": "1997 - Composed @ Staplins",
     "description": "Multi user session live jams recorded onto historical tape formats during structural analogue studio experiments.",
@@ -263,7 +263,7 @@ const masterCollectionRegistry = {
     "mediaUrl": "",
     "footer": "Format: Tape Mix Archive Feed"
   },
-  "jamb": {
+  "JAMB": {
     "title": "JAMBIENCE SESSIONS",
     "date": "1996 - Composed @ Staplins",
     "description": "Legacy multi-user improvisation jams tracking early structural hardware sound explorations.",
