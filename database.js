@@ -82,7 +82,7 @@ const pageLayoutEngine = {
     "titleBanner": {
       "title": "LEGACY ARCHIVE // 1994 - 2006",
       "text": "Collections, tracker modules, and live operational tape mixdowns from earlier foundational projects.",
-      "imageName": "TCSO.jpg"
+      "imageName": "legacy_bg.jpg"
     },
     "sections": [
       {
