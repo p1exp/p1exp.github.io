@@ -39,7 +39,7 @@ const pageLayoutEngine = {
     "sections": [
         {
         "title": "EPHEMERAL SESSIONS // 2026",
-        "text": "Ephemeral diagnostic sessions. The live evolution of structural compositions, captured and archived in real-time.",
+        "text": "Ephemeral diagnostic sessions. The live evolution of structural compositions, captured and archived in real-time.<br/>Coming soon.",
         "imageName": "ephemeral_bg.jpg", 
         "archiveKeys": [] 
       },
