@@ -25,7 +25,7 @@ const pageLayoutEngine = {
       {
         "title": "FEATURED TRANSMISSIONS",
         "text": "Latest dispatches and highlighted archives from the Platform-1 tracking matrix.",
-        "imageName": "NEUR.jpg", 
+        "imageName": "featured_bg.jpg", 
         "archiveKeys": ["NEUR", "ILS2", "INMA"] // Pulls a highlight from Projects, Sessions, and Legacy
       }
     ]
