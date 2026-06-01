@@ -39,7 +39,7 @@ const pageLayoutEngine = {
     "sections": [
         {
         "title": "EPHEMERAL SESSIONS // 2026",
-        "text": "Generative sequences and algorithmic pattern design. Exploring the intersection of human arrangement and autonomous machine logic.",
+        "text": "Ephemeral diagnostic sessions. The live evolution of structural compositions, captured and archived in real-time.",
         "imageName": "ephemeral_bg.jpg", 
         "archiveKeys": [] 
       },
