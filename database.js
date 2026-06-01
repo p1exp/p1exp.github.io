@@ -87,22 +87,34 @@ const pageLayoutEngine = {
     },
     "sections": [
       {
-        "title": "CARBON60 & QUANTA",
+        "title": "CARBON60",
         "text": "Crossover archives representing transition from retro hardware to computer WAV tracking array, alongside the best selections from the Quanta solo project.",
-        "imageName": "INMA.jpg",
-        "archiveKeys": ["INMA", "TCSO", "SYNO", "ALGO", "XTFU"]
+        "imageName": "carbon60_bg.jpg",
+        "archiveKeys": ["INMA", "TCSO"]
+      },
+            {
+        "title": "QUANTA",
+        "text": "Crossover archives representing transition from retro hardware to computer WAV tracking array, alongside the best selections from the Quanta solo project.",
+        "imageName": "quanta_bg.jpg",
+        "archiveKeys": ["SYNO", "ALGO", "XTFU", "MHTH"]
+      },
+            {
+        "title": "JAMBIENCE",
+        "text": "Crossover archives representing transition from retro hardware to computer WAV tracking array, alongside the best selections from the Quanta solo project.",
+        "imageName": "jambience_bg.jpg",
+        "archiveKeys": ["SYPS", "JAMB"]
       },
       {
         "title": "ALCHERINGGA",
         "text": "The initial hardware tracking operations under the Alcheringga collaborative lineage. Restored and compiled from legacy cassette data modules.",
-        "imageName": "INNO.jpg",
+        "imageName": "alcheringga_bg.jpg",
         "archiveKeys": ["KNSL", "INNO", "INFA"]
       },
       {
-        "title": "THE ORIGINS",
+        "title": "ORIGIN",
         "text": "The very first collaborative tracking projects showcasing early workspace rave arrays generated using legacy tracking systems.",
-        "imageName": "GURU.jpg",
-        "archiveKeys": ["JOBJ", "MHTH", "ELEM", "GURU"]
+        "imageName": "forerunner_bg.jpg",
+        "archiveKeys": ["ELEM", "GURU"]
       }
     ]
   }
