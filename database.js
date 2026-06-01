@@ -37,9 +37,15 @@ const pageLayoutEngine = {
       "imageName": "projects_bg.jpg" 
     },
     "sections": [
+        {
+        "title": "EPHEMERAL SESSIONS // 2026",
+        "text": "Generative sequences and algorithmic pattern design. Exploring the intersection of human arrangement and autonomous machine logic.",
+        "imageName": "trichromat_bg.jpg", 
+        "archiveKeys": [] 
+      },
       {
         "title": "TRICHROMAT SERIES // 2021 - 2025",
-        "text": "Generative sequences and algorithmic pattern design. Exploring the intersection of human arrangement and autonomous machine logic.",
+        "text": "Generative visual sequences and algorithmic pattern design. Exploring the intersection of human arrangement and autonomous machine logic.",
         "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NEUR", "COSP", "COVI"] 
       },
