@@ -95,7 +95,7 @@ const pageLayoutEngine = {
         "title": "QUANTA // 1996 - 1997",
         "text": "Crossover archives representing transition from retro hardware to computer WAV tracking array, alongside the best selections from the Quanta solo project.",
         "imageName": "quanta_bg.jpg",
-        "archiveKeys": ["SYNO", "ALGO", "XTFU", "MHTH"]
+        "archiveKeys": ["SYNO", "ALGO", "XTFU", "JOBJ", "MHTH"]
       },
             {
         "title": "JAMBIENCE // 1996 - 1997",
