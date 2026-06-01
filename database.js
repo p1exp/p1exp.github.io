@@ -40,7 +40,7 @@ const pageLayoutEngine = {
         {
         "title": "EPHEMERAL SESSIONS // 2026",
         "text": "Generative sequences and algorithmic pattern design. Exploring the intersection of human arrangement and autonomous machine logic.",
-        "imageName": "trichromat_bg.jpg", 
+        "imageName": "ephemeral_bg.jpg", 
         "archiveKeys": [] 
       },
       {
