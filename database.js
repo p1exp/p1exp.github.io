@@ -43,18 +43,19 @@ const pageLayoutEngine = {
         "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NUER", "COSP", "COVI"] 
       },
+            {
+        "title": "MODULAR EXPLORATION",
+        "text": "Experimental loop compositions recorded during earlier modular synth experimentation. Imported into a DAW and arranged.",
+        "imageName": "SCDO.jpg",
+        "archiveKeys": ["SCDO", "TTLG", "CLEN", "INTL"]
+      },
       {
         "title": "ELECTRIC ABUSE",
         "text": "This project represents a time when computer systems running DAW software had come of age. A vast array of multigenre samples were mixed and manipulated.",
         "imageName": "electricabuse_bg.jpg",
         "archiveKeys": ["BREL", "EXCP", "STRA"]
-      },
-      {
-        "title": "MODULAR EXPLORATION",
-        "text": "Experimental loop compositions recorded during earlier modular synth experimentation. Imported into a DAW and arranged.",
-        "imageName": "SCDO.jpg",
-        "archiveKeys": ["SCDO", "TTLG", "CLEN", "INTL"]
       }
+
     ]
   },
   "sessions": {
