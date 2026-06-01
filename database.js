@@ -38,19 +38,19 @@ const pageLayoutEngine = {
     },
     "sections": [
       {
-        "title": "TRICHROMAT SERIES",
+        "title": "TRICHROMAT SERIES // 2021 - 2025",
         "text": "The Machinebrain project concentrates on creating sound and beats using algorithmic and generative sequences mixed with traditional sequencing. Modular synthesis is also used with computer DAW technology.",
         "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NUER", "COSP", "COVI"] 
       },
             {
-        "title": "IMMUNO",
+        "title": "IMMUNO // 2015 - 2020",
         "text": "Experimental loop compositions recorded during earlier modular synth experimentation. Imported into a DAW and arranged.",
         "imageName": "immuno_bg.jpg",
         "archiveKeys": ["SCDO", "TTLG", "CLEN", "INTL"]
       },
       {
-        "title": "ELECTRIC ABUSE",
+        "title": "ELECTRIC ABUSE // 2007 - 2014",
         "text": "This project represents a time when computer systems running DAW software had come of age. A vast array of multigenre samples were mixed and manipulated.",
         "imageName": "electricabuse_bg.jpg",
         "archiveKeys": ["BREL", "EXCP", "STRA"]
@@ -86,31 +86,31 @@ const pageLayoutEngine = {
     },
     "sections": [
       {
-        "title": "CARBON60",
+        "title": "CARBON60 // 1998 - 2006",
         "text": "Crossover archives representing transition from retro hardware to computer WAV tracking array, alongside the best selections from the Quanta solo project.",
         "imageName": "carbon60_bg.jpg",
         "archiveKeys": ["INMA", "TCSO"]
       },
             {
-        "title": "QUANTA",
+        "title": "QUANTA // 1996 - 1997",
         "text": "Crossover archives representing transition from retro hardware to computer WAV tracking array, alongside the best selections from the Quanta solo project.",
         "imageName": "quanta_bg.jpg",
         "archiveKeys": ["SYNO", "ALGO", "XTFU", "MHTH"]
       },
             {
-        "title": "JAMBIENCE",
+        "title": "JAMBIENCE // 1996 - 1997",
         "text": "Crossover archives representing transition from retro hardware to computer WAV tracking array, alongside the best selections from the Quanta solo project.",
         "imageName": "jambience_bg.jpg",
         "archiveKeys": ["SYPS", "JAMB"]
       },
       {
-        "title": "ALCHERINGGA",
+        "title": "ALCHERINGGA // 1994 - 1995",
         "text": "The initial hardware tracking operations under the Alcheringga collaborative lineage. Restored and compiled from legacy cassette data modules.",
         "imageName": "alcheringga_bg.jpg",
         "archiveKeys": ["KNSL", "INNO", "INFA"]
       },
       {
-        "title": "ORIGIN",
+        "title": "ORIGIN // 1992 - 1993",
         "text": "The very first collaborative tracking projects showcasing early workspace rave arrays generated using legacy tracking systems.",
         "imageName": "forerunner_bg.jpg",
         "archiveKeys": ["ELEM", "GURU"]
