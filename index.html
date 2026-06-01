@@ -35,10 +35,16 @@
         header {
             background-color: #121212; border-bottom: 2px solid #252525;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 0 20px; z-index: 10; width: 100%; /* Changed to 100% */
+            padding: 0 20px; z-index: 10; width: 100%;
         }
 
-        header .logo { font-weight: 700; font-size: 1.2rem; color: #00ffcc; letter-spacing: 2px; }
+        header .logo { 
+            font-weight: 700; 
+            font-size: 1.2rem; 
+            color: #00ffcc; 
+            letter-spacing: 2px; 
+            text-decoration: none; /* Prevents underline on the Linktree link */
+        }
 
         nav button {
             background: none; border: none; font-family: inherit; color: #888;
@@ -49,7 +55,7 @@
 
         /* --- FRAME 2: SCROLLING CENTER ENGINE --- */
         main {
-            overflow-y: auto; padding-bottom: 40px; width: 100%; /* Changed to 100% */
+            overflow-y: auto; padding-bottom: 40px; width: 100%;
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 950px) minmax(0, 1fr);
         }
@@ -57,7 +63,7 @@
         /* --- FULL BLEED BANNERS --- */
         .full-banner { 
             grid-column: 1 / -1; 
-            width: 100%; /* Changed to 100% */
+            width: 100%; 
             position: relative; 
             display: flex; 
             align-items: center; 
@@ -118,7 +124,7 @@
         .meta-tag { font-size: 0.8rem; color: #00ffcc; background: #1a2925; padding: 3px 10px; align-self: flex-start; margin-bottom: 12px; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px; }
         .card-footer-text { font-size: 0.8rem; color: #555; margin-top: auto; font-style: italic; font-weight: 400; }
 
-        /* ACTION ROUTING BUTTONS */
+        /* --- ACTION ROUTING BUTTONS --- */
         .route-link {
             align-self: flex-start; background: #1a1a1a; color: #00ffcc; 
             border: 1px solid #00ffcc; padding: 7px 16px; font-size: 0.8rem; 
@@ -127,8 +133,39 @@
         }
         .route-link:hover { background: #00ffcc; color: #121212; box-shadow: 0 0 10px rgba(0,255,204,0.3); }
 
+        /* --- NEXT PAGE ROUTING BUTTON --- */
+        .next-page-wrapper {
+            grid-column: 2;
+            display: flex;
+            justify-content: flex-end;
+            padding: 40px 20px;
+            margin-top: 20px;
+            border-top: 1px solid #222;
+        }
+        
+        .next-page-btn {
+            background: #111;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .next-page-btn:hover {
+            background: #00ffcc;
+            color: #121212;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
         /* --- FRAME 3: FOOTER RUNTIME MEDIA DECK --- */
-        footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; } /* Changed to 100% */
+        footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; }
         .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; }
         .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 18px; font-family: inherit; font-size: 0.75rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); letter-spacing: 1px; }
         .toggle-btn:hover { background-color: #00ffcc; color: #121212; border-color: #00ffcc; }
@@ -154,13 +191,14 @@
             }
             .collection-grid { padding: 0 15px; }
             .route-link { width: 100%; text-align: center; }
+            .next-page-wrapper { justify-content: center; } /* Center the Next button on mobile */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo" id="site-logo"></div>
+        <a href="https://linktr.ee/p1exp" class="logo" id="site-logo"></a>
         <nav id="nav-filters"></nav>
     </header>
 
@@ -237,7 +275,7 @@
                         `;
                     }
 
-                    // C. Associated Collection Array Loop
+                    // 3. ASSOCIATED COLLECTION ARRAY LOOP
                     layoutHtml += `<div class="collection-grid">`;
                     if (section.archiveKeys && section.archiveKeys.length > 0) {
                         section.archiveKeys.forEach(catNo => {
@@ -262,8 +300,37 @@
                 });
             }
 
+            // 4. NEXT PAGE ROUTING LOGIC
+            const navMenu = siteConfiguration.navigationMenu;
+            const currentIndex = navMenu.findIndex(item => item.id === pageKey);
+            
+            // If we are not on the last page, generate a NEXT button
+            if (currentIndex !== -1 && currentIndex < navMenu.length - 1) {
+                const nextItem = navMenu[currentIndex + 1];
+                layoutHtml += `
+                    <div class="next-page-wrapper">
+                        <button class="next-page-btn" onclick="triggerNavigation('${nextItem.id}')">
+                            NEXT AREA: ${nextItem.label} &#10142;
+                        </button>
+                    </div>
+                `;
+            }
+
             document.getElementById('main-scroll-panel').innerHTML = layoutHtml;
             document.getElementById('main-scroll-panel').scrollTop = 0;
+        }
+
+        // Helper to programmatically click the top nav buttons
+        function triggerNavigation(targetPageKey) {
+            const navMenu = siteConfiguration.navigationMenu;
+            const targetIndex = navMenu.findIndex(item => item.id === targetPageKey);
+            
+            if (targetIndex !== -1) {
+                const navButtons = document.querySelectorAll('#nav-filters button');
+                if (navButtons[targetIndex]) {
+                    switchCategory(targetPageKey, navButtons[targetIndex]);
+                }
+            }
         }
 
         function routeToDeck(targetUrl) {
