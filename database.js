@@ -25,8 +25,8 @@ const pageLayoutEngine = {
       {
         "title": "FEATURED TRANSMISSIONS",
         "text": "Latest dispatches and highlighted archives from the Platform-1 tracking matrix.",
-        "imageName": "NUER.jpg", 
-        "archiveKeys": ["NUER", "ILS2", "INMA"] // Pulls a highlight from Projects, Sessions, and Legacy
+        "imageName": "NEUR.jpg", 
+        "archiveKeys": ["NEUR", "ILS2", "INMA"] // Pulls a highlight from Projects, Sessions, and Legacy
       }
     ]
   },
@@ -41,7 +41,7 @@ const pageLayoutEngine = {
         "title": "TRICHROMAT SERIES // 2021 - 2025",
         "text": "The Machinebrain project concentrates on creating sound and beats using algorithmic and generative sequences mixed with traditional sequencing. Modular synthesis is also used with computer DAW technology.",
         "imageName": "trichromat_bg.jpg", 
-        "archiveKeys": ["NUER", "COSP", "COVI"] 
+        "archiveKeys": ["NEUR", "COSP", "COVI"] 
       },
             {
         "title": "IMMUNO // 2015 - 2020",
@@ -121,7 +121,7 @@ const pageLayoutEngine = {
 
 // 3. MASTER PLATFORM-1 FLAT REGISTRY INDEXED BY UNIQUE CATALOG NUMBER
 const masterCollectionRegistry = {
-  "NUER": { "title": "NEUROFLUX25", "date": "2024", "description": "Experimental live jam sessions recorded on eurorack.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF", "footer": "Status: Finished" },
+  "NEUR": { "title": "NEUROFLUX25", "date": "2025", "description": "Experimental live jam sessions recorded on eurorack.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF", "footer": "Status: Finished" },
   "COSP": { "title": "COLORSPLASH24", "date": "2024", "description": "Experimental live jam sessions recorded from 2021 - 2024.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF", "footer": "Format: YouTube Video Playlist" },
   "COVI": { "title": "THE CO:VIDZ", "date": "2021", "description": "Composed on real electronic music gear without a computer.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=OEJasDLnXC8gD7uV&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m", "footer": "Format: YouTube Video Playlist" },
   "BREL": { "title": "BROKEN ELECTRIC", "date": "2020", "description": "Group of DAW loops and sessions arranged into full tracks.", "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1131803323/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/", "footer": "Status: Incomplete" },
