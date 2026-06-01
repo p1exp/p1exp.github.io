@@ -47,13 +47,13 @@ const pageLayoutEngine = {
         "title": "IMMUNO // 2015 - 2020",
         "text": "Experimental loop compositions recorded during earlier modular synth experimentation. Imported into a DAW and arranged.",
         "imageName": "immuno_bg.jpg",
-        "archiveKeys": ["SCDO", "TTLG", "CLEN", "INTL"]
+        "archiveKeys": ["BREL", "SCDO", "TTLG", "CLEN"]
       },
       {
         "title": "ELECTRIC ABUSE // 2007 - 2014",
         "text": "This project represents a time when computer systems running DAW software had come of age. A vast array of multigenre samples were mixed and manipulated.",
         "imageName": "electricabuse_bg.jpg",
-        "archiveKeys": ["BREL", "EXCP", "STRA"]
+        "archiveKeys": ["EXCP", "STRA", "INTL"]
       }
     ]
   },
