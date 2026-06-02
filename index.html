@@ -21,7 +21,8 @@
             font-family: 'Jura', sans-serif;
             background-color: #0c0c0c;
             color: #e0e0e0;
-            height: 100vh;
+            height: 100vh; /* Fallback for older browsers */
+            height: 100dvh; /* The mobile Chrome UI fix */
             display: grid;
             grid-template-rows: 60px 1fr auto; 
             overflow: hidden; 
@@ -84,7 +85,7 @@
             background-color: #111; 
         }
         .banner-70 { height: 70vh; border-bottom: 2px solid #222; }
-        .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 0; } /* <--- UPDATED MARGIN */
+        .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 0; } 
 
         .banner-img { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
@@ -270,9 +271,10 @@
             
             .player-wrapper { max-width: 100%; padding: 5px 15px; }
             
-            .player-wrapper[data-platform="bandcamp"].expanded { height: 300px; }
-            .player-wrapper[data-platform="youtube"].expanded { height: 250px; }
-            .player-wrapper[data-platform="mixcloud"].expanded { height: 140px; }
+            /* Taller mobile heights for easier touch interaction */
+            .player-wrapper[data-platform="bandcamp"].expanded { height: 380px; }
+            .player-wrapper[data-platform="youtube"].expanded { height: 280px; }
+            .player-wrapper[data-platform="mixcloud"].expanded { height: 200px; }
         }
     </style>
 </head>
