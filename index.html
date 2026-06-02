@@ -84,7 +84,7 @@
             background-color: #111; 
         }
         .banner-70 { height: 70vh; border-bottom: 2px solid #222; }
-        .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 40px; }
+        .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 0; } /* <--- UPDATED MARGIN */
 
         .banner-img { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
@@ -270,7 +270,6 @@
             
             .player-wrapper { max-width: 100%; padding: 5px 15px; }
             
-            /* Synced mobile heights with new desktop maximums */
             .player-wrapper[data-platform="bandcamp"].expanded { height: 300px; }
             .player-wrapper[data-platform="youtube"].expanded { height: 250px; }
             .player-wrapper[data-platform="mixcloud"].expanded { height: 140px; }
