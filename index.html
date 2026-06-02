@@ -178,4 +178,309 @@
 
         /* --- FRAME 3: FOOTER RUNTIME MEDIA DECK --- */
         footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; }
-        .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top
+        .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; transition: opacity 0.4s ease; }
+        .toggle-btn-container.hidden { opacity: 0; pointer-events: none; }
+        
+        .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 18px; font-family: inherit; font-size: 0.75rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); letter-spacing: 1px; }
+        .toggle-btn:hover { background-color: #00ffcc; color: #121212; border-color: #00ffcc; }
+        
+        /* --- DYNAMIC PLAYER HEIGHT ENGINE --- */
+        .player-wrapper { 
+            position: relative; 
+            width: 100%; 
+            max-width: 700px; 
+            overflow: hidden; 
+            transition: height 0.3s ease-in-out, padding 0.3s ease-in-out; 
+            padding: 10px 0; 
+            height: 80px; 
+        }
+        iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 100%; border: 0; background: #000; border-radius: 4px; }
+
+        /* --- STATUS SCREENS (IDLE & LOADING) --- */
+        .status-overlay {
+            position: absolute;
+            top: 10px; left: 0; right: 0; bottom: 10px;
+            background-color: #000;
+            color: #00ffcc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            z-index: 5;
+            transition: opacity 0.4s ease;
+            border-radius: 4px;
+        }
+        .status-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 18px; height: 18px;
+            border: 2px solid rgba(0, 255, 204, 0.3);
+            border-top-color: #00ffcc;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 12px;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .idle-indicator {
+            width: 12px; height: 12px;
+            background-color: #00ffcc;
+            margin-right: 12px;
+            border-radius: 2px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+
+        /* --- UPDATED BANDCAMP SIZING --- */
+        .player-wrapper[data-platform="bandcamp"] { height: 140px; }
+        .player-wrapper[data-platform="bandcamp"].expanded { height: 300px; }
+
+        /* --- UPDATED YOUTUBE SIZING (16:9 Focus) --- */
+        .player-wrapper[data-platform="youtube"] { height: 160px; }
+        .player-wrapper[data-platform="youtube"].expanded { height: 400px; }
+
+        /* --- UPDATED MIXCLOUD SIZING --- */
+        .player-wrapper[data-platform="mixcloud"] { height: 80px; padding: 5px 0; }
+        .player-wrapper[data-platform="mixcloud"].expanded { height: 140px; } 
+
+        /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
+        @media (max-width: 768px) {
+            .banner-70, .banner-60 { height: 60vh; } 
+            .banner-heading h1 { font-size: 1.8rem; }
+            .banner-heading h2 { font-size: 1.5rem; }
+            .narrow-text-block { padding: 30px 15px; }
+            
+            .project-layout-card { flex-direction: column; }
+            .card-thumbnail { 
+                width: 100%; 
+                height: auto; 
+                aspect-ratio: 1 / 1; 
+                border-right: none; 
+                border-bottom: 1px solid #222; 
+            }
+            .collection-grid { padding: 0 15px; }
+            .route-link { width: 100%; text-align: center; }
+            .next-page-wrapper { justify-content: center; } 
+            
+            .player-wrapper { max-width: 100%; padding: 5px 15px; }
+            
+            /* Synced mobile heights with new desktop maximums */
+            .player-wrapper[data-platform="bandcamp"].expanded { height: 300px; }
+            .player-wrapper[data-platform="youtube"].expanded { height: 250px; }
+            .player-wrapper[data-platform="mixcloud"].expanded { height: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="https://linktr.ee/p1exp" class="logo" id="site-logo"></a>
+        <nav id="nav-filters"></nav>
+    </header>
+
+    <main id="main-scroll-panel"></main>
+
+    <footer>
+        <div class="toggle-btn-container hidden" id="toggle-container">
+            <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
+        </div>
+        <div class="player-wrapper" id="player-wrapper" data-platform="generic">
+            
+            <div id="deck-idle" class="status-overlay">
+                <span class="idle-indicator"></span> AWAITING ARCHIVE SELECTION...
+            </div>
+
+            <div id="deck-preloader" class="status-overlay hidden">
+                <span class="spinner"></span> LOADING TELEMETRY...
+            </div>
+            
+            <iframe id="master-deck-frame" src="about:blank" allow="autoplay; encrypted-media; fullscreen"></iframe>
+        </div>
+    </footer>
+
+    <script>
+        function bootstrapApplication() {
+            if (typeof masterCollectionRegistry === 'undefined') return;
+            const config = siteConfiguration;
+
+            document.getElementById('site-logo').textContent = config.logoTitle || '';
+            document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow || '';
+
+            const navContainer = document.getElementById('nav-filters');
+            navContainer.innerHTML = '';
+
+            config.navigationMenu.forEach((menuItem, idx) => {
+                const btn = document.createElement('button');
+                btn.textContent = menuItem.label;
+                if (idx === 0) btn.className = 'active'; 
+                btn.onclick = function() { switchCategory(menuItem.id, this); };
+                navContainer.appendChild(btn);
+            });
+
+            loadPageView(config.navigationMenu[0].id);
+            
+            document.getElementById('player-wrapper').classList.remove('expanded');
+        }
+
+        function loadPageView(pageKey) {
+            const pageMap = pageLayoutEngine[pageKey];
+            if (!pageMap) return;
+
+            let layoutHtml = '';
+
+            layoutHtml += `
+                <div class="full-banner banner-70">
+                    <img src="./img_bg/${pageMap.titleBanner.imageName || ''}" class="banner-img">
+                    <div class="banner-heading">
+                        <h1>${pageMap.titleBanner.title || ''}</h1>
+                    </div>
+                </div>
+                <div class="narrow-text-block">
+                    <p>${pageMap.titleBanner.text || ''}</p>
+                </div>
+            `;
+
+            if (pageMap.sections && pageMap.sections.length > 0) {
+                pageMap.sections.forEach(section => {
+                    
+                    layoutHtml += `
+                        <div class="full-banner banner-60">
+                            <img src="./img_bg/${section.imageName || ''}" class="banner-img">
+                            <div class="banner-heading">
+                                <h2>${section.title || ''}</h2>
+                            </div>
+                        </div>
+                    `;
+
+                    if (section.text) {
+                        layoutHtml += `
+                            <div class="narrow-text-block">
+                                <p>${section.text}</p>
+                            </div>
+                        `;
+                    }
+
+                    layoutHtml += `<div class="collection-grid">`;
+                    if (section.archiveKeys && section.archiveKeys.length > 0) {
+                        section.archiveKeys.forEach(catNo => {
+                            const item = masterCollectionRegistry[catNo];
+                            if (!item) return;
+
+                            layoutHtml += `
+                                <div class="project-layout-card">
+                                    <img src="./img_coll/${catNo}.jpg" class="card-thumbnail">
+                                    <div class="card-details">
+                                        <h3>${item.title || ''}</h3>
+                                        <span class="meta-tag">P1-${catNo} // ${item.date || ''}</span>
+                                        <p>${item.description || ''}</p>
+                                        ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">▶ PLAY ARCHIVE DECK</button>` : ''}
+                                        ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+                    layoutHtml += `</div>`; 
+                });
+            }
+
+            const navMenu = siteConfiguration.navigationMenu;
+            const currentIndex = navMenu.findIndex(item => item.id === pageKey);
+            
+            if (currentIndex !== -1 && currentIndex < navMenu.length - 1) {
+                const nextItem = navMenu[currentIndex + 1];
+                layoutHtml += `
+                    <div class="next-page-wrapper">
+                        <button class="next-page-btn" onclick="triggerNavigation('${nextItem.id}')">
+                            NEXT AREA: ${nextItem.label} &#10142;
+                        </button>
+                    </div>
+                `;
+            }
+
+            const mainPanel = document.getElementById('main-scroll-panel');
+            mainPanel.classList.add('fade-out');
+            
+            setTimeout(() => {
+                mainPanel.innerHTML = layoutHtml;
+                mainPanel.scrollTop = 0;
+                mainPanel.classList.remove('fade-out');
+            }, 300); 
+        }
+
+        function triggerNavigation(targetPageKey) {
+            const navMenu = siteConfiguration.navigationMenu;
+            const targetIndex = navMenu.findIndex(item => item.id === targetPageKey);
+            
+            if (targetIndex !== -1) {
+                const navButtons = document.querySelectorAll('#nav-filters button');
+                if (navButtons[targetIndex]) {
+                    switchCategory(targetPageKey, navButtons[targetIndex]);
+                }
+            }
+        }
+
+        function routeToDeck(targetUrl) {
+            const deckFrame = document.getElementById('master-deck-frame');
+            const wrapper = document.getElementById('player-wrapper');
+            const preloader = document.getElementById('deck-preloader');
+            const idleScreen = document.getElementById('deck-idle');
+            const toggleContainer = document.getElementById('toggle-container');
+            
+            if (idleScreen) {
+                idleScreen.classList.add('hidden');
+            }
+            
+            if (toggleContainer) {
+                toggleContainer.classList.remove('hidden');
+            }
+
+            preloader.classList.remove('hidden');
+            deckFrame.src = 'about:blank'; 
+
+            if (targetUrl.includes('bandcamp.com')) {
+                wrapper.setAttribute('data-platform', 'bandcamp');
+            } else if (targetUrl.includes('youtube.com')) {
+                wrapper.setAttribute('data-platform', 'youtube');
+            } else if (targetUrl.includes('mixcloud.com')) {
+                wrapper.setAttribute('data-platform', 'mixcloud');
+            } else {
+                wrapper.setAttribute('data-platform', 'generic');
+            }
+
+            wrapper.classList.add('expanded');
+            document.getElementById('tracklist-toggle').innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
+            deckFrame.src = targetUrl;
+
+            deckFrame.onload = function() {
+                if (deckFrame.src !== 'about:blank' && deckFrame.src !== window.location.href) {
+                    preloader.classList.add('hidden');
+                }
+            };
+        }
+
+        function switchCategory(categoryKey, buttonElement) {
+            document.querySelectorAll('#nav-filters button').forEach(btn => btn.classList.remove('active'));
+            buttonElement.classList.add('active');
+            loadPageView(categoryKey);
+        }
+
+        function toggleTracklist() {
+            const wrapper = document.getElementById('player-wrapper');
+            const button = document.getElementById('tracklist-toggle');
+            const labels = siteConfiguration.sectionLabels;
+
+            wrapper.classList.toggle('expanded');
+            button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
+        }
+
+        bootstrapApplication();
+    </script>
+</body>
+</html>
