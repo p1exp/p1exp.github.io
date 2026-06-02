@@ -48,6 +48,11 @@
             text-decoration: none; 
         }
 
+        /* --- Align Nav Links to the Right --- */
+        nav {
+            text-align: right;
+        }
+
         nav button {
             background: none; border: none; font-family: inherit; color: #888;
             margin-left: 25px; font-size: 0.9rem; text-transform: uppercase;
@@ -173,7 +178,9 @@
 
         /* --- FRAME 3: FOOTER RUNTIME MEDIA DECK --- */
         footer { background-color: #121212; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; }
-        .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; }
+        .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; transition: opacity 0.4s ease; }
+        .toggle-btn-container.hidden { opacity: 0; pointer-events: none; }
+        
         .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 18px; font-family: inherit; font-size: 0.75rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); letter-spacing: 1px; }
         .toggle-btn:hover { background-color: #00ffcc; color: #121212; border-color: #00ffcc; }
         
@@ -185,7 +192,7 @@
             overflow: hidden; 
             transition: height 0.3s ease-in-out, padding 0.3s ease-in-out; 
             padding: 10px 0; 
-            height: 140px; 
+            height: 80px; 
         }
         iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 100%; border: 0; background: #000; border-radius: 4px; }
 
@@ -279,7 +286,7 @@
     <main id="main-scroll-panel"></main>
 
     <footer>
-        <div class="toggle-btn-container">
+        <div class="toggle-btn-container hidden" id="toggle-container">
             <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
         </div>
         <div class="player-wrapper" id="player-wrapper" data-platform="generic">
@@ -326,7 +333,6 @@
 
             let layoutHtml = '';
 
-            // 1. GENERATE THE TOP 70vh TITLE BANNER + TEXT
             layoutHtml += `
                 <div class="full-banner banner-70">
                     <img src="./img_bg/${pageMap.titleBanner.imageName || ''}" class="banner-img">
@@ -339,7 +345,6 @@
                 </div>
             `;
 
-            // 2. LOOP THROUGH AND GENERATE EACH 60vh PROJECT SECTION + TEXT + COLLECTIONS
             if (pageMap.sections && pageMap.sections.length > 0) {
                 pageMap.sections.forEach(section => {
                     
@@ -360,7 +365,6 @@
                         `;
                     }
 
-                    // 3. ASSOCIATED COLLECTION ARRAY LOOP
                     layoutHtml += `<div class="collection-grid">`;
                     if (section.archiveKeys && section.archiveKeys.length > 0) {
                         section.archiveKeys.forEach(catNo => {
@@ -385,7 +389,6 @@
                 });
             }
 
-            // 4. NEXT PAGE ROUTING LOGIC
             const navMenu = siteConfiguration.navigationMenu;
             const currentIndex = navMenu.findIndex(item => item.id === pageKey);
             
@@ -400,7 +403,6 @@
                 `;
             }
 
-            // 5. FADE TRANSITION LOGIC
             const mainPanel = document.getElementById('main-scroll-panel');
             mainPanel.classList.add('fade-out');
             
@@ -411,7 +413,6 @@
             }, 300); 
         }
 
-        // Helper to programmatically click the top nav buttons
         function triggerNavigation(targetPageKey) {
             const navMenu = siteConfiguration.navigationMenu;
             const targetIndex = navMenu.findIndex(item => item.id === targetPageKey);
@@ -424,15 +425,19 @@
             }
         }
 
-        // Dynamic routing with platform detection and preloader logic
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
             const preloader = document.getElementById('deck-preloader');
             const idleScreen = document.getElementById('deck-idle');
+            const toggleContainer = document.getElementById('toggle-container');
             
             if (idleScreen) {
                 idleScreen.classList.add('hidden');
+            }
+            
+            if (toggleContainer) {
+                toggleContainer.classList.remove('hidden');
             }
 
             preloader.classList.remove('hidden');
