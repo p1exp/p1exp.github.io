@@ -127,7 +127,7 @@ const pageLayoutEngine = {
 
 // 3. MASTER PLATFORM-1 FLAT REGISTRY INDEXED BY UNIQUE CATALOG NUMBER
 const masterCollectionRegistry = {
-  "NEUR": { "title": "NEUROFLUX25", "date": "2025", "description": "Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF", "footer": "Status: Unfinished" },
+  "NEUR": { "title": "NEUROFLUX25", "date": "2025", "description": "Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.", "mediaUrl": "", "footer": "Status: Unfinished" },
   "COSP": { "title": "COLORSPLASH24", "date": "2024", "description": "Aggregated data from 2021-2024. A compiled spectrum of experimental live session logs.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF", "footer": "Format: YouTube Video Playlist" },
   "COVI": { "title": "THE CO:VIDZ", "date": "2021", "description": "Isolation protocol enactments. Pure hardware synthesis executed offline without central computational assistance.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=OEJasDLnXC8gD7uV&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m", "footer": "Format: YouTube Video Playlist" },
   "BREL": { "title": "BROKEN ELECTRIC", "date": "2020", "description": "Fractured DAW signals reconstructed and arranged into stable full-track architectures.", "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1131803323/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/", "footer": "Status: Incomplete" },
