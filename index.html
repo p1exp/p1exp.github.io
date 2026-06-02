@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1EXP // Platform-1 Experimental</title>
     
-    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="./p1logo.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Ensure your updated database.js is in the same folder -->
     <script src="./database.js"></script>
 
     <style>
@@ -62,6 +60,11 @@
             overflow-y: auto; padding-bottom: 40px; width: 100%;
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 950px) minmax(0, 1fr);
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        main.fade-out {
+            opacity: 0;
         }
 
         /* --- FULL BLEED BANNERS --- */
@@ -176,7 +179,7 @@
         
         /* --- DYNAMIC PLAYER HEIGHT ENGINE --- */
         .player-wrapper { 
-            position: relative; /* Added so preloader aligns to this box */
+            position: relative; 
             width: 100%; 
             max-width: 700px; 
             overflow: hidden; 
@@ -186,10 +189,10 @@
         }
         iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 100%; border: 0; background: #000; border-radius: 4px; }
 
-        /* --- PRELOADER STYLES --- */
-        #deck-preloader {
+        /* --- STATUS SCREENS (IDLE & LOADING) --- */
+        .status-overlay {
             position: absolute;
-            top: 10px; left: 0; right: 0; bottom: 10px; /* Aligns inside the padding */
+            top: 10px; left: 0; right: 0; bottom: 10px;
             background-color: #000;
             color: #00ffcc;
             display: flex;
@@ -202,10 +205,11 @@
             transition: opacity 0.4s ease;
             border-radius: 4px;
         }
-        #deck-preloader.hidden {
+        .status-overlay.hidden {
             opacity: 0;
             pointer-events: none;
         }
+        
         .spinner {
             width: 18px; height: 18px;
             border: 2px solid rgba(0, 255, 204, 0.3);
@@ -215,6 +219,16 @@
             margin-right: 12px;
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .idle-indicator {
+            width: 12px; height: 12px;
+            background-color: #00ffcc;
+            margin-right: 12px;
+            border-radius: 2px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
 
         /* --- BANDCAMP SIZING --- */
         .player-wrapper[data-platform="bandcamp"] { height: 140px; }
@@ -226,7 +240,7 @@
 
         /* --- MIXCLOUD SIZING --- */
         .player-wrapper[data-platform="mixcloud"] { height: 80px; padding: 5px 0; }
-        .player-wrapper[data-platform="mixcloud"].expanded { height: 200px; } /* Updated to 200px */
+        .player-wrapper[data-platform="mixcloud"].expanded { height: 200px; } 
 
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
@@ -249,7 +263,6 @@
             
             .player-wrapper { max-width: 100%; padding: 5px 15px; }
             
-            /* Tighter expanded heights for phone screens */
             .player-wrapper[data-platform="bandcamp"].expanded { height: 350px; }
             .player-wrapper[data-platform="youtube"].expanded { height: 250px; }
             .player-wrapper[data-platform="mixcloud"].expanded { height: 200px; }
@@ -259,7 +272,6 @@
 <body>
 
     <header>
-        <!-- Linktree Anchor -->
         <a href="https://linktr.ee/p1exp" class="logo" id="site-logo"></a>
         <nav id="nav-filters"></nav>
     </header>
@@ -271,11 +283,15 @@
             <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
         </div>
         <div class="player-wrapper" id="player-wrapper" data-platform="generic">
-            <!-- PRELOADER ADDED HERE -->
-            <div id="deck-preloader" class="hidden">
+            
+            <div id="deck-idle" class="status-overlay">
+                <span class="idle-indicator"></span> AWAITING ARCHIVE SELECTION...
+            </div>
+
+            <div id="deck-preloader" class="status-overlay hidden">
                 <span class="spinner"></span> LOADING TELEMETRY...
             </div>
-            <!-- Default placeholder blank to prevent initial loading pop -->
+            
             <iframe id="master-deck-frame" src="about:blank" allow="autoplay; encrypted-media; fullscreen"></iframe>
         </div>
     </footer>
@@ -301,9 +317,6 @@
 
             loadPageView(config.navigationMenu[0].id);
             
-            // Load an initial default track so the player isn't completely blank on first load
-            routeToDeck('https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/');
-            // Keep it collapsed initially
             document.getElementById('player-wrapper').classList.remove('expanded');
         }
 
@@ -376,7 +389,6 @@
             const navMenu = siteConfiguration.navigationMenu;
             const currentIndex = navMenu.findIndex(item => item.id === pageKey);
             
-            // If we are not on the last page, generate a NEXT button
             if (currentIndex !== -1 && currentIndex < navMenu.length - 1) {
                 const nextItem = navMenu[currentIndex + 1];
                 layoutHtml += `
@@ -388,8 +400,15 @@
                 `;
             }
 
-            document.getElementById('main-scroll-panel').innerHTML = layoutHtml;
-            document.getElementById('main-scroll-panel').scrollTop = 0;
+            // 5. FADE TRANSITION LOGIC
+            const mainPanel = document.getElementById('main-scroll-panel');
+            mainPanel.classList.add('fade-out');
+            
+            setTimeout(() => {
+                mainPanel.innerHTML = layoutHtml;
+                mainPanel.scrollTop = 0;
+                mainPanel.classList.remove('fade-out');
+            }, 300); 
         }
 
         // Helper to programmatically click the top nav buttons
@@ -410,12 +429,15 @@
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
             const preloader = document.getElementById('deck-preloader');
+            const idleScreen = document.getElementById('deck-idle');
             
-            // 1. Reveal the preloader and "blank" the existing frame
+            if (idleScreen) {
+                idleScreen.classList.add('hidden');
+            }
+
             preloader.classList.remove('hidden');
             deckFrame.src = 'about:blank'; 
 
-            // 2. Detect the platform from the URL string to set CSS sizing
             if (targetUrl.includes('bandcamp.com')) {
                 wrapper.setAttribute('data-platform', 'bandcamp');
             } else if (targetUrl.includes('youtube.com')) {
@@ -426,14 +448,11 @@
                 wrapper.setAttribute('data-platform', 'generic');
             }
 
-            // 3. Expand the matrix UI and load the new source
             wrapper.classList.add('expanded');
             document.getElementById('tracklist-toggle').innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
             deckFrame.src = targetUrl;
 
-            // 4. Listen for the new track to finish loading, then hide the preloader
             deckFrame.onload = function() {
-                // Ensure it doesn't trigger on the 'about:blank' reset
                 if (deckFrame.src !== 'about:blank' && deckFrame.src !== window.location.href) {
                     preloader.classList.add('hidden');
                 }
