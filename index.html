@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1EXP // Platform-1 Experimental</title>
     
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="./p1logo.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <!-- Ensure your updated database.js is in the same folder -->
     <script src="./database.js"></script>
 
     <style>
@@ -45,7 +47,7 @@
             font-size: 1.2rem; 
             color: #00ffcc; 
             letter-spacing: 2px; 
-            text-decoration: none; /* Prevents underline on the Linktree link */
+            text-decoration: none; 
         }
 
         nav button {
@@ -73,7 +75,7 @@
             overflow: hidden; 
             background-color: #111; 
         }
-        .banner-70 { height: 80vh; border-bottom: 2px solid #222; }
+        .banner-70 { height: 70vh; border-bottom: 2px solid #222; }
         .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 40px; }
 
         .banner-img { 
@@ -174,18 +176,49 @@
         
         /* --- DYNAMIC PLAYER HEIGHT ENGINE --- */
         .player-wrapper { 
+            position: relative; /* Added so preloader aligns to this box */
             width: 100%; 
             max-width: 700px; 
             overflow: hidden; 
             transition: height 0.3s ease-in-out, padding 0.3s ease-in-out; 
             padding: 10px 0; 
-            height: 140px; /* Fallback default */
+            height: 140px; 
         }
-        iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; border-radius: 4px; }
+        iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 100%; border: 0; background: #000; border-radius: 4px; }
+
+        /* --- PRELOADER STYLES --- */
+        #deck-preloader {
+            position: absolute;
+            top: 10px; left: 0; right: 0; bottom: 10px; /* Aligns inside the padding */
+            background-color: #000;
+            color: #00ffcc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            z-index: 5;
+            transition: opacity 0.4s ease;
+            border-radius: 4px;
+        }
+        #deck-preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .spinner {
+            width: 18px; height: 18px;
+            border: 2px solid rgba(0, 255, 204, 0.3);
+            border-top-color: #00ffcc;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 12px;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
 
         /* --- BANDCAMP SIZING --- */
         .player-wrapper[data-platform="bandcamp"] { height: 140px; }
-        .player-wrapper[data-platform="bandcamp"].expanded { height: 300px; }
+        .player-wrapper[data-platform="bandcamp"].expanded { height: 420px; }
 
         /* --- YOUTUBE SIZING (16:9 Focus) --- */
         .player-wrapper[data-platform="youtube"] { height: 120px; }
@@ -193,12 +226,11 @@
 
         /* --- MIXCLOUD SIZING --- */
         .player-wrapper[data-platform="mixcloud"] { height: 80px; padding: 5px 0; }
-        .player-wrapper[data-platform="mixcloud"].expanded { height: 200px; }
+        .player-wrapper[data-platform="mixcloud"].expanded { height: 200px; } /* Updated to 200px */
 
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
-            .banner-70 { height: 75vh; } 
-            .banner-60 { height: 60vh; } 
+            .banner-70, .banner-60 { height: 60vh; } 
             .banner-heading h1 { font-size: 1.8rem; }
             .banner-heading h2 { font-size: 1.5rem; }
             .narrow-text-block { padding: 30px 15px; }
@@ -227,6 +259,7 @@
 <body>
 
     <header>
+        <!-- Linktree Anchor -->
         <a href="https://linktr.ee/p1exp" class="logo" id="site-logo"></a>
         <nav id="nav-filters"></nav>
     </header>
@@ -238,7 +271,12 @@
             <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
         </div>
         <div class="player-wrapper" id="player-wrapper" data-platform="generic">
-            <iframe id="master-deck-frame" src="https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/" allow="autoplay; encrypted-media; fullscreen"></iframe>
+            <!-- PRELOADER ADDED HERE -->
+            <div id="deck-preloader" class="hidden">
+                <span class="spinner"></span> LOADING TELEMETRY...
+            </div>
+            <!-- Default placeholder blank to prevent initial loading pop -->
+            <iframe id="master-deck-frame" src="about:blank" allow="autoplay; encrypted-media; fullscreen"></iframe>
         </div>
     </footer>
 
@@ -262,6 +300,11 @@
             });
 
             loadPageView(config.navigationMenu[0].id);
+            
+            // Load an initial default track so the player isn't completely blank on first load
+            routeToDeck('https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/');
+            // Keep it collapsed initially
+            document.getElementById('player-wrapper').classList.remove('expanded');
         }
 
         function loadPageView(pageKey) {
@@ -362,12 +405,17 @@
             }
         }
 
-        // Dynamic routing with platform detection
+        // Dynamic routing with platform detection and preloader logic
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
+            const preloader = document.getElementById('deck-preloader');
             
-            // 1. Detect the platform from the URL string
+            // 1. Reveal the preloader and "blank" the existing frame
+            preloader.classList.remove('hidden');
+            deckFrame.src = 'about:blank'; 
+
+            // 2. Detect the platform from the URL string to set CSS sizing
             if (targetUrl.includes('bandcamp.com')) {
                 wrapper.setAttribute('data-platform', 'bandcamp');
             } else if (targetUrl.includes('youtube.com')) {
@@ -378,10 +426,18 @@
                 wrapper.setAttribute('data-platform', 'generic');
             }
 
-            // 2. Load the deck and expand the matrix
-            deckFrame.src = targetUrl;
+            // 3. Expand the matrix UI and load the new source
             wrapper.classList.add('expanded');
             document.getElementById('tracklist-toggle').innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
+            deckFrame.src = targetUrl;
+
+            // 4. Listen for the new track to finish loading, then hide the preloader
+            deckFrame.onload = function() {
+                // Ensure it doesn't trigger on the 'about:blank' reset
+                if (deckFrame.src !== 'about:blank' && deckFrame.src !== window.location.href) {
+                    preloader.classList.add('hidden');
+                }
+            };
         }
 
         function switchCategory(categoryKey, buttonElement) {
