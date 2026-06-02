@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1EXP // Platform-1 Experimental</title>
     
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="./p1logo.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +64,7 @@
 
         /* --- FRAME 2: SCROLLING CENTER ENGINE --- */
         main {
-            overflow-y: auto; padding-bottom: 40px; width: 100%;
+            overflow-y: auto; padding-bottom: 0px; width: 100%;
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 950px) minmax(0, 1fr);
             opacity: 1;
@@ -110,7 +111,7 @@
         /* --- 950px COLLECTION LIST WRAPPER --- */
         .collection-grid { 
             grid-column: 2; 
-            padding: 0 20px; 
+            padding: 0 20px 60px 20px; 
             display: flex;
             flex-direction: column;
             gap: 25px; 
@@ -151,8 +152,7 @@
             grid-column: 2;
             display: flex;
             justify-content: flex-end;
-            padding: 40px 20px;
-            margin-top: 20px;
+            padding: 20px 20px 0 20px; /* Adjusted padding to flow cleanly into copyright */
             border-top: 1px solid #222;
         }
         
@@ -175,6 +175,16 @@
             background: #00ffcc;
             color: #121212;
             box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
+        /* --- COPYRIGHT TEXT --- */
+        .copyright-text {
+            grid-column: 1 / -1; 
+            text-align: center;
+            color: #444; 
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            padding: 40px 20px 20px 20px;
         }
 
         /* --- FRAME 3: FOOTER RUNTIME MEDIA DECK --- */
@@ -265,7 +275,7 @@
                 border-right: none; 
                 border-bottom: 1px solid #222; 
             }
-            .collection-grid { padding: 0 15px; }
+            .collection-grid { padding: 0 15px 40px 15px; }
             .route-link { width: 100%; text-align: center; }
             .next-page-wrapper { justify-content: center; } 
             
@@ -404,6 +414,14 @@
                     </div>
                 `;
             }
+
+            // --- INJECT DYNAMIC COPYRIGHT ---
+            const currentYear = new Date().getFullYear();
+            layoutHtml += `
+                <div class="copyright-text">
+                    &copy; ${currentYear} Platform-1 Experimental - All rights reserved
+                </div>
+            `;
 
             const mainPanel = document.getElementById('main-scroll-panel');
             mainPanel.classList.add('fade-out');
