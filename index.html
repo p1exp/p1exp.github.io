@@ -172,9 +172,28 @@
         .toggle-btn { background-color: #121212; color: #00ffcc; border: 2px solid #222; border-radius: 20px; padding: 4px 18px; font-family: inherit; font-size: 0.75rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.6); letter-spacing: 1px; }
         .toggle-btn:hover { background-color: #00ffcc; color: #121212; border-color: #00ffcc; }
         
-        .player-wrapper { width: 100%; max-width: 700px; height: 140px; overflow: hidden; transition: height 0.3s ease-in-out; padding: 10px 0; }
-        .player-wrapper.expanded { height: 360px; }
-        iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; }
+        /* --- DYNAMIC PLAYER HEIGHT ENGINE --- */
+        .player-wrapper { 
+            width: 100%; 
+            max-width: 700px; 
+            overflow: hidden; 
+            transition: height 0.3s ease-in-out, padding 0.3s ease-in-out; 
+            padding: 10px 0; 
+            height: 140px; /* Fallback default */
+        }
+        iframe#master-deck-frame { width: 100%; height: 100%; border: 0; background: #000; border-radius: 4px; }
+
+        /* --- BANDCAMP SIZING --- */
+        .player-wrapper[data-platform="bandcamp"] { height: 140px; }
+        .player-wrapper[data-platform="bandcamp"].expanded { height: 420px; }
+
+        /* --- YOUTUBE SIZING (16:9 Focus) --- */
+        .player-wrapper[data-platform="youtube"] { height: 120px; }
+        .player-wrapper[data-platform="youtube"].expanded { height: 400px; }
+
+        /* --- MIXCLOUD SIZING --- */
+        .player-wrapper[data-platform="mixcloud"] { height: 80px; padding: 5px 0; }
+        .player-wrapper[data-platform="mixcloud"].expanded { height: 250px; }
 
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
@@ -193,7 +212,14 @@
             }
             .collection-grid { padding: 0 15px; }
             .route-link { width: 100%; text-align: center; }
-            .next-page-wrapper { justify-content: center; } /* Center the Next button on mobile */
+            .next-page-wrapper { justify-content: center; } 
+            
+            .player-wrapper { max-width: 100%; padding: 5px 15px; }
+            
+            /* Tighter expanded heights for phone screens */
+            .player-wrapper[data-platform="bandcamp"].expanded { height: 350px; }
+            .player-wrapper[data-platform="youtube"].expanded { height: 250px; }
+            .player-wrapper[data-platform="mixcloud"].expanded { height: 200px; }
         }
     </style>
 </head>
@@ -210,7 +236,7 @@
         <div class="toggle-btn-container">
             <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
         </div>
-        <div class="player-wrapper" id="player-wrapper">
+        <div class="player-wrapper" id="player-wrapper" data-platform="generic">
             <iframe id="master-deck-frame" src="https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/" allow="autoplay; encrypted-media; fullscreen"></iframe>
         </div>
     </footer>
@@ -335,9 +361,23 @@
             }
         }
 
+        // Dynamic routing with platform detection
         function routeToDeck(targetUrl) {
             const deckFrame = document.getElementById('master-deck-frame');
             const wrapper = document.getElementById('player-wrapper');
+            
+            // 1. Detect the platform from the URL string
+            if (targetUrl.includes('bandcamp.com')) {
+                wrapper.setAttribute('data-platform', 'bandcamp');
+            } else if (targetUrl.includes('youtube.com')) {
+                wrapper.setAttribute('data-platform', 'youtube');
+            } else if (targetUrl.includes('mixcloud.com')) {
+                wrapper.setAttribute('data-platform', 'mixcloud');
+            } else {
+                wrapper.setAttribute('data-platform', 'generic');
+            }
+
+            // 2. Load the deck and expand the matrix
             deckFrame.src = targetUrl;
             wrapper.classList.add('expanded');
             document.getElementById('tracklist-toggle').innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
