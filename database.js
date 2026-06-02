@@ -32,7 +32,7 @@ const pageLayoutEngine = {
   },
   "projects": {
     "titleBanner": {
-      "title": "<strong>#P1EXP</strong> PROJECTS // 2007 - PRESENT",
+      "title": "<strong>#P1EXP</strong> PROJECTS<br/>2007 - PRESENT",
       "text": "Refined studio compositions and arrangements. Complex loop structures and sequences engineered within the digital audio workspace.",
       "imageName": "projects_bg.jpg" 
     },
