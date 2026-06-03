@@ -370,19 +370,7 @@
             if (!pageMap) return;
 
             let layoutHtml = '';
-
-            layoutHtml += `
-                <div class="full-banner banner-70">
-                    <img src="./img_bg/${pageMap.titleBanner.imageName || ''}" class="banner-img">
-                    <div class="banner-heading">
-                        <h1>${pageMap.titleBanner.title || ''}</h1>
-                    </div>
-                </div>
-                <div class="narrow-text-block">
-                    <p>${pageMap.titleBanner.text || ''}</p>
-                </div>
-            `;
-
+            
             if (pageKey === siteConfiguration.navigationMenu[0].id) {
                 layoutHtml += `
                     <div class="social-matrix-wrapper">
@@ -403,6 +391,18 @@
                     </div>
                 `;
             }
+
+            layoutHtml += `
+                <div class="full-banner banner-70">
+                    <img src="./img_bg/${pageMap.titleBanner.imageName || ''}" class="banner-img">
+                    <div class="banner-heading">
+                        <h1>${pageMap.titleBanner.title || ''}</h1>
+                    </div>
+                </div>
+                <div class="narrow-text-block">
+                    <p>${pageMap.titleBanner.text || ''}</p>
+                </div>
+            `;
 
             if (pageMap.sections && pageMap.sections.length > 0) {
                 pageMap.sections.forEach(section => {
