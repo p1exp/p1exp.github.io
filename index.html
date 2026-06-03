@@ -21,8 +21,8 @@
             font-family: 'Jura', sans-serif;
             background-color: #0c0c0c;
             color: #e0e0e0;
-            height: 100vh; /* Fallback for older browsers */
-            height: 100dvh; /* The mobile Chrome UI fix */
+            height: 100vh; 
+            height: 100dvh; 
             display: grid;
             grid-template-rows: 60px 1fr auto; 
             overflow: hidden; 
@@ -49,7 +49,6 @@
             text-decoration: none; 
         }
 
-        /* --- Align Nav Links to the Right --- */
         nav {
             text-align: right;
         }
@@ -116,7 +115,7 @@
         .social-matrix {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allows wrapping on very narrow phone screens */
+            flex-wrap: wrap; 
             gap: 15px;
         }
         
@@ -309,7 +308,6 @@
             
             .player-wrapper { max-width: 100%; padding: 5px 15px; }
             
-            /* Synced mobile heights with new desktop maximums */
             .player-wrapper[data-platform="bandcamp"].expanded { height: 300px; }
             .player-wrapper[data-platform="youtube"].expanded { height: 250px; }
             .player-wrapper[data-platform="mixcloud"].expanded { height: 140px; }
@@ -385,7 +383,6 @@
                 </div>
             `;
 
-            // --- INJECT SOCIAL ICONS ON THE FIRST PAGE (ONE LINE) ---
             if (pageKey === siteConfiguration.navigationMenu[0].id) {
                 layoutHtml += `
                     <div class="social-matrix-wrapper">
@@ -556,6 +553,44 @@
 
             wrapper.classList.toggle('expanded');
             button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
+        }
+
+        // --- MOBILE SWIPE NAVIGATION ENGINE ---
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        const mainScrollPanel = document.getElementById('main-scroll-panel');
+
+        mainScrollPanel.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true }); 
+
+        mainScrollPanel.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipeGesture();
+        }, { passive: true });
+
+        function handleSwipeGesture() {
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+            const swipeThreshold = 50; 
+
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
+                const navButtons = Array.from(document.querySelectorAll('#nav-filters button'));
+                const activeBtn = document.querySelector('#nav-filters button.active');
+                const currentIndex = navButtons.indexOf(activeBtn);
+                const navMenu = siteConfiguration.navigationMenu;
+
+                if (deltaX < 0 && currentIndex < navMenu.length - 1) {
+                    triggerNavigation(navMenu[currentIndex + 1].id);
+                } else if (deltaX > 0 && currentIndex > 0) {
+                    triggerNavigation(navMenu[currentIndex - 1].id);
+                }
+            }
         }
 
         bootstrapApplication();
