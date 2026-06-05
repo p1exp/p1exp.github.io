@@ -289,6 +289,36 @@
 
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
+            
+            /* --- MOBILE HEADER & TAB NAVIGATION --- */
+            body { grid-template-rows: auto 1fr auto; } 
+            
+            header { 
+                flex-direction: column; 
+                padding: 15px 0 0 0; 
+                align-items: center; 
+            }
+            
+            header .logo { 
+                margin-bottom: 5px; 
+            }
+            
+            nav { 
+                display: flex; 
+                width: 100%; 
+                justify-content: space-between; 
+            }
+            
+            nav button { 
+                margin: 0; 
+                flex: 1; 
+                padding: 12px 0; 
+                font-size: 0.75rem; 
+                letter-spacing: 1px; 
+                text-align: center;
+                border-bottom: 2px solid transparent; 
+            }
+
             .banner-70 { height: 81dvh; }
             .banner-60 { height: 60vh; } 
             .banner-heading h1 { font-size: 1.8rem; }
