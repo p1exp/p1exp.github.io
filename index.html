@@ -21,10 +21,10 @@
             font-family: 'Jura', sans-serif;
             background-color: #0c0c0c;
             color: #e0e0e0;
-            height: 100vh; 
-            height: 100dvh; 
-            display: grid;
-            grid-template-rows: 60px 1fr auto; 
+            height: 100vh; /* Fallback for older browsers */
+            height: 100dvh; /* Mobile Chrome UI fix */
+            display: flex; /* NEW: Flex tension engine */
+            flex-direction: column;
             overflow: hidden; 
         }
 
@@ -39,6 +39,7 @@
             background-color: #121212; border-bottom: 2px solid #252525;
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 20px; z-index: 10; width: 100%;
+            flex-shrink: 0; /* Prevents header from being squashed */
         }
 
         header .logo { 
@@ -62,6 +63,9 @@
 
         /* --- FRAME 2: SCROLLING CENTER ENGINE --- */
         main {
+            flex-grow: 1; /* Expands to fill available vertical space */
+            flex-shrink: 1; /* Shrinks when footer expands */
+            min-height: 0; /* Critical to allow internal scrolling */
             overflow-y: auto; padding-bottom: 0px; width: 100%;
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 950px) minmax(0, 1fr);
@@ -83,7 +87,11 @@
             overflow: hidden; 
             background-color: #111; 
         }
-        .banner-70 { height: 81vh; border-bottom: 2px solid #222; }
+        .banner-70 { 
+            height: 81vh; 
+            max-height: 100%; /* Forces it to shrink if the player eats up the screen space */
+            border-bottom: 2px solid #222; 
+        }
         .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 0; } 
 
         .banner-img { 
@@ -216,7 +224,7 @@
         }
 
         /* --- FRAME 3: FOOTER RUNTIME MEDIA DECK --- */
-        footer { background-color: #000000; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; }
+        footer { background-color: #000000; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; flex-shrink: 0; }
         .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; transition: opacity 0.4s ease; }
         .toggle-btn-container.hidden { opacity: 0; pointer-events: none; }
         
@@ -291,24 +299,19 @@
         @media (max-width: 768px) {
             
             /* --- MOBILE HEADER & TAB NAVIGATION --- */
-            body { grid-template-rows: auto 1fr auto; } 
-            
             header { 
                 flex-direction: column; 
                 padding: 15px 0 0 0; 
                 align-items: center; 
             }
-            
             header .logo { 
                 margin-bottom: 5px; 
             }
-            
             nav { 
                 display: flex; 
                 width: 100%; 
                 justify-content: space-between; 
             }
-            
             nav button { 
                 margin: 0; 
                 flex: 1; 
@@ -319,7 +322,7 @@
                 border-bottom: 2px solid transparent; 
             }
 
-            .banner-70 { height: 81dvh; }
+            .banner-70 { height: 81dvh; max-height: 100%; }
             .banner-60 { height: 60vh; } 
             .banner-heading h1 { font-size: 1.8rem; }
             .banner-heading h2 { font-size: 1.5rem; }
