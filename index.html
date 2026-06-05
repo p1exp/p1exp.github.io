@@ -21,9 +21,9 @@
             font-family: 'Jura', sans-serif;
             background-color: #0c0c0c;
             color: #e0e0e0;
-            height: 100vh; /* Fallback for older browsers */
-            height: 100dvh; /* Mobile Chrome UI fix */
-            display: flex; /* NEW: Flex tension engine */
+            height: 100vh; 
+            height: 100dvh; 
+            display: flex; 
             flex-direction: column;
             overflow: hidden; 
         }
@@ -39,7 +39,8 @@
             background-color: #121212; border-bottom: 2px solid #252525;
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 20px; z-index: 10; width: 100%;
-            flex-shrink: 0; /* Prevents header from being squashed */
+            flex-shrink: 0; 
+            height: 60px; 
         }
 
         header .logo { 
@@ -63,9 +64,9 @@
 
         /* --- FRAME 2: SCROLLING CENTER ENGINE --- */
         main {
-            flex-grow: 1; /* Expands to fill available vertical space */
-            flex-shrink: 1; /* Shrinks when footer expands */
-            min-height: 0; /* Critical to allow internal scrolling */
+            flex-grow: 1; 
+            flex-shrink: 1; 
+            min-height: 0; 
             overflow-y: auto; padding-bottom: 0px; width: 100%;
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 950px) minmax(0, 1fr);
@@ -88,9 +89,8 @@
             background-color: #111; 
         }
         .banner-70 { 
-            height: 90vh; 
-            height: 90dvh; 
-            max-height: 100%; /* Forces it to shrink if the player eats up the screen space */
+            height: 81vh; 
+            max-height: 100%; 
             border-bottom: 2px solid #222; 
         }
         .banner-60 { height: 60vh; border-top: 1px solid #222; border-bottom: 2px solid #222; margin-top: 0; } 
@@ -304,6 +304,7 @@
                 flex-direction: column; 
                 padding: 15px 0 0 0; 
                 align-items: center; 
+                height: auto; 
             }
             header .logo { 
                 margin-bottom: 5px; 
