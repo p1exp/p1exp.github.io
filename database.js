@@ -18,7 +18,7 @@ const pageLayoutEngine = {
   "p1exp": {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL",
-      "text": `<h4>The central processing deck for the #P1EXP audio matrix.</h4><p>Swipe or select from above to explore the timeline archives and project logs, or view the featured showcases below.</p>`,
+      "text": `<h3>The central processing deck for the #P1EXP audio matrix.</h3><p>Swipe or select from above to explore the timeline archives and project logs, or view the featured showcases below.</p>`,
       "imageName": "p1_bg.jpg" 
     },
     "sections": [
@@ -33,7 +33,7 @@ const pageLayoutEngine = {
   "projects": {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> PROJECTS // 2007 - PRESENT",
-      "text": `<p>Refined studio compositions and arrangements. Complex loop structures and sequences engineered within the audio workspace.</p>`,
+      "text": `<h3>Refined studio compositions and arrangements.</h3><p>Complex loop structures and sequences engineered within the audio workspace.</p>`,
       "imageName": "projects_bg.jpg" 
     },
     "sections": [
@@ -66,7 +66,7 @@ const pageLayoutEngine = {
   "interlooper": {
     "titleBanner": {
       "title": "INTERLOOPER LIVE // SESSION LABS",
-      "text": `<p>Collaborative lab sessions and multi-user hardware setups. Live electronic improvisations documented alongside RmS.</p>`,
+      "text": `<h3>Collaborative lab sessions and multi-user hardware setups.</h3><p>Live electronic improvisations documented alongside RmS.</p>`,
       "imageName": "interlooper_bg.jpg"
     },
     "sections": [
@@ -87,7 +87,7 @@ const pageLayoutEngine = {
   "legacy": {
     "titleBanner": {
       "title": "LEGACY ARCHIVE // 1992 - 2006",
-      "text": `<p>The foundational project archives. Historical tracking data, tape mixdowns, and early studio experiments retrieved from the vaults.</p>`,
+      "text": `<h3>The foundational project archives.</h3><p>Historical tracking data, tape mixdowns, and early studio experiments retrieved from the vaults.</p>`,
       "imageName": "legacy_bg.jpg"
     },
     "sections": [
