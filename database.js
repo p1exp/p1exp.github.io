@@ -57,7 +57,7 @@ const pageLayoutEngine = {
       },
       {
         "title": "ELECTRIC ABUSE // 2007 - 2014",
-        "text": `<h4>High-density digital sample manipulation.</h4<p>Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>`,
+        "text": `<h4>High-density digital sample manipulation.</h4><p>Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>`,
         "imageName": "electricabuse_bg.jpg",
         "archiveKeys": ["EXCP", "STRA", "INTL"]
       }
