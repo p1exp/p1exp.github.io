@@ -18,13 +18,13 @@ const pageLayoutEngine = {
   "p1exp": {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL",
-      "text": `<h2>The central processing deck for the #P1EXP audio matrix.</h2><br/>Swipe right or select from above to explore the timeline archives and project logs, or view the featured showcases below.`,
+      "text": `<h2>The central processing deck for the #P1EXP audio matrix.</h2><p>Swipe or select from above to explore the timeline archives and project logs, or view the featured showcases below.</p>`,
       "imageName": "p1_bg.jpg" 
     },
     "sections": [
       {
         "title": "FEATURED TRANSMISSIONS",
-        "text": `<h1>Highlighted archives pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.<h1>`,
+        "text": `<h1>Highlighted archives pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</h1>`,
         "imageName": "featured_bg.jpg", 
         "archiveKeys": ["COSP", "ILS2", "BREL", "EXCP", "INTL", "INMA"] 
       }
