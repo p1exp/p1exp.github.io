@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +12,13 @@
     <meta property="og:title" content="P1EXP // Platform-1 Experimental">
     <meta property="og:description" content="The central processing deck for the #P1EXP audio matrix. Explore hardware grids, collaborative studio sessions, and legacy data vaults.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://p1exp.github.io/">
-    <meta property="og:image" content="https://p1exp.github.io/img_logo/p1_share-banner.jpg">
+    <meta property="og:url" content="https://YOUR_WEBSITE_URL_HERE.com/">
+    <meta property="og:image" content="https://YOUR_WEBSITE_URL_HERE.com/img_logo/share-banner.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="P1EXP // Platform-1 Experimental">
     <meta name="twitter:description" content="The central processing deck for the #P1EXP audio matrix. Explore hardware grids, collaborative studio sessions, and legacy data vaults.">
-    <meta name="twitter:image" content="https://p1exp.github.io/img_logo/p1_share-banner.jpg">
+    <meta name="twitter:image" content="https://YOUR_WEBSITE_URL_HERE.com/img_logo/share-banner.jpg">
 
     <link rel="icon" type="image/png" href="./img_logo/p1logo26sqr.png">
     
@@ -29,6 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;700&display=swap" rel="stylesheet">
 
     <script src="./database.js"></script>
+
     <style>
         /* --- CORE SYSTEM RESET --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -105,8 +104,7 @@
             background-color: #111; 
         }
         .banner-70 { 
-            height: 85vh; 
-            height: 85dvh; 
+            height: 81vh; 
             max-height: 100%; 
             border-bottom: 2px solid #222; 
         }
@@ -115,7 +113,6 @@
         .banner-img { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             object-fit: cover; filter: grayscale(40%) contrast(110%) brightness(75%); z-index: 1; 
-            transition: 0.5s;
         }
 
         .banner-heading { 
@@ -125,13 +122,23 @@
         .banner-heading h1 { font-size: 2.5rem; letter-spacing: 5px; font-weight: 700; }
         .banner-heading h2 { font-size: 2rem; letter-spacing: 4px; font-weight: 700; }
 
-        /* --- 950px NARROW TEXT BLOCKS BELOW BANNERS --- */
+        /* --- 950px NARROW TEXT BLOCKS BELOW BANNERS (UPGRADED FOR HTML) --- */
         .narrow-text-block { 
             grid-column: 2; 
             padding: 40px 20px; 
             text-align: center; 
+            color: #ccc; 
+            line-height: 1.7; 
+            font-size: 1rem; 
+            letter-spacing: 0.5px;
         }
-        .narrow-text-block p { color: #ccc; line-height: 1.7; font-size: 1rem; letter-spacing: 0.5px; }
+        .narrow-text-block h2 { font-size: 1.8rem; color: #fff; margin-top: 10px; margin-bottom: 15px; letter-spacing: 2px; }
+        .narrow-text-block h3 { font-size: 1.3rem; color: #00ffcc; margin-top: 10px; margin-bottom: 12px; letter-spacing: 1px; }
+        .narrow-text-block p { margin-bottom: 15px; }
+        .narrow-text-block p:last-child { margin-bottom: 0; }
+        .narrow-text-block img { max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #222; margin: 20px auto; display: block; }
+        .narrow-text-block a { color: #00ffcc; text-decoration: none; border-bottom: 1px solid rgba(0,255,204,0.3); transition: all 0.2s; }
+        .narrow-text-block a:hover { border-bottom-color: #00ffcc; }
 
         /* --- LANDING PAGE SOCIAL & MEDIA MATRIX --- */
         .social-matrix-wrapper {
@@ -317,7 +324,6 @@
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
             
-            /* --- MOBILE HEADER & TAB NAVIGATION --- */
             header { 
                 flex-direction: column; 
                 padding: 15px 0 0 0; 
@@ -384,7 +390,7 @@
         <div class="player-wrapper" id="player-wrapper" data-platform="generic">
             
             <div id="deck-idle" class="status-overlay">
-                <span class="idle-indicator"></span> SELECT ARCHIVE TO PLAY...
+                <span class="idle-indicator"></span> AWAITING ARCHIVE SELECTION...
             </div>
 
             <div id="deck-preloader" class="status-overlay hidden">
@@ -425,6 +431,7 @@
 
             let layoutHtml = '';
 
+            // 1. RENDER MAIN HERO BANNER & HTML TEXT BLOCK
             layoutHtml += `
                 <div class="full-banner banner-70">
                     <img src="./img_bg/${pageMap.titleBanner.imageName || ''}" class="banner-img">
@@ -433,10 +440,11 @@
                     </div>
                 </div>
                 <div class="narrow-text-block">
-                    <p>${pageMap.titleBanner.text || ''}</p>
+                    ${pageMap.titleBanner.text || ''}
                 </div>
             `;
 
+            // 2. INJECT SOCIAL MATRIX
             if (pageKey === siteConfiguration.navigationMenu[0].id) {
                 layoutHtml += `
                     <div class="social-matrix-wrapper">
@@ -458,28 +466,34 @@
                 `;
             }
 
+            // 3. RENDER ALL SUB-SECTIONS (BANNERS, HTML TEXT, GRID)
             if (pageMap.sections && pageMap.sections.length > 0) {
                 pageMap.sections.forEach(section => {
                     
-                    layoutHtml += `
-                        <div class="full-banner banner-60">
-                            <img src="./img_bg/${section.imageName || ''}" class="banner-img">
-                            <div class="banner-heading">
-                                <h2>${section.title || ''}</h2>
-                            </div>
-                        </div>
-                    `;
-
-                    if (section.text) {
+                    // A: Only inject a section banner if an imageName exists
+                    if (section.imageName) {
                         layoutHtml += `
-                            <div class="narrow-text-block">
-                                <p>${section.text}</p>
+                            <div class="full-banner banner-60">
+                                <img src="./img_bg/${section.imageName}" class="banner-img">
+                                <div class="banner-heading">
+                                    <h2>${section.title || ''}</h2>
+                                </div>
                             </div>
                         `;
                     }
 
-                    layoutHtml += `<div class="collection-grid">`;
+                    // B: Inject the raw text block (no forced <p> tags)
+                    if (section.text) {
+                        layoutHtml += `
+                            <div class="narrow-text-block">
+                                ${section.text}
+                            </div>
+                        `;
+                    }
+
+                    // C: Only build the project grid if there are archive items
                     if (section.archiveKeys && section.archiveKeys.length > 0) {
+                        layoutHtml += `<div class="collection-grid">`;
                         section.archiveKeys.forEach(catNo => {
                             const item = masterCollectionRegistry[catNo];
                             if (!item) return;
@@ -497,8 +511,8 @@
                                 </div>
                             `;
                         });
+                        layoutHtml += `</div>`; 
                     }
-                    layoutHtml += `</div>`; 
                 });
             }
 
