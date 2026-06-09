@@ -24,7 +24,7 @@ const pageLayoutEngine = {
     "sections": [
       {
         "title": "FEATURED TRANSMISSIONS",
-        "text": `<p>Highlighted archives pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>`,
+        "text": `<h4>Highlighted archives</h4><p>Pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>`,
         "imageName": "featured_bg.jpg", 
         "archiveKeys": ["COSP", "ILS2", "BREL", "EXCP", "INTL", "INMA"] 
       }
