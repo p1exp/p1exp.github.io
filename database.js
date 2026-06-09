@@ -18,7 +18,7 @@ const pageLayoutEngine = {
   "p1exp": {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL",
-      "text": "The central processing deck for the #P1EXP audio matrix.<br/>Swipe right or select from above to explore the timeline archives and project logs, or view the featured showcases below.",
+      "text": `The central processing deck for the #P1EXP audio matrix.<br/>Swipe right or select from above to explore the timeline archives and project logs, or view the featured showcases below.`,
       "imageName": "p1_bg.jpg" 
     },
     "sections": [
