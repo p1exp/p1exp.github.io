@@ -24,7 +24,7 @@ const pageLayoutEngine = {
     "sections": [
       {
         "title": "FEATURED TRANSMISSIONS",
-        "text": `<h1>Highlighted archives pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</h1>`,
+        "text": `<p>Highlighted archives pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>`,
         "imageName": "featured_bg.jpg", 
         "archiveKeys": ["COSP", "ILS2", "BREL", "EXCP", "INTL", "INMA"] 
       }
@@ -33,31 +33,31 @@ const pageLayoutEngine = {
   "projects": {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> PROJECTS // 2007 - PRESENT",
-      "text": "Refined studio compositions and arrangements. Complex loop structures and sequences engineered within the audio workspace.",
+      "text": `<p>Refined studio compositions and arrangements. Complex loop structures and sequences engineered within the audio workspace.</p>`,
       "imageName": "projects_bg.jpg" 
     },
     "sections": [
         {
         "title": "EPHEMERAL SESSIONS // 2026",
-        "text": "Ephemeral diagnostic sessions. The structural evolution of live compositions, captured and archived in real-time.<br/><br/>Coming soon.",
+        "text": `<p>Ephemeral diagnostic sessions. The structural evolution of live compositions, captured and archived in real-time.<br/><br/>Coming soon.</p>`,
         "imageName": "ephemeral_bg.jpg", 
         "archiveKeys": [] 
       },
       {
         "title": "TRICHROMAT SERIES // 2021 - 2025",
-        "text": "Generative visual sequences and algorithmic pattern design. Exploring the intersection of human arrangement and autonomous machine logic.",
+        "text": `<p>Generative visual sequences and algorithmic pattern design. Exploring the intersection of human arrangement and autonomous machine logic.</p>`,
         "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NEUR", "COSP", "COVI"] 
       },
       {
         "title": "IMMUNO // 2015 - 2020",
-        "text": "Fragmented modular audio and experimental loop compositions reconstructed into complete, structured tracks.",
+        "text": `<p>Fragmented modular audio and experimental loop compositions reconstructed into complete, structured tracks.</p>`,
         "imageName": "immuno_bg.jpg",
         "archiveKeys": ["BREL", "SCDO", "TTLG", "CLEN"]
       },
       {
         "title": "ELECTRIC ABUSE // 2007 - 2014",
-        "text": "High-density digital sample manipulation. Complex loop arrangements mixed and sequenced exclusively within DAW environments.",
+        "text": `<p>High-density digital sample manipulation. Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>`,
         "imageName": "electricabuse_bg.jpg",
         "archiveKeys": ["EXCP", "STRA", "INTL"]
       }
@@ -66,19 +66,19 @@ const pageLayoutEngine = {
   "interlooper": {
     "titleBanner": {
       "title": "INTERLOOPER LIVE // SESSION LABS",
-      "text": "Collaborative lab sessions and multi-user hardware setups. Live electronic improvisations documented alongside RmS.",
+      "text": `<p>Collaborative lab sessions and multi-user hardware setups. Live electronic improvisations documented alongside RmS.</p>`,
       "imageName": "interlooper_bg.jpg"
     },
     "sections": [
       {
         "title": "INTERLOOPER LIVE GIGS",
-        "text": "Live hardware sets captured on location. Remote collaborative jams tracked directly to digital magnetic disc.",
+        "text": `<p>Live hardware sets captured on location. Remote collaborative jams tracked directly to digital magnetic disc.</p>`,
         "imageName": "interlooperlive_bg.jpg",
         "archiveKeys": ["ILS2", "ILS1"]
       },
       {
         "title": "INTERLOOPER SESSION LABS",
-        "text": "Improvisational studio cross-talk communication. Raw, unedited live streams documenting collective hardware experiments.",
+        "text": `<p>Improvisational studio cross-talk communication. Raw, unedited live streams documenting collective hardware experiments.</p>`,
         "imageName": "interloopersessions_bg.jpg",
         "archiveKeys": ["INS2", "INS1"]
       }
@@ -87,37 +87,37 @@ const pageLayoutEngine = {
   "legacy": {
     "titleBanner": {
       "title": "LEGACY ARCHIVE // 1992 - 2006",
-      "text": "The foundational project archives. Historical tracking data, tape mixdowns, and early studio experiments retrieved from the vaults.",
+      "text": `<p>The foundational project archives. Historical tracking data, tape mixdowns, and early studio experiments retrieved from the vaults.</p>`,
       "imageName": "legacy_bg.jpg"
     },
     "sections": [
       {
         "title": "CARBON60 // 1998 - 2006",
-        "text": "The transition to the digital audio workspace. Heavy industrial distortions and experimental crossover configurations.",
+        "text": `<p>The transition to the digital audio workspace. Heavy industrial distortions and experimental crossover configurations.</p>`,
         "imageName": "carbon60_bg.jpg",
         "archiveKeys": ["INMA", "TCSO"]
       },
       {
         "title": "QUANTA // 1996 - 1997",
-        "text": "Pure analogue synthetic modules and high-fidelity DAT recordings. Solo algorithmic trance and techno explorations.",
+        "text": `<p>Pure analogue synthetic modules and high-fidelity DAT recordings. Solo algorithmic trance and techno explorations.</p>`,
         "imageName": "quanta_bg.jpg",
         "archiveKeys": ["SYNO", "ALGO", "XTFU", "JOBJ", "MHTH"]
       },
       {
         "title": "JAMBIENCE // 1996 - 1997",
-        "text": "Restored magnetic tape archives. Legacy multi-user improvised studio sessions capturing raw analogue stress tests.",
+        "text": `<p>Restored magnetic tape archives. Legacy multi-user improvised studio sessions capturing raw analogue stress tests.</p>`,
         "imageName": "jambience_bg.jpg",
         "archiveKeys": ["SYPS", "JAMB"]
       },
       {
         "title": "ALCHERINGGA // 1994 - 1995",
-        "text": "The earliest synthetic operations. Restored hardware configurations compiled from original cassette data.",
+        "text": `<p>The earliest synthetic operations. Restored hardware configurations compiled from original cassette data.</p>`,
         "imageName": "alcheringga_bg.jpg",
         "archiveKeys": ["KNSL", "INNO", "INFA"]
       },
       {
         "title": "ORIGIN // 1992 - 1993",
-        "text": "Earliest collaborative tracking projects showcasing the foundational workspace arrays generated using legacy insruments and software.",
+        "text": `<p>Earliest collaborative tracking projects showcasing the foundational workspace arrays generated using legacy insruments and software.</p>`,
         "imageName": "forerunner_bg.jpg",
         "archiveKeys": ["ELEM", "GURU"]
       }
