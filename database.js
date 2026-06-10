@@ -18,7 +18,7 @@ const pageLayoutEngine = {
   "p1exp": {
     "titleBanner": {
       "title": "<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL",
-      "text": `<h3>The central processing deck for the #P1EXP audio matrix</h3><p>Swipe or select from above to explore the timeline archives and project logs, or view the featured showcases below.</p><p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno. This catalog explores the structural evolution of underground machine compositions, engineered through a hybrid workflow of live hardware modular synthesis, custom generative MIDI sequencing, and complex DAW sample manipulation.</p>
+      "text": `<h3>The central processing deck for the #P1EXP audio matrix</h3><p><strong>Swipe or select from above to view the timeline archives and projects or view the featured showcases below</strong></p><p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno. This catalog explores the structural evolution of underground machine compositions, engineered through a hybrid workflow of live hardware modular synthesis, custom generative MIDI sequencing, and complex DAW sample manipulation.</p>
         `,
       "imageName": "p1_bg.jpg" 
     },
