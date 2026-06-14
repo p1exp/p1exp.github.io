@@ -39,13 +39,13 @@ const pageLayoutEngine = {
     },
     "sections": [
         {
-        "title": "EPHEMERAL SESSIONS // NOW - 2026<h3>BLUEROOM</h3>"",
+        "title": "EPHEMERAL SESSIONS // NOW - 2026<h3>BLUEROOM</h3>",
         "text": `<h4>Ephemeral diagnostic sessions</h4><p>The structural evolution of live compositions, captured and archived in real-time.</p><h2>Coming soon.</h2>`,
         "imageName": "ephemeral_bg.jpg", 
         "archiveKeys": [] 
       },
       {
-        "title": "TRICHROMAT SERIES // 2025 - 2021<h3>BLUEROOM</h3>"",
+        "title": "TRICHROMAT SERIES // 2025 - 2021<h3>BLUEROOM</h3>",
         "text": `<h4>Generative visual sequences and algorithmic pattern design</h4><p>Exploring the intersection of human arrangement and autonomous machine logic.</p>`,
         "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NEUR", "COSP", "COVI"] 
@@ -57,7 +57,7 @@ const pageLayoutEngine = {
         "archiveKeys": ["BREL", "SCDO", "TTLG", "CLEN"]
       },
       {
-        "title": "ELECTRIC ABUSE // 2014 - 2007<h3>LLOYDS</h3>"",
+        "title": "ELECTRIC ABUSE // 2014 - 2007<h3>LLOYDS</h3>",
         "text": `<h4>High-density digital sample manipulation</h4><p>Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>`,
         "imageName": "electricabuse_bg.jpg",
         "archiveKeys": ["EXCP", "STRA", "INTL"]
