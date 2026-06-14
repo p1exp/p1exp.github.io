@@ -39,19 +39,19 @@ const pageLayoutEngine = {
     },
     "sections": [
         {
-        "title": "EPHEMERAL SESSIONS // NOW - 2026<h3>BLUEROOM</h3>",
-        "text": `<h4>Ephemeral diagnostic sessions</h4><p>The structural evolution of live compositions, captured and archived in real-time.</p><h2>Coming soon.</h2>`,
+        "title": "EPHEMERAL SESSIONS // NOW - 2026",
+        "text": `<h4>Ephemeral diagnostic sessions</h4><h4>Location: Blueroom</h4><p>The structural evolution of live compositions, captured and archived in real-time.</p><h2>Coming soon.</h2>`,
         "imageName": "ephemeral_bg.jpg", 
         "archiveKeys": [] 
       },
       {
         "title": "TRICHROMAT SERIES // 2025 - 2021<h3>BLUEROOM</h3>",
-        "text": `<h4>Generative visual sequences and algorithmic pattern design</h4><p>Exploring the intersection of human arrangement and autonomous machine logic.</p>`,
+        "text": `<h4>Generative visual sequences and algorithmic pattern design</h4><h4>Location: Blueroom</h4><p>Exploring the intersection of human arrangement and autonomous machine logic.</p>`,
         "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NEUR", "COSP", "COVI"] 
       },
       {
-        "title": "IMMUNO // 2020 - 2015<h3>ERMIN</h3>",
+        "title": "IMMUNO // 2020 - 2015>",
         "text": `<h4>Fragmented modular audio</h4><p>experimental loop compositions reconstructed into complete, structured tracks.</p>`,
         "imageName": "immuno_bg.jpg",
         "archiveKeys": ["BREL", "SCDO", "TTLG", "CLEN"]
