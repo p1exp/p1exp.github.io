@@ -45,20 +45,20 @@ const pageLayoutEngine = {
         "archiveKeys": ["EPH1"] 
       },
       {
-        "title": "TRICHROMAT SERIES // 2025 - 2021<h3>BLUEROOM</h3>",
-        "text": `<h4>Generative visual sequences and algorithmic pattern design</h4><h4>Location: Blueroom</h4><p>Exploring the intersection of human arrangement and autonomous machine logic.</p>`,
+        "title": "TRICHROMAT SERIES // 2025 - 2021",
+        "text": `<h4>Generative visual sequences and algorithmic pattern design</h4><span class="meta-tag">Location: Blueroom</span><p>Exploring the intersection of human arrangement and autonomous machine logic.</p>`,
         "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NEUR", "COSP", "COVI"] 
       },
       {
         "title": "IMMUNO // 2020 - 2015>",
-        "text": `<h4>Fragmented modular audio</h4><p>experimental loop compositions reconstructed into complete, structured tracks.</p>`,
+        "text": `<h4>Fragmented modular audio</h4><span class="meta-tag">Location: Ermin</span><p>experimental loop compositions reconstructed into complete, structured tracks.</p>`,
         "imageName": "immuno_bg.jpg",
         "archiveKeys": ["BREL", "SCDO", "TTLG", "CLEN"]
       },
       {
-        "title": "ELECTRIC ABUSE // 2014 - 2007<h3>LLOYDS</h3>",
-        "text": `<h4>High-density digital sample manipulation</h4><p>Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>`,
+        "title": "ELECTRIC ABUSE // 2014 - 2007",
+        "text": `<h4>High-density digital sample manipulation</h4><span class="meta-tag">Location: Lloyds</span><p>Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>`,
         "imageName": "electricabuse_bg.jpg",
         "archiveKeys": ["EXCP", "STRA", "INTL"]
       }
@@ -94,31 +94,31 @@ const pageLayoutEngine = {
     "sections": [
       {
         "title": "CARBON60 // 1998 - 2006",
-        "text": `<h4>The transition to the digital audio workspace</h4><p>Heavy industrial distortions and experimental crossover configurations.</p>`,
+        "text": `<h4>The transition to the digital audio workspace</h4><span class="meta-tag">Location: Astor</span><p>Heavy industrial distortions and experimental crossover configurations.</p>`,
         "imageName": "carbon60_bg.jpg",
         "archiveKeys": ["INMA", "TCSO"]
       },
       {
         "title": "QUANTA // 1996 - 1997",
-        "text": `<h4>Pure analogue synthesis/h4><p>Solo algorithmic trance and techno explorations recorded on high-fidelity DAT.</p>`,
+        "text": `<h4>Pure analogue synthesis/h4><span class="meta-tag">Location: Staplins</span><p>Solo algorithmic trance and techno explorations recorded on high-fidelity DAT.</p>`,
         "imageName": "quanta_bg.jpg",
         "archiveKeys": ["SYNO", "ALGO", "XTFU", "JOBJ", "MHTH"]
       },
       {
         "title": "JAMBIENCE // 1996 - 1997",
-        "text": `<h4>Restored magnetic tape archives</h4><p>Legacy multi-user improvised studio sessions capturing raw analogue stress tests.</p>`,
+        "text": `<h4>Restored magnetic tape archives</h4><span class="meta-tag">Location: Staplins</span><p>Legacy multi-user improvised studio sessions capturing raw analogue stress tests.</p>`,
         "imageName": "jambience_bg.jpg",
         "archiveKeys": ["SYPS", "JAMB"]
       },
       {
         "title": "ALCHERINGGA // 1994 - 1995",
-        "text": `<h4>The earliest synthetic operations</h4><p>Restored hardware configurations compiled from original cassette data.</p>`,
+        "text": `<h4>The earliest synthetic operations</h4><span class="meta-tag">Location: Grosvenor</span><p>Restored hardware configurations compiled from original cassette data.</p>`,
         "imageName": "alcheringga_bg.jpg",
         "archiveKeys": ["KNSL", "INNO", "INFA"]
       },
       {
         "title": "ORIGIN // 1992 - 1993",
-        "text": `<h4>Earliest collaborative projects</h4><p>showcasing the foundational workspace arrays generated using legacy insruments and software.</p>`,
+        "text": `<h4>Earliest collaborative projects</h4><span class="meta-tag">Location: North</span><p>showcasing the foundational workspace arrays generated using legacy insruments and software.</p>`,
         "imageName": "forerunner_bg.jpg",
         "archiveKeys": ["ELEM", "GURU"]
       }
