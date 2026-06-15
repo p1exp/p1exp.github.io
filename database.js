@@ -128,6 +128,7 @@ const pageLayoutEngine = {
 
 // 3. MASTER PLATFORM-1 FLAT REGISTRY INDEXED BY UNIQUE CATALOG NUMBER
 const masterCollectionRegistry = {
+  "EPH1": { "title": "EPHEMERAL SESSIONS #1", "date": "2026", "description": "Test captures from the Lower Lode 2026 Live set development.", "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/", "footer": "Status: Incomplete" },
   "NEUR": { "title": "NEUROFLUX25", "date": "2025", "description": "Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.", "mediaUrl": "", "footer": "Status: Unfinished" },
   "COSP": { "title": "COLORSPLASH24", "date": "2024", "description": "Aggregated data from 2021-2024. A compiled spectrum of experimental live session logs.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF", "footer": "Format: YouTube Video Playlist" },
   "COVI": { "title": "THE CO:VIDZ", "date": "2021", "description": "Isolation protocol enactments. Pure hardware synthesis executed offline without central computational assistance.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=OEJasDLnXC8gD7uV&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m", "footer": "Format: YouTube Video Playlist" },
