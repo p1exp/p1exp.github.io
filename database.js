@@ -79,7 +79,7 @@ const pageLayoutEngine = {
       },
       {
         "title": "INTERLOOPER SESSION LABS",
-        "text": `<h4>Improvisational studio cross-talk communication</h4><p>Raw, unedited live streams documenting collective hardware experiments.</p>`,
+        "text": `<h4>Improvisational studio cross-talk communication</h4><span class="meta-tag">Location: Blueroom &amp; Ermin</span><p>Raw, unedited live streams documenting collective hardware experiments.</p>`,
         "imageName": "interloopersessions_bg.jpg",
         "archiveKeys": ["INS2", "INS1"]
       }
@@ -100,7 +100,7 @@ const pageLayoutEngine = {
       },
       {
         "title": "QUANTA // 1996 - 1997",
-        "text": `<h4>Pure analogue synthesis/h4><span class="meta-tag">Location: Staplins</span><p>Solo algorithmic trance and techno explorations recorded on high-fidelity DAT.</p>`,
+        "text": `<h4>Pure analogue synthesis</h4><span class="meta-tag">Location: Staplins</span><p>Solo algorithmic trance and techno explorations recorded on high-fidelity DAT.</p>`,
         "imageName": "quanta_bg.jpg",
         "archiveKeys": ["SYNO", "ALGO", "XTFU", "JOBJ", "MHTH"]
       },
