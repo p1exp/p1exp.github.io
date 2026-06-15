@@ -42,7 +42,7 @@ const pageLayoutEngine = {
         "title": "EPHEMERAL SESSIONS // NOW - 2026",
         "text": `<h4>Ephemeral diagnostic sessions</h4><h4>Location: Blueroom</h4><p>The structural evolution of live compositions, captured and archived in real-time.</p><h2>Coming soon.</h2>`,
         "imageName": "ephemeral_bg.jpg", 
-        "archiveKeys": [] 
+        "archiveKeys": ["EPH1"] 
       },
       {
         "title": "TRICHROMAT SERIES // 2025 - 2021<h3>BLUEROOM</h3>",
