@@ -51,7 +51,7 @@ const pageLayoutEngine = {
         "archiveKeys": ["NEUR", "COSP", "COVI"] 
       },
       {
-        "title": "IMMUNO // 2020 - 2015>",
+        "title": "IMMUNO // 2020 - 2015",
         "text": `<h4>Fragmented modular audio</h4><span class="meta-tag">Location: Ermin</span><p>experimental loop compositions reconstructed into complete, structured tracks.</p>`,
         "imageName": "immuno_bg.jpg",
         "archiveKeys": ["BREL", "SCDO", "TTLG", "CLEN"]
