@@ -159,5 +159,3 @@ const masterCollectionRegistry = {
   "JAMB": { "title": "JAMBIENCE SESSIONS", "date": "1996", "description": "Legacy exploratory logs. Multi-user improvisations mapping uncharted analog sound environments.", "mediaUrl": "", "footer": "Tape Archive" }
 };
 
-
-<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=679892495/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://p1exp.bandcamp.com/album/strangelet">STRANGELET by #P1EXP</a></iframe>
