@@ -142,6 +142,41 @@
         .narrow-text-block a { color: #00ffcc; text-decoration: none; border-bottom: 1px solid rgba(0,255,204,0.3); transition: all 0.2s; }
         .narrow-text-block a:hover { border-bottom-color: #00ffcc; }
 
+        /* --- VISUAL-ONLY PLAYER OVERLAYS (GLASS PANE) --- */
+        .visual-player-wrapper {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            margin: 20px 0;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #111;
+            border: 1px solid #222;
+        }
+
+        .visual-player-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Kills all interaction inside the player */
+            border: none;
+        }
+
+        .visual-player-wrapper .glass-pane {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            cursor: pointer;
+            background: rgba(0,0,0,0);
+            transition: background 0.2s;
+        }
+
+        .visual-player-wrapper .glass-pane:hover {
+            background: rgba(0, 255, 204, 0.05); 
+        }
+
         /* --- LANDING PAGE SOCIAL & MEDIA MATRIX --- */
         .social-matrix-wrapper {
             grid-column: 2;
@@ -323,6 +358,10 @@
         .player-wrapper[data-platform="mixcloud"] { height: 100px; padding-top: 14px; }
         .player-wrapper[data-platform="mixcloud"].expanded { height: 130px; padding-top: 0; } 
 
+        /* --- NEW HEARTHIS.AT SIZING --- */
+        .player-wrapper[data-platform="hearthis"] { height: 150px; padding-top: 10px; }
+        .player-wrapper[data-platform="hearthis"].expanded { height: 180px; padding-top: 0; }
+
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
             
@@ -377,6 +416,7 @@
             .player-wrapper[data-platform="bandcamp"].expanded { height: 300px; }
             .player-wrapper[data-platform="youtube"].expanded { height: 250px; }
             .player-wrapper[data-platform="mixcloud"].expanded { height: 130px; }
+            .player-wrapper[data-platform="hearthis"].expanded { height: 180px; }
         }
     </style>
 </head>
@@ -597,6 +637,8 @@
                 wrapper.setAttribute('data-platform', 'youtube');
             } else if (targetUrl.includes('mixcloud.com')) {
                 wrapper.setAttribute('data-platform', 'mixcloud');
+            } else if (targetUrl.includes('hearthis.at')) {
+                wrapper.setAttribute('data-platform', 'hearthis');
             } else {
                 wrapper.setAttribute('data-platform', 'generic');
             }
