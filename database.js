@@ -24,6 +24,21 @@ const pageLayoutEngine = {
     },
     "sections": [
       {
+        "title": "CURRENT TRANSMISSIONS",
+        "text": `
+            <h4>WIP: STUDIO SESSIONS</h4>
+            <p>Latest raw audio telemetry. Unmastered.</p>
+            
+            <div class="visual-player-wrapper">
+                
+                <div class="glass-pane" onclick="routeToDeck('https://hearthis.at/set/76603/embed/')"></div>
+                
+                <iframe src="https://hearthis.at/set/76603/embed/" frameborder="0" allowtransparency allow="autoplay"></iframe>
+                
+            </div>
+        `
+      },
+      {
         "title": "FEATURED TRANSMISSIONS",
         "text": `<h4>Highlighted archives</h4><p>Pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>`,
         "imageName": "featured_bg.jpg", 
@@ -158,4 +173,3 @@ const masterCollectionRegistry = {
   "SYPS": { "title": "SYNTHEPSYCHOSIS", "date": "1997", "description": "Psychological acoustic stressors. Multi-user session jams archived on historical magnetic tape.", "mediaUrl": "", "footer": "Tape Archive" },
   "JAMB": { "title": "JAMBIENCE SESSIONS", "date": "1996", "description": "Legacy exploratory logs. Multi-user improvisations mapping uncharted analog sound environments.", "mediaUrl": "", "footer": "Tape Archive" }
 };
-
