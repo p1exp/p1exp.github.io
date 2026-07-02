@@ -33,7 +33,7 @@ const pageLayoutEngine = {
                 <div class="glass-pane" onclick="routeToDeck('https://hearthis.at/set/76603/embed/')"></div>
                 <iframe src="https://hearthis.at/set/76603/embed/" frameborder="0" allowtransparency allow="autoplay"></iframe>
             </div>`,
-        "imageName": "featured_bg.jpg",
+        "imageName": "lab_bg.jpg",
       },
       {
         "title": "FEATURED TRANSMISSIONS",
