@@ -24,10 +24,10 @@ const pageLayoutEngine = {
     },
     "sections": [
       {
-        "title": "IN THE LAB",
+        "title": "IN THE LAB // ON THE SLAB",
         "text": `
-            <h4>WIP: STUDIO SESSIONS</h4>
-            <p>Latest raw audio telemetry. Unmastered.</p>
+            <h4>LATEST EXPERIMENTS</h4>
+            <p>Raw audio telemetry.</p>
             <p>Tracks from different projects currently under development.</p>
             <div class="visual-player-wrapper">
                 <div class="glass-pane" onclick="routeToDeck('https://hearthis.at/set/76603/embed/')"></div>
