@@ -36,7 +36,8 @@ const pageLayoutEngine = {
                 <iframe src="https://hearthis.at/set/76603/embed/" frameborder="0" allowtransparency allow="autoplay"></iframe>
                 
             </div>
-        `
+        `,
+        "imageName": "featured_bg.jpg",
       },
       {
         "title": "FEATURED TRANSMISSIONS",
