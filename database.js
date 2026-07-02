@@ -24,19 +24,15 @@ const pageLayoutEngine = {
     },
     "sections": [
       {
-        "title": "CURRENT TRANSMISSIONS",
+        "title": "IN THE LAB",
         "text": `
             <h4>WIP: STUDIO SESSIONS</h4>
             <p>Latest raw audio telemetry. Unmastered.</p>
-            
+            <p>Tracks from different projects currently under development.</p>
             <div class="visual-player-wrapper">
-                
                 <div class="glass-pane" onclick="routeToDeck('https://hearthis.at/set/76603/embed/')"></div>
-                
                 <iframe src="https://hearthis.at/set/76603/embed/" frameborder="0" allowtransparency allow="autoplay"></iframe>
-                
-            </div>
-        `,
+            </div>`,
         "imageName": "featured_bg.jpg",
       },
       {
