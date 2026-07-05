@@ -25,7 +25,7 @@ const pageLayoutEngine = {
     "sections": [
       {
         "title": "IN THE LAB // ON THE SLAB",
-        "text": `<h4>LATEST EXPERIMENTS</h4><p>Raw audio telemetry.</p><p>Tracks from various projects currently under development.</p>,
+        "text": `<h4>LATEST EXPERIMENTS</h4><p>Raw audio telemetry.</p><p>Tracks from various projects currently under development.</p>`,
         "imageName": "lab_bg.jpg",
         "archiveKeys": ["LAB1", "EPH1"] 
       },
