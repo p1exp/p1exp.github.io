@@ -25,14 +25,7 @@ const pageLayoutEngine = {
     "sections": [
       {
         "title": "IN THE LAB // ON THE SLAB",
-        "text": `
-            <h4>LATEST EXPERIMENTS</h4>
-            <p>Raw audio telemetry.</p>
-            <p>Tracks from various projects currently under development.</p>
-            <div class="visual-player-wrapper">
-                <div class="glass-pane" onclick="routeToDeck('https://hearthis.at/set/76603/embed/')"></div>
-                <iframe src="https://hearthis.at/set/76603/embed/" frameborder="0" allowtransparency allow="autoplay"></iframe>
-            </div>`,
+        "text": `<h4>LATEST EXPERIMENTS</h4><p>Raw audio telemetry.</p><p>Tracks from various projects currently under development.</p>,
         "imageName": "lab_bg.jpg",
         "archiveKeys": ["LAB1", "EPH1"] 
       },
