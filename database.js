@@ -45,6 +45,12 @@ const pageLayoutEngine = {
     },
     "sections": [
         {
+        "title": "MACHINEBRAIN // NOW - 2026",
+        "text": `<h4>Ephemeral diagnostic sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>`,
+        "imageName": "ephemeral_bg.jpg", 
+        "archiveKeys": ["TETR"] 
+      },
+      {
         "title": "EPHEMERAL SESSIONS // NOW - 2026",
         "text": `<h4>Ephemeral diagnostic sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>`,
         "imageName": "ephemeral_bg.jpg", 
@@ -135,6 +141,7 @@ const pageLayoutEngine = {
 // 3. MASTER PLATFORM-1 FLAT REGISTRY INDEXED BY UNIQUE CATALOG NUMBER
 const masterCollectionRegistry = {
   "LAB1": { "title": "LABORATORY PRELIMS", "date": "2026", "description": "Latest tracks currently under development from various projects.", "mediaUrl": "https://hearthis.at/set/551685/embed/?hcolor=00ffcc", "footer": "HEARTHIS Stream - Status: Incomplete" },
+  "TETR": { "title": "EPHEMERAL SESSIONS #1", "date": "2026", "description": "Test captures from the Lower Lode 2026 Live set development.", "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/", "footer": "Download free from BANDCAMP - Status: Complete" },
   "EPH1": { "title": "EPHEMERAL SESSIONS #1", "date": "2026", "description": "Test captures from the Lower Lode 2026 Live set development.", "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/", "footer": "Download free from BANDCAMP - Status: Complete" },
   "NEUR": { "title": "NEUROFLUX25", "date": "2025", "description": "Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.", "mediaUrl": "", "footer": "YouTube Video Playlist - Status: Unfinished" },
   "COSP": { "title": "COLORSPLASH24", "date": "2024", "description": "Aggregated data from 2021-2024. A compiled spectrum of experimental live session logs.", "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF", "footer": "YOUTUBE Video Playlist - Status: Final" },
