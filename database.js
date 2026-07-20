@@ -47,7 +47,7 @@ const pageLayoutEngine = {
         {
         "title": "MACHINEBRAIN // NOW - 2026",
         "text": `<h4>Ephemeral diagnostic sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>`,
-        "imageName": "ephemeral_bg.jpg", 
+        "imageName": "machinebrain_bg.jpg", 
         "archiveKeys": ["TETR"] 
       },
       {
