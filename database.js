@@ -46,19 +46,19 @@ const pageLayoutEngine = {
     "sections": [
         {
         "title": "MACHINEBRAIN // NOW - 2026",
-        "text": `<h4>Ephemeral diagnostic sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>`,
+        "text": `<h4>AI humanoid fusion</h4><span class="meta-tag">Location: Blueroom</span><p>Experiments with Artificial Intelligence, augmenting human composition.</p>`,
         "imageName": "machinebrain_bg.jpg", 
         "archiveKeys": ["TETR"] 
       },
       {
         "title": "EPHEMERAL SESSIONS // NOW - 2026",
-        "text": `<h4>Ephemeral diagnostic sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>`,
+        "text": `<h4>Ephemeral development sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>`,
         "imageName": "ephemeral_bg.jpg", 
         "archiveKeys": ["EPH1"] 
       },
       {
         "title": "TRICHROMAT SERIES // 2025 - 2021",
-        "text": `<h4>Generative visual sequences and algorithmic pattern design</h4><span class="meta-tag">Location: Blueroom</span><p>Exploring the intersection of human arrangement and autonomous machine logic.</p>`,
+        "text": `<h4>Generative visual sequences and algorithmic pattern design</h4><span class="meta-tag">Location: Blueroom</span><p>Exploring the intersection of human arrangement and autonomous generative machine logic.</p>`,
         "imageName": "trichromat_bg.jpg", 
         "archiveKeys": ["NEUR", "COSP", "COVI"] 
       },
