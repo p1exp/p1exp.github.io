@@ -563,7 +563,7 @@
                                     <div class="card-details">
                                         <h3>${item.title || ''}</h3>
                                         <span class="meta-tag">P1-${catNo} // ${item.date || ''}</span>
-                                        <p>${item.description || ''}</p>
+                                        <div class="card-desc-block">${item.description || ''}</div>
                                         ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">▶ PLAY ARCHIVE DECK</button>` : ''}
                                         ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
                                     </div>
