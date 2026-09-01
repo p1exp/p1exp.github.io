@@ -159,19 +159,19 @@ const masterCollectionRegistry = {
     },
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
-        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/><a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube playlist</a>`,
+        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/><a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube Playlist</a>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
         "footer": `YOUTUBE Video Playlist - Status: Final`
     },
     "COSP": {
         "title": "COLORSPLASH", "date": "2024",
-        "description": `Aggregated data from 2021-2024. A compiled spectrum of experimental live session logs.`,
+        "description": `Aggregated data from 2021-2024. A compiled spectrum of experimental live session logs.<br/><br/><a href="https://www.youtube.com/watch?v=Ydfegw4KryU&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF" target="_blank">YouTube Playlist</a>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF",
         "footer": "YOUTUBE Video Playlist - Status: Final"
     },
     "COVI": {
         "title": "THE CO:VIDZ", "date": "2021",
-        "description": "Isolation protocol enactments. Pure hardware synthesis executed offline without central computational assistance.",
+        "description": `Isolation protocol enactments. Pure hardware synthesis executed offline without central computational assistance.<br/><br/><a href="https://www.youtube.com/watch?v=8lbLWdj4dw8&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m" target="_blank">YouTube Playlist</a>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?si=OEJasDLnXC8gD7uV&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m",
         "footer": "YOUTUBE Video Playlist - Status: Final"
     },
