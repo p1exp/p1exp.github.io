@@ -155,13 +155,13 @@ const masterCollectionRegistry = {
         "title": "EPHEMERAL SESSIONS #1", "date": "2026",
         "description": `Test captures from the Lower Lode 2026 Live set development.<details><summary>+ VIEW HARDWARE LOG</summary><div class="details-content"><strong>SEQUENCER:</strong> Akai Force<br><strong>MODULAR:</strong> Eurorack 104HP<br><strong>STATUS:</strong> Unmastered telemetry</div></details><br/>`,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
-        "footer": "Download free from BANDCAMP - Status: Complete"
+        "footer": "Download free from BANDCAMP - Status: Final"
     },
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
-        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/>Full playlist: <a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">HERE ❐</a>`,
+        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/><a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube playlist</a>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
-        "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
+        "footer": `YOUTUBE Video Playlist - Status: Final`
     },
     "COSP": {
         "title": "COLORSPLASH", "date": "2024",
