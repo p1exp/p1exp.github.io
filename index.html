@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1EXP // Platform-1 Experimental</title>
+    
+    <meta name="description" content="The central processing deck for the #P1EXP audio matrix. Explore hardware grids, collaborative studio sessions, and legacy data vaults.">
+    <meta name="author" content="P1EXP">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="P1EXP // Platform-1 Experimental">
+    <meta property="og:description" content="The central processing deck for the #P1EXP audio matrix.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://p1exp.github.io/">
+    <meta property="og:image" content="https://p1exp.github.io/img_logo/share-banner.jpg">
+
+    <link rel="icon" type="image/png" href="./img_logo/p1logo26sqr.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- EXTERNAL STYLESHEET AND DATABASE -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="./database.js"></script>
+</head>
+<body>
+
+    <header>
+        <a href="https://linktr.ee/p1exp" class="logo" id="site-logo"></a>
+        <nav id="nav-filters"></nav>
+    </header>
+
+    <main id="main-scroll-panel">
+        <div style="padding: 60px; color: #888; line-height: 3; width: 100vw; text-align: center; ">
+            <h1>#P1EXP // Platform-1 Experimental</h1>
+            <h3>The central processing deck for the #P1EXP audio matrix</h3>
+            <p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="toggle-btn-container hidden" id="toggle-container">
+            <button class="toggle-btn" id="tracklist-toggle" onclick="toggleTracklist()"></button>
+        </div>
+        <div class="player-wrapper" id="player-wrapper" data-platform="generic">
+            <div id="deck-idle" class="status-overlay">
+                <span class="idle-indicator"></span> AWAITING ARCHIVE SELECTION...
+            </div>
+            <div id="deck-preloader" class="status-overlay hidden">
+                <span class="spinner"></span> LOADING TELEMETRY...
+            </div>
+            <iframe id="master-deck-frame" src="about:blank" allow="autoplay; encrypted-media; fullscreen"></iframe>
+        </div>
+    </footer>
+
+    <!-- THE EXTERNAL ROUTING ENGINE -->
+    <script src="./engine.js"></script>
+</body>
+</html>
