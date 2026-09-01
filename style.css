@@ -152,17 +152,21 @@ details[open] summary {
     line-height: 1.6;
 }
 
-/* --- INLINE TEXT LINKS (CYAN STYLE) --- */
+/* --- UNIVERSAL INLINE TEXT LINKS (CYAN STYLE) --- */
+.narrow-text-block a,
 .card-desc-block a, 
-.details-content a {
+.details-content a,
+.card-footer-text a {
     color: #00ffcc;
     text-decoration: none;
     border-bottom: 1px solid rgba(0, 255, 204, 0.3);
     transition: all 0.2s ease-in-out;
 }
 
+.narrow-text-block a:hover,
 .card-desc-block a:hover, 
-.details-content a:hover {
+.details-content a:hover,
+.card-footer-text a:hover {
     border-bottom-color: #00ffcc;
     text-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
 }
