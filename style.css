@@ -412,7 +412,7 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
 
 /* --- UPDATED YOUTUBE SIZING (16:9 Focus) --- */
 .player-wrapper[data-platform="youtube"] { height: 160px; }
-.player-wrapper[data-platform="youtube"].expanded { height: 56vw; }
+.player-wrapper[data-platform="youtube"].expanded { height: 40vh; max-height: 440px; }
 
 /* --- UPDATED MIXCLOUD SIZING --- */
 .player-wrapper[data-platform="mixcloud"] { height: 100px; padding-top: 14px; }
