@@ -366,6 +366,59 @@
         .player-wrapper[data-platform="hearthis"] { height: 150px; }
         .player-wrapper[data-platform="hearthis"].expanded { height: 40vh; max-height: 440px; }
 
+/* --- EXPANDABLE TEXT LOGS (TERMINAL ANIMATION) --- */
+        details {
+            margin-top: 10px;
+        }
+        summary {
+            color: #00ffcc;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            list-style: none;
+            display: inline-block;
+            border-bottom: 1px solid rgba(0,255,204,0.3);
+            transition: all 0.2s;
+        }
+        summary::-webkit-details-marker {
+            display: none; 
+        }
+        summary:hover {
+            border-bottom-color: #00ffcc;
+            text-shadow: 0 0 8px rgba(0,255,204,0.4);
+        }
+        details[open] summary {
+            margin-bottom: 8px;
+            border-bottom-color: transparent;
+            color: #888;
+        }
+        .details-content {
+            color: #aaa;
+            font-size: 0.9rem;
+            border-left: 2px solid #222;
+            padding-left: 15px;
+            margin-top: 8px;
+            line-height: 1.6;
+        }
+        
+        /* THE ANIMATION TRIGGER */
+        details[open] .details-content {
+            animation: terminalReveal 0.3s ease-out forwards;
+        }
+
+        @keyframes terminalReveal {
+            0% { 
+                opacity: 0; 
+                transform: translateY(-10px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
         /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
         @media (max-width: 768px) {
             
