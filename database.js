@@ -154,8 +154,7 @@ const masterCollectionRegistry = {
     },
     "EPH1": {
         "title": "EPHEMERAL SESSIONS #1", "date": "2026",
-        "description": `Test captures from the Lower Lode 2026 Live set development.<details><summary>+ VIEW HARDWARE LOG</summary><div class="details-content"><br>
-        <strong>SEQUENCER:</strong> Akai Force<br><strong>MODULAR:</strong> Eurorack 104HP<br><strong>STATUS:</strong> Unmastered telemetry</div></details>`,
+        "description": `Test captures from the Lower Lode 2026 Live set development.<details><summary>+ VIEW HARDWARE LOG</summary><div class="details-content"><br><strong>SEQUENCER:</strong> Akai Force<br><strong>MODULAR:</strong> Eurorack 104HP<br><strong>STATUS:</strong> Unmastered telemetry</div></details>`,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP - Status: Complete"
     },
