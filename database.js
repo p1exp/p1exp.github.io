@@ -159,9 +159,9 @@ const masterCollectionRegistry = {
     },
     "NEUR": {
         "title": "NEUROFLUX25", "date": "2025",
-        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/>Full playlist: <a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I">HERE ❐</a>`,
+        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/>Full playlist: <a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">HERE ❐</a>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
-        "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I">YOUTUBE Video Playlist</a> - Status: Final`
+        "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
     },
     "COSP": {
         "title": "COLORSPLASH24", "date": "2024",
