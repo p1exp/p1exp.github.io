@@ -24,7 +24,8 @@ main::-webkit-scrollbar-thumb:hover { background: #00ffcc; }
 
 /* --- FRAME 1: TOP NAV BAR --- */
 header {
-    background-color: #121212; border-bottom: 2px solid #252525;
+    background-color: #000000;
+    border-bottom: 2px solid #161616;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 20px; z-index: 10; width: 100%;
     flex-shrink: 0; 
@@ -342,7 +343,11 @@ details[open] .details-content {
 }
 
 /* --- FRAME 3: FOOTER RUNTIME MEDIA DECK --- */
-footer { background-color: #000000; border-top: 2px solid #222; z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; flex-shrink: 0; }
+footer { 
+    background-color: #000000; 
+    border-top: 2px solid #161616;
+    z-index: 10; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; flex-shrink: 0; 
+}
 .toggle-btn-container { width: 100%; display: flex; justify-content: center; margin-top: -14px; z-index: 20; transition: opacity 0.4s ease; }
 .toggle-btn-container.hidden { opacity: 0; pointer-events: none; }
 
