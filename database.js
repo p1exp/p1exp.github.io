@@ -158,13 +158,13 @@ const masterCollectionRegistry = {
         "footer": "Download free from BANDCAMP - Status: Complete"
     },
     "NEUR": {
-        "title": "NEUROFLUX25", "date": "2025",
+        "title": "NEUROFLUX", "date": "2025",
         "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/>Full playlist: <a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">HERE ❐</a>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
         "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
     },
     "COSP": {
-        "title": "COLORSPLASH24", "date": "2024",
+        "title": "COLORSPLASH", "date": "2024",
         "description": `Aggregated data from 2021-2024. A compiled spectrum of experimental live session logs.`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF",
         "footer": "YOUTUBE Video Playlist - Status: Final"
