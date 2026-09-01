@@ -278,8 +278,8 @@ details[open] .details-content {
 }
 
 .card-thumbnail { 
-    width: 240px; 
-    height: 240px; 
+    width: 300px; 
+    height: 300px; 
     object-fit: cover; 
     border-right: 1px solid #222; 
     flex-shrink: 0; 
