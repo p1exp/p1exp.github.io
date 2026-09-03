@@ -160,18 +160,12 @@ const masterCollectionRegistry = {
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
         "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/>
-        <a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube Playlist</a><br/> 
         <details><summary>+ VIEW DETAILS</summary>
         <div class="details-content">
-
-<p><strong>NEUROFLUX</strong><br>
-Part 3/3 of the Trichromat Video Series</p>
-
+<p>Part 3/3 of the Trichromat Video Series</p>
 <p>🌐 <strong>#P1EXP - Explore the full project and discography:</strong><br>
 <a href="https://p1exp.github.io/" target="_blank" rel="noopener noreferrer">https://p1exp.github.io/</a></p>
-
 <p>This series of 13 music videos captures a fully dawless, improvised hardware ecosystem. Instead of timeline arrangements, tracks were built using live sequencing and generative loops, relying entirely on real-time parameter tweaking to build tension and structure.</p>
-
 <p>🎛️ <strong>The Process & Gear:</strong></p>
 <ul>
     <li><strong>The Brain & Beats:</strong> The MPC One acts as the master clock, providing percussion and musical loops punched in live on the pads. Ableton Session mode is used more in this series to provide addtional percussion and sounds, but not as a sequencer.</li>
@@ -181,20 +175,6 @@ Part 3/3 of the Trichromat Video Series</p>
     <li><strong>Generative Visuals:</strong> The video element is just as live as the audio. Video clips were randomised and sequenced on the fly to match the unpredictable nature of the hardware jam, with both audio and video captured simultaneously direct to OBS Studio.</li>
     <li><strong>Post-Production & Mastering:</strong> The raw OBS capture was imported and mastered in Adobe Premiere.</li>
 </ul>
-
-<p>📺 <strong>Watch the full series playlist:</strong><br>
-<a href="https://www.youtube.com/playlist?list=PLG9oUASPsH7I" target="_blank" rel="noopener noreferrer">https://www.youtube.com/playlist?list=PLG9oUASPsH7I</a></p>
-
-<p>⭐ <strong>Stream the Audio & Socials:</strong><br>
-<a href="https://linktr.ee/p1exp" target="_blank" rel="noopener noreferrer">https://linktr.ee/p1exp</a></p>
-
-<p>Enjoy, and listen on speakers or headphones.</p>
-
-<p>&copy; 2024 Platform-1 Experimental Recordings - All Rights Reserved</p>
-
-<p>#P1EXP #HardwareJam #Dawless #ElectronicMusic #MPCOne #Eurorack</p>
-
-        
         </div></details>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
         "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
