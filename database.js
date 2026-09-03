@@ -159,7 +159,8 @@ const masterCollectionRegistry = {
     },
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
-        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/><a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube Playlist</a><br/> 
+        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/>
+        <a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube Playlist</a><br/> 
         <details><summary>+ VIEW DETAILS</summary>
         <div class="details-content">
 
@@ -196,7 +197,7 @@ Part 3/3 of the Trichromat Video Series</p>
         
         </div></details>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
-        "footer": `YOUTUBE Video Playlist - Status: Final`
+        "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a><br/> - Status: Final`
     },
     "COSP": {
         "title": "COLORSPLASH", "date": "2024",
