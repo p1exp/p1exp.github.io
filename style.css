@@ -164,6 +164,10 @@ details[open] summary {
     border-bottom: 1px solid rgba(0, 255, 204, 0.3);
     transition: all 0.2s ease-in-out;
 }
+.card-footer-text a {
+    color: #cccccc;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+}
 
 .narrow-text-block a:hover,
 .card-desc-block a:hover, 
