@@ -51,7 +51,24 @@ const pageLayoutEngine = {
             },
             {
                 "title": "EPHEMERAL SESSIONS // NOW - 2026",
-                "text": `<h4>Ephemeral development sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>`,
+                "text": `<h4>Ephemeral development sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>
+                 <details><summary>+ VIEW DETAILS</summary>
+        <div class="details-content">
+<p>Part 3/3 of the Trichromat Video Series</p>
+<p>🌐 <strong>#P1EXP - Explore the full project and discography:</strong><br>
+<a href="https://p1exp.github.io/" target="_blank" rel="noopener noreferrer">https://p1exp.github.io/</a></p>
+<p>This series of 13 music videos captures a fully dawless, improvised hardware ecosystem. Instead of timeline arrangements, tracks were built using live sequencing and generative loops, relying entirely on real-time parameter tweaking to build tension and structure.</p>
+<p>🎛️ <strong>The Process & Gear:</strong></p>
+<ul>
+    <li><strong>The Brain & Beats:</strong> The MPC One acts as the master clock, providing percussion and musical loops punched in live on the pads. Ableton Session mode is used more in this series to provide addtional percussion and sounds, but not as a sequencer.</li>
+    <li><strong>Acid & Bass:</strong> Independent generative sequencers drive the Behringer TD-3 and MAM MB33 via MIDI for evolving basslines.</li>
+    <li><strong>Modular Textures:</strong> The F:Wheel - a custom-built, microcontroller-based generative sequencer drives the Eurorack and Make Noise 0-Coast to create unpredictable, evolving textures. A Moog Subharmonicum and Behringer Spice is also used.</li>
+    <li><strong>The Live Jam Execution:</strong> Every track is a single, continuous take. There are no pre-written arrangements - just riding the mixer, triggering live mutes, and manually sweeping filters on the hardware in real-time - all recorded in one take.</li>
+    <li><strong>Generative Visuals:</strong> The video element is just as live as the audio. Video clips were randomised and sequenced on the fly to match the unpredictable nature of the hardware jam, with both audio and video captured simultaneously direct to OBS Studio.</li>
+    <li><strong>Post-Production & Mastering:</strong> The raw OBS capture was imported and mastered in Adobe Premiere.</li>
+</ul>
+        </div></details>
+                `,
                 "imageName": "ephemeral_bg.jpg",
                 "archiveKeys": ["EPH1"]
             },
@@ -175,7 +192,8 @@ const masterCollectionRegistry = {
     <li><strong>Generative Visuals:</strong> The video element is just as live as the audio. Video clips were randomised and sequenced on the fly to match the unpredictable nature of the hardware jam, with both audio and video captured simultaneously direct to OBS Studio.</li>
     <li><strong>Post-Production & Mastering:</strong> The raw OBS capture was imported and mastered in Adobe Premiere.</li>
 </ul>
-        </div></details>`,
+        </div></details>
+        `,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
         "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
     },
