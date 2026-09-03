@@ -176,7 +176,7 @@ const masterCollectionRegistry = {
     },
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
-        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/>
+        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/>
         <details><summary>+ VIEW DETAILS</summary>
         <div class="details-content">
 <p>Part 3/3 of the Trichromat Video Series</p>
