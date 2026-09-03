@@ -159,7 +159,40 @@ const masterCollectionRegistry = {
     },
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
-        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/><a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube Playlist</a>`,
+        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/><a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube Playlist</a><br/>
+        
+        <details><summary>+ VIEW HARDWARE LOG</summary><div class="details-content">NEUROFLUX
+Part 3/3 of the Trichromat Video Series
+
+🌐 #P1EXP - Explore the full project and discography:
+https://p1exp.github.io/
+
+This series of 13 music videos captures a fully dawless, improvised hardware ecosystem. Instead of timeline arrangements, tracks were built using live sequencing and generative loops, relying entirely on real-time parameter tweaking to build tension and structure.
+
+🎛️ The Process & Gear:
+• The Brain & Beats: The MPC One acts as the master clock, providing percussion and musical loops punched in live on the pads. Ableton Session mode is used more in this series to provide addtional percussion and sounds, but not as a sequencer.
+
+• Acid & Bass: Independent generative sequencers drive the Behringer TD-3 and MAM MB33 via MIDI for evolving basslines.
+
+• Modular Textures: The F:Wheel - a custom-built, microcontroller-based generative sequencer drives the Eurorack and Make Noise 0-Coast to create unpredictable, evolving textures. A Moog Subharmonicum and Behringer Spice is also used.
+
+• The Live Jam Execution: Every track is a single, continuous take. There are no pre-written arrangements - just riding the mixer, triggering live mutes, and manually sweeping filters on the hardware in real-time - all recorded in one take.
+
+• Generative Visuals: The video element is just as live as the audio. Video clips were randomised and sequenced on the fly to match the unpredictable nature of the hardware jam, with both audio and video captured simultaneously direct to OBS Studio.
+
+• Post-Production & Mastering: The raw OBS capture was imported and mastered in Adobe Premiere. 
+
+📺 Watch the full series playlist:
+https://www.youtube.com/playlist?list=PLG9oUASPsH7I
+
+⭐ Stream the Audio & Socials:
+https://linktr.ee/p1exp
+
+Enjoy, and listen on speakers or headphones.
+
+©2024 Platform-1 Experimental Recordings - All Rights Reserved
+
+#P1EXP #HardwareJam #Dawless #ElectronicMusic #MPCOne #Eurorack</div></details>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
         "footer": `YOUTUBE Video Playlist - Status: Final`
     },
