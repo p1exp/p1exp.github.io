@@ -153,20 +153,20 @@ details[open] summary {
     margin-top: 8px;
     line-height: 1.4;
     text-align: left;
-    padding: 10px 20px; /* Sets universal box padding without conflicting */
+    padding: 10px 20px;
     border: 1px solid #2a2a2a;
-    border-radius: 4px; /* Optional: smooths the box corners to match your cards */
+    border-radius: 8px;
 }
 
 /* --- RESTORE BULLET INDENTATION --- */
 .details-content ul {
-    padding-left: 24px; /* Pushes the bullets in from the left edge */
+    padding-left: 24px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
 .details-content li {
-    margin-bottom: 6px; /* Gives the list items room to breathe */
+    margin-bottom: 6px;
 }
 
 /* --- UNIVERSAL INLINE TEXT LINKS (CYAN STYLE) --- */
