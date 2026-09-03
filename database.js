@@ -160,10 +160,10 @@ const masterCollectionRegistry = {
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
         "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/><br/><a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YouTube Playlist</a><br/> 
-        <details>
-        <summary>+ VIEW HARDWARE LOG</summary>
+        <details><summary>+ VIEW DETAILS</summary>
         <div class="details-content">
-      <p><strong>NEUROFLUX</strong><br>
+
+<p><strong>NEUROFLUX</strong><br>
 Part 3/3 of the Trichromat Video Series</p>
 
 <p>🌐 <strong>#P1EXP - Explore the full project and discography:</strong><br>
@@ -191,7 +191,10 @@ Part 3/3 of the Trichromat Video Series</p>
 
 <p>&copy; 2024 Platform-1 Experimental Recordings - All Rights Reserved</p>
 
-<p>#P1EXP #HardwareJam #Dawless #ElectronicMusic #MPCOne #Eurorack</p>`,
+<p>#P1EXP #HardwareJam #Dawless #ElectronicMusic #MPCOne #Eurorack</p>
+
+        
+        </div></details>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
         "footer": `YOUTUBE Video Playlist - Status: Final`
     },
