@@ -144,17 +144,29 @@ details[open] summary {
     border-bottom-color: transparent;
     color: #888;
 }
+
+/* --- THE TEXT BOX CONTAINER --- */
 .details-content {
-     background-color: #1a1a1a;
+    background-color: #1a1a1a;
     color: #aaa;
     font-size: 0.9rem;
     margin-top: 8px;
     line-height: 1.4;
     text-align: left;
-    padding-inline-start: 46px;
-    padding: 11px 20px;
-    background-color: #1a1a1a;
+    padding: 11px 20px; /* Sets universal box padding without conflicting */
     border: 1px solid #2a2a2a;
+    border-radius: 4px; /* Optional: smooths the box corners to match your cards */
+}
+
+/* --- RESTORE BULLET INDENTATION --- */
+.details-content ul {
+    padding-left: 24px; /* Pushes the bullets in from the left edge */
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.details-content li {
+    margin-bottom: 6px; /* Gives the list items room to breathe */
 }
 
 /* --- UNIVERSAL INLINE TEXT LINKS (CYAN STYLE) --- */
