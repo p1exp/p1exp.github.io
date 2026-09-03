@@ -149,11 +149,11 @@ details[open] summary {
 .details-content {
     background-color: #111;
     color: #aaa;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin-top: 8px;
     line-height: 1.4;
     text-align: left;
-    padding: 11px 20px; /* Sets universal box padding without conflicting */
+    padding: 10px 20px; /* Sets universal box padding without conflicting */
     border: 1px solid #2a2a2a;
     border-radius: 4px; /* Optional: smooths the box corners to match your cards */
 }
@@ -187,10 +187,13 @@ details[open] summary {
 
 .narrow-text-block a:hover,
 .card-desc-block a:hover, 
-.details-content a:hover,
-.card-footer-text a:hover {
+.details-content a:hover {
     border-bottom-color: #00ffcc;
     text-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
+}
+.card-footer-text a:hover {
+    border-bottom-color: #cccccc;
+    text-shadow: 0 0 8px rgba(204, 204, 204, 0.4);
 }
 
 /* --- AUTO-INJECT EXTERNAL LINK ARROW --- */
