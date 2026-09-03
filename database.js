@@ -197,7 +197,7 @@ Part 3/3 of the Trichromat Video Series</p>
         
         </div></details>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
-        "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a><br/> - Status: Final`
+        "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
     },
     "COSP": {
         "title": "COLORSPLASH", "date": "2024",
