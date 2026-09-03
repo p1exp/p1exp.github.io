@@ -147,7 +147,7 @@ details[open] summary {
 
 /* --- THE TEXT BOX CONTAINER --- */
 .details-content {
-    background-color: #1a1a1a;
+    background-color: #111;
     color: #aaa;
     font-size: 0.9rem;
     margin-top: 8px;
