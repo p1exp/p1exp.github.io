@@ -260,7 +260,7 @@ details[open] .details-content {
 /* --- LANDING PAGE SOCIAL & MEDIA MATRIX --- */
 .social-matrix-wrapper {
     grid-column: 2;
-    padding: 20px 20px 50px 20px;
+    padding: 50px 20px 0px 20px; /* 50px Top, 0px Bottom */
 }
 
 .social-matrix {
