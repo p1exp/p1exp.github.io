@@ -26,13 +26,13 @@ const pageLayoutEngine = {
                 "title": "IN THE LAB // ON THE SLAB",
                 "text": `<h4>LATEST EXPERIMENTS</h4><p>Raw audio telemetry.</p><p>Tracks from various projects currently under development.</p>`,
                 "imageName": "lab_bg.jpg",
-                "archiveKeys": ["LAB1", "ILS2", "NEUR", "EPH1"]
+                "archiveKeys": ["LAB1", "INS2", "NEUR", "EPH1"]
             },
             {
                 "title": "FEATURED TRANSMISSIONS",
                 "text": `<h4>Highlighted archives</h4><p>Pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>`,
                 "imageName": "featured_bg.jpg",
-                "archiveKeys": ["COSP", "ILS2", "BREL", "EXCP", "INTL", "INMA"]
+                "archiveKeys": ["COSP", "INL2", "BREL", "EXCP", "INTL", "INMA"]
             }
         ]
     },
@@ -103,7 +103,7 @@ const pageLayoutEngine = {
                 "title": "INTERLOOPER LIVE GIGS",
                 "text": `<h4>Live hardware sets captured on location</h4><p>Remote collaborative jams tracked directly to digital magnetic disc.</p>`,
                 "imageName": "interlooperlive_bg.jpg",
-                "archiveKeys": ["ILS2", "ILS1"]
+                "archiveKeys": ["INL2", "INL1"]
             },
             {
                 "title": "INTERLOOPER SESSION LABS",
@@ -251,13 +251,13 @@ const masterCollectionRegistry = {
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=4116788522/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download from BANDCAMP"
     },
-    "ILS2": {
+    "INL2": {
         "title": "INTERLOOPER LAKEFEST LIVE SET 2025", "date": "2025",
         "description": "Field recordings from the Lakefest sector. Collaborative jam telemetry captured direct to magnetic cassette.",
         "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-lakefest-2025%2F",
         "footer": "MIXCLOUD Stream"
     },
-    "ILS1": {
+    "INL1": {
         "title": "INTERLOOPER LOWER LODE LIVE SET 2025", "date": "2025",
         "description": "Live hardware stress-tests. Tactical audio arrangements captured to tape at the Lower Lode coordinates.",
         "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-carry-on-up-the-lode-live-jam-april-25%2F",
