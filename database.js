@@ -26,7 +26,7 @@ const pageLayoutEngine = {
                 "title": "IN THE LAB // ON THE SLAB",
                 "text": `<h4>LATEST EXPERIMENTS</h4><p>Raw audio telemetry.</p><p>Tracks from various projects currently under development.</p>`,
                 "imageName": "lab_bg.jpg",
-                "archiveKeys": ["LAB1", "EPH1"]
+                "archiveKeys": ["LAB1", "ILS2", "NEUR", "EPH1"]
             },
             {
                 "title": "FEATURED TRANSMISSIONS",
@@ -266,7 +266,7 @@ const masterCollectionRegistry = {
     "INS2": {
         "title": "INTERLOOPER SESSIONS #2", "date": "2022 - 2019",
         "description": "Unregulated improvisational protocols. Live collaborative experiments in unstable sound design.",
-        "mediaUrl": "",
+        "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=2136178309/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": null
     },
     "INS1": {
