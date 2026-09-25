@@ -171,23 +171,23 @@ const masterCollectionRegistry = {
     "EPH1": {
         "title": "EPHEMERAL SESSIONS #1", "date": "2026",
         "description": `Test captures from the Lower Lode 2026 Live set development.
-        <details><summary>+ VIEW HARDWARE LOG</summary>
-        <div class="details-content">
-       <ul class="log-list">
-      <li><strong>Objective:</strong> To capture raw output during the development process of a live gig performance, testing track structures and dynamic movement before porting the framework to the Akai Force.</li>
-      <li><strong>Style:</strong> Live Set Development / Experimental Electronic</li>
-      <li><strong>Methodology:</strong> Performance-driven session routing sample packs and recorded hardware instruments through a standardised 8-channel grid template.</li>
-      <li><strong>Audio Signal Chain:</strong>
-        <ul>
-          <li><em>Brain/Control:</em> Ableton Live managed via Ableton Push 2</li>
-          <li><em>Sound Sources:</em> Sample packs and recorded hardware instruments</li>
-          <li><em>Processing/FX:</em> 8-channel performance bus utilising filters, delays, and Flexbeat for real-time manipulation</li>
-        </ul>
-      </li>
-      <li><strong>Visual & Display Architecture:</strong> Audio-focused development captures (pre-visual integration).</li>
-      <li><strong>Session Data:</strong> Live Set Prototype Captures</li>
-    </ul>
-        </div></details>`,
+            <details><summary>+ VIEW HARDWARE LOG</summary>
+            <div class="details-content">
+            <p>To capture raw output during the development process of a live gig performance, testing track structures and dynamic movement before porting the framework to the Akai Force.</p>
+            <ul class="log-list">
+            <li><strong>Style:</strong> Live Set Development / Experimental Electronic</li>
+            <li><strong>Methodology:</strong> Performance-driven session routing sample packs and recorded hardware instruments through a standardised 8-channel grid template.</li>
+            <li><strong>Audio Signal Chain:</strong>
+            <ul>
+            <li><em>Brain/Control:</em> Ableton Live managed via Ableton Push 2</li>
+            <li><em>Sound Sources:</em> Sample packs and recorded hardware instruments</li>
+            <li><em>Processing/FX:</em> 8-channel performance bus utilising filters, delays, and Flexbeat for real-time manipulation</li>
+            </ul>
+            </li>
+            <li><strong>Visual & Display Architecture:</strong> Audio-focused development captures (pre-visual integration).</li>
+            <li><strong>Session Data:</strong> Live Set Prototype Captures</li>
+            </ul>
+            </div></details>`,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP - Status: Final"
     },
