@@ -172,6 +172,7 @@ const masterCollectionRegistry = {
         "title": "EPHEMERAL SESSIONS #1", "date": "2026",
         "description": `Test captures from the Lower Lode 2026 Live set development.
         <details><summary>+ VIEW HARDWARE LOG</summary>
+        <div class="details-content">
        <ul class="log-list">
       <li><strong>Objective:</strong> To capture raw output during the development process of a live gig performance, testing track structures and dynamic movement before porting the framework to the Akai Force.</li>
       <li><strong>Style:</strong> Live Set Development / Experimental Electronic</li>
@@ -186,7 +187,7 @@ const masterCollectionRegistry = {
       <li><strong>Visual & Display Architecture:</strong> Audio-focused development captures (pre-visual integration).</li>
       <li><strong>Session Data:</strong> Live Set Prototype Captures</li>
     </ul>
-        </details>`,
+        </div></details>`,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP - Status: Final"
     },
