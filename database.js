@@ -170,7 +170,8 @@ const masterCollectionRegistry = {
     },
     "EPH1": {
         "title": "EPHEMERAL SESSIONS #1", "date": "2026",
-        "description": `Test captures from the Lower Lode 2026 Live set development.
+        "description": `
+        <p>Test captures from the Lower Lode 2026 Live set development.</p>
             <details><summary>+ VIEW HARDWARE LOG</summary>
             <div class="details-content">
             <p>To capture raw output during the development process of a live gig performance, testing track structures and dynamic movement before porting the framework to the Akai Force.</p>
@@ -187,13 +188,14 @@ const masterCollectionRegistry = {
             <li><strong>Visual & Display Architecture:</strong> Audio-focused development captures (pre-visual integration).</li>
             <li><strong>Session Data:</strong> Live Set Prototype Captures</li>
             </ul>
-            </div></details>`,
+            </div></details>
+            `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP - Status: Final"
     },
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
-        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.<br/>
+        "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.
         <details><summary>+ VIEW DETAILS</summary>
         <div class="details-content">
 <p>Part 3/3 of the Trichromat Video Series</p>
@@ -216,15 +218,33 @@ const masterCollectionRegistry = {
     },
     "COSP": {
         "title": "COLORSPLASH", "date": "2024",
-        "description": `Aggregated data from 2021-2024. A compiled spectrum of experimental live session logs.<br/><br/><a href="https://www.youtube.com/watch?v=Ydfegw4KryU&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF" target="_blank">YouTube Playlist</a>`,
+        "description": `
+        <p>Aggregated data from 2021-2024. A compiled spectrum of experimental live session logs.</p>
+           <details><summary>+ VIEW HARDWARE LOG</summary>
+            <div class="details-content">
+            <p>To execute and capture a continuous audio-visual performance, blending generative sequencing with live hardware manipulation.</p>
+            <ul class="log-list">
+            <li><strong>Style:</strong> Live Hardware Jam / Audio-Visual Performance</li>
+            <li><strong>Methodology:</strong> 100% live, single-take performance. The audio architecture integrates MPC One loops with Ableton Session View clips via generative sequencing, mixed in real-time alongside live hardware manipulation.</li>
+            <li><strong>Audio Signal Chain:</strong>
+            <ul>
+            <li><em>Brain/Control:</em> Akai MPC One and Ableton Live (Session View / generative sequencing)</li>
+            <li><em>Sound Sources:</em> Eurorack modular system and external hardware synthesisers</li>
+            </ul>
+            </li>
+            <li><strong>Visual & Display Architecture:</strong> Real-time randomised video clips layered via chroma keying and captured directly in OBS Studio to generate colourful geometric visual compositions.</li>
+            <li><strong>Session Data:</strong> Part 3 of the #Trichromat Series | Live Audio-Visual Capture (Single Take)</li>
+            </ul>
+            </div></details>
+        `,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?si=bskhsRpzIY5H0zky&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF",
-        "footer": "YOUTUBE Video Playlist - Status: Final"
+        "footer": `<a href="https://www.youtube.com/watch?v=Ydfegw4KryU&list=PLkEwPD_31_HYX9vjfsXC6o5cNyAPL0qiF" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
     },
     "COVI": {
         "title": "THE CO:VIDZ", "date": "2021",
         "description": `Isolation protocol enactments. Pure hardware synthesis executed offline without central computational assistance.<br/><br/><a href="https://www.youtube.com/watch?v=8lbLWdj4dw8&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m" target="_blank">YouTube Playlist</a>`,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?si=OEJasDLnXC8gD7uV&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m",
-        "footer": "YOUTUBE Video Playlist - Status: Final"
+        "footer": `<a href="https://www.youtube.com/watch?v=8lbLWdj4dw8&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
     },
     "BREL": {
         "title": "BROKEN ELECTRIC", "date": "2020 - 2016",
