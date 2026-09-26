@@ -156,12 +156,16 @@ const pageLayoutEngine = {
 
 // 3. MASTER PLATFORM-1 FLAT REGISTRY INDEXED BY UNIQUE CATALOG NUMBER
 const masterCollectionRegistry = {
+
+    // ----- P1EXP ----- //
     "LAB1": {
         "title": "LABORATORY PRELIMS", "date": "2026",
         "description": "Latest tracks currently under development from various projects.",
         "mediaUrl": "https://hearthis.at/set/551685/embed/?hcolor=00ffcc",
         "footer": "HEARTHIS Stream - Status: Incomplete"
     },
+
+    // ----- PROJECTS ----- //
     "TETR": {
         "title": "TETRACHROME VISION", "date": "2026",
         "description": "A new visual FX project to run with the sound in all medias. More info to follow.",
@@ -242,55 +246,99 @@ const masterCollectionRegistry = {
     },
     "COVI": {
         "title": "THE CO:VIDZ", "date": "2021",
-        "description": `Isolation protocol enactments. Pure hardware synthesis executed offline without central computational assistance.<br/><br/><a href="https://www.youtube.com/watch?v=8lbLWdj4dw8&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m" target="_blank">YouTube Playlist</a>`,
+        "description": `
+        <p>Isolation protocol enactments. Pure hardware synthesis executed offline without central computational assistance.</p>
+        <details><summary>+ VIEW HARDWARE LOG</summary>
+        <div class="details-content">
+        
+        </div></details>
+        `,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?si=OEJasDLnXC8gD7uV&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m",
         "footer": `<a href="https://www.youtube.com/watch?v=8lbLWdj4dw8&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
     },
     "BREL": {
         "title": "BROKEN ELECTRIC", "date": "2020 - 2016",
-        "description": "Fractured DAW signals reconstructed and arranged into stable full-track architectures.",
+        "description": `
+        <p>Fractured DAW signals reconstructed and arranged into stable full-track architectures.</p>
+        <details><summary>+ VIEW HARDWARE LOG</summary>
+        <div class="details-content">
+        
+        </div></details>
+        `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1131803323/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Status: Incomplete"
     },
     "SCDO": {
         "title": "SCHRODINGER'S DOG", "date": "2019 - 2017",
-        "description": "Quantum state loop configurations. Compositions arranged from highly volatile audio matter.",
+        "description": `
+        <p>Quantum state loop configurations. Compositions arranged from highly volatile audio matter.</p>
+        <details><summary>+ VIEW HARDWARE LOG</summary>
+        <div class="details-content">
+        
+        </div></details>
+        `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1568662603/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP"
     },
     "TTLG": {
         "title": "THROUGH THE LOOKING GLASS", "date": "2018",
-        "description": "Unedited ambient anomalies. A pure dawless transmission recorded directly from the source.",
+        "description": `
+        <p>Unedited ambient anomalies. A pure dawless transmission recorded directly from the source.</p>
+        <details><summary>+ VIEW HARDWARE LOG</summary>
+        <div class="details-content">
+        
+        </div></details>
+        `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1510586443/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP"
     },
     "CLEN": {
         "title": "CLOSE ENCOUNTERS", "date": "2018",
-        "description": "Algorithmic contact. Deep exploration of generative patterns and autonomous modular synthesis.",
+        "description": `
+        <p>Algorithmic contact. Deep exploration of generative patterns and autonomous modular synthesis.</p>
+        <details><summary>+ VIEW HARDWARE LOG</summary>
+        <div class="details-content">
+        
+        </div></details>
+        `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=2494523694/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP"
     },
     "EXCP": {
         "title": "EXCEPTION", "date": "2012",
-        "description": "Digital audio workspace anomalies. A solo containment project utilizing high-density loop manipulation.",
+        "description": `
+        <p>Digital audio workspace anomalies. A solo containment project utilizing high-density loop manipulation.</p>
+        <details><summary>+ VIEW HARDWARE LOG</summary>
+        <div class="details-content">
+        
+        </div></details>
+        `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=327864152/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP"
     },
     "STRA": {
         "title": "STRANGELET", "date": "2010",
-        "description": "Sub-bass frequency experiments. Collaborative sessions yielding a mutated electronic dub sound.",
+        "description": `
+        <p>Sub-bass frequency experiments. Collaborative sessions yielding a mutated electronic dub sound.</p>
+        <details><summary>+ VIEW HARDWARE LOG</summary>
+        <div class="details-content">
+        
+        </div></details>
+        `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=679892495/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Status: Archived set"
     },
+
+    // ----- INTERLOOPER ----- //
     "INTL": {
-        "title": "INTERLOPER", "date": "2009", "description":
-            "Synchronized multi-user operations. A collaborative matrix composed and sequenced with RmS.",
+        "title": "INTERLOPER", "date": "2009", 
+        "description": "Synchronized multi-user operations. A collaborative matrix composed and sequenced with RmS.",
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=4116788522/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download from BANDCAMP"
     },
     "INL2": {
         "title": "INTERLOOPER LAKEFEST LIVE SET 2025", "date": "2025",
-        "description": "Field recordings from the Lakefest sector. Collaborative jam telemetry captured direct to magnetic cassette.",
+        "description": `Field recordings from the Lakefest sector. Collaborative jam telemetry captured direct to magnetic cassette.`,
         "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-lakefest-2025%2F",
         "footer": "MIXCLOUD Stream"
     },
@@ -312,6 +360,8 @@ const masterCollectionRegistry = {
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1559419773/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": null
     },
+
+    // ----- LEGACY ----- //
     "INMA": {
         "title": "INFERNAL MACHINE", "date": "2006",
         "description": "Hostile industrial distortions. Extreme decibel hardcore extracted from corrupted data cores.",
