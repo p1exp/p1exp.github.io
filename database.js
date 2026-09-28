@@ -216,7 +216,7 @@ const masterCollectionRegistry = {
             <li><strong>Visual & Display Architecture:</strong> Generative video clips randomly sequenced on the fly to match the unpredictable nature of the hardware jam, captured simultaneously direct to OBS Studio.</li>
             <li><strong>Session Data:</strong> Part 3 of the #Trichromat Series | 13-Part Live Capture</li>
             </ul>
-            </div></details>`
+            </div></details>
         `,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
         "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
@@ -250,8 +250,21 @@ const masterCollectionRegistry = {
         "description": `
         <p>Isolation protocol enactments. Pure hardware synthesis executed offline without central computational assistance.</p>
         <details><summary>+ VIEW HARDWARE LOG</summary>
-        <div class="details-content">
-        
+            <div class="details-content">
+            <p>To create structured, autonomous machine logic through 100% dawless hardware improvisation, relying exclusively on standalone sequencers during isolation.</p>
+            <ul class="log-list">
+            <li><strong>Style:</strong> Experimental Electronic / Hardware Synthesis</li>
+            <li><strong>Methodology:</strong> 100% dawless, single-take hardware improvisation. No timeline sequencing or computer DAWs (strictly no Ableton) were used; arrangements relied entirely on live mixer manipulation and hardware mutes.</li>
+            <li><strong>Audio Signal Chain:</strong>
+            <ul>
+            <li><em>Brain/Control:</em> Akai MPC One (master clock and sequencing) and custom F:Wheel generative microcontroller.</li>
+            <li><em>Sound Sources:</em> Pure hardware synthesis ecosystem driven directly by the MPC and F:Wheel.</li>
+            <li><em>Processing/FX:</em> Captured live directly to stereo mixdown.</li>
+            </ul>
+            </li>
+            <li><strong>Visual & Display Architecture:</strong> Live generative video elements captured simultaneously with the audio performance to document the offline session.</li>
+            <li><strong>Session Data:</strong> Part 1 of the #Trichromat Series | Format: YouTube Archive</li>
+            </ul>
         </div></details>
         `,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?si=OEJasDLnXC8gD7uV&list=PLkEwPD_31_HZz2iUCB5rqiQpOQM1Ubb-m",
