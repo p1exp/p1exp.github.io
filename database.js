@@ -326,7 +326,20 @@ const masterCollectionRegistry = {
         <p>Fractured DAW signals reconstructed and arranged into stable full-track architectures.</p>
         <details><summary>+ VIEW HARDWARE LOG</summary>
         <div class="details-content">
-        
+            <p>To revitalise archival audio loops and project files from the Electric Abuse era, integrating legacy stems with modern virtual studio technology to create cohesive, updated arrangements.</p>
+            <ul class="log-list">
+            <li><strong>Style:</strong> Archival Rework / Experimental Electronic</li>
+            <li><strong>Methodology:</strong> Studio-based arrangement and manipulation. Archival Cubase stems were reconstructed and layered with modern VST instruments and updated synthesis techniques.</li>
+            <li><strong>Audio Signal Chain:</strong>
+            <ul>
+            <li><em>Brain/Control:</em> Modern DAW environment sequencing legacy audio loops alongside new MIDI data.</li>
+            <li><em>Sound Sources:</em> Original 'Electric Abuse' audio loops (2007–2014) combined with modern software synthesisers and VST plugins.</li>
+            <li><em>Processing/FX:</em> Modern VST effect chains applied to legacy audio to match current sonic standards.</li>
+            </ul>
+            </li>
+            <li><strong>Visual & Display Architecture:</strong> Audio-focused studio project.</li>
+            <li><strong>Session Data:</strong> Archival Rework | Source Material: 2007–2014</li>
+            </ul>
         </div></details>
         `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1131803323/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
@@ -338,7 +351,20 @@ const masterCollectionRegistry = {
         <p>Quantum state loop configurations. Compositions arranged from highly volatile audio matter.</p>
         <details><summary>+ VIEW HARDWARE LOG</summary>
         <div class="details-content">
-        
+            <p>To capture the raw, unpredictable nature of early Eurorack system building, bridging initial generative hardware experiments with structured DAW arrangements.</p>
+            <ul class="log-list">
+            <li><strong>Style:</strong> Modular Experimental / Hybrid Electronic</li>
+            <li><strong>Methodology:</strong> Initial raw captures of modular patches and generative sequences, later imported into Ableton Live for editing, loop integration, and final arrangement.</li>
+            <li><strong>Audio Signal Chain:</strong>
+            <ul>
+            <li><em>Brain/Control:</em> Baby8 sequencer, Music Thing Modular Turing Machine, and Make Noise Maths for generative control, with final arrangement and sequencing in Ableton Live.</li>
+            <li><em>Sound Sources:</em> Mutable Instruments Braids and Tides, Make Noise 0-Coast, Teenage Engineering PO-12 Rhythm, and Arturia DrumBrute Impact.</li>
+            <li><em>Processing/FX:</em> Mutable Instruments Clouds for granular texture, with final mixdown and effects applied in Ableton.</li>
+            </ul>
+            </li>
+            <li><strong>Visual & Display Architecture:</strong> Audio-focused modular system captures.</li>
+            <li><strong>Session Data:</strong> Early Modular System Experiments</li>
+            </ul>
         </div></details>
         `,
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1568662603/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
