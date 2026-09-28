@@ -200,22 +200,23 @@ const masterCollectionRegistry = {
     "NEUR": {
         "title": "NEUROFLUX", "date": "2025",
         "description": `Real-time eurorack telemetry. Unfiltered live jam sessions extracted from unstable modular arrays.
-        <details><summary>+ VIEW DETAILS</summary>
-        <div class="details-content">
-<p>Part 3/3 of the Trichromat Video Series</p>
-<p>🌐 <strong>#P1EXP - Explore the full project and discography:</strong><br>
-<a href="https://p1exp.github.io/" target="_blank" rel="noopener noreferrer">https://p1exp.github.io/</a></p>
-<p>This series of 13 music videos captures a fully dawless, improvised hardware ecosystem. Instead of timeline arrangements, tracks were built using live sequencing and generative loops, relying entirely on real-time parameter tweaking to build tension and structure.</p>
-<p>🎛️ <strong>The Process & Gear:</strong></p>
-<ul>
-    <li><strong>The Brain & Beats:</strong> The MPC One acts as the master clock, providing percussion and musical loops punched in live on the pads. Ableton Session mode is used more in this series to provide addtional percussion and sounds, but not as a sequencer.</li>
-    <li><strong>Acid & Bass:</strong> Independent generative sequencers drive the Behringer TD-3 and MAM MB33 via MIDI for evolving basslines.</li>
-    <li><strong>Modular Textures:</strong> The F:Wheel - a custom-built, microcontroller-based generative sequencer drives the Eurorack and Make Noise 0-Coast to create unpredictable, evolving textures. A Moog Subharmonicum and Behringer Spice is also used.</li>
-    <li><strong>The Live Jam Execution:</strong> Every track is a single, continuous take. There are no pre-written arrangements - just riding the mixer, triggering live mutes, and manually sweeping filters on the hardware in real-time - all recorded in one take.</li>
-    <li><strong>Generative Visuals:</strong> The video element is just as live as the audio. Video clips were randomised and sequenced on the fly to match the unpredictable nature of the hardware jam, with both audio and video captured simultaneously direct to OBS Studio.</li>
-    <li><strong>Post-Production & Mastering:</strong> The raw OBS capture was imported and mastered in Adobe Premiere.</li>
-</ul>
-        </div></details>
+           <details><summary>+ VIEW HARDWARE LOG</summary>
+            <div class="details-content">
+            <p>To execute 13 tracks as continuous, uninterrupted live hardware jams, relying entirely on real-time parameter tweaking and generative sequencing to build tension and structure.</p>
+            <ul class="log-list">
+            <li><strong>Style:</strong> Experimental Audio-Visual / Live Hardware Jam</li>
+            <li><strong>Methodology:</strong> 100% live, single continuous takes with zero timeline sequencing. Arrangements were built on the fly by riding the mixer, triggering live mutes, and manually sweeping filters.</li>
+            <li><strong>Audio Signal Chain:</strong>
+            <ul>
+            <li><em>Brain/Control:</em> Akai MPC One (master clock and percussion loops) and Ableton Live Session mode (for additional percussion and sounds). Custom F:Wheel microcontroller and independent generative sequencers driving MIDI.</li>
+            <li><em>Sound Sources:</em> Behringer TD-3, MAM MB33, Eurorack modular, Make Noise 0-Coast, Moog Subharmonicon, and Behringer Spice.</li>
+            <li><em>Processing/FX:</em> Captured raw alongside visuals, with final post-production and mastering completed in Adobe Premiere.</li>
+            </ul>
+            </li>
+            <li><strong>Visual & Display Architecture:</strong> Generative video clips randomly sequenced on the fly to match the unpredictable nature of the hardware jam, captured simultaneously direct to OBS Studio.</li>
+            <li><strong>Session Data:</strong> Part 3 of the #Trichromat Series | 13-Part Live Capture</li>
+            </ul>
+            </div></details>`
         `,
         "mediaUrl": "https://www.youtube.com/embed/videoseries?list=PLG9oUASPsH7I",
         "footer": `<a href="https://www.youtube.com/watch?v=2qkMhV3raU4&list=PLG9oUASPsH7I" target="_blank">YOUTUBE Video Playlist</a> - Status: Final`
