@@ -18,19 +18,31 @@ const pageLayoutEngine = {
     "p1exp": {
         "titleBanner": {
             "title": "<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL",
-            "text": `<h3>The central processing deck for the #P1EXP audio matrix</h3><p><strong>Swipe the page or select from the menu above to view the timeline archives and projects or view the featured showcase below. Select PLAY ARCHIVE DECK to stream the collections.</strong></p><p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno.</p><p>This catalogue explores the structural evolution of underground machine compositions, engineered through a hybrid workflow of live hardware modular synthesis, custom generative MIDI sequencing, and complex DAW sample manipulation.</p>`,
+            "text": `
+                <h3>The central processing deck for the #P1EXP audio matrix</h3>
+                <p><strong>Swipe the page or select from the menu above to view the timeline archives and projects or view the featured showcase below. Select PLAY ARCHIVE DECK to stream the collections.</strong></p>
+                <p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno.</p>
+                <p>This catalogue explores the structural evolution of underground machine compositions, engineered through a hybrid workflow of live hardware modular synthesis, custom generative MIDI sequencing, and complex DAW sample manipulation.</p>
+            `,
             "imageName": "p1_bg.jpg"
         },
         "sections": [
             {
                 "title": "IN THE LAB // ON THE SLAB",
-                "text": `<h4>LATEST EXPERIMENTS</h4><p>Raw audio telemetry.</p><p>Tracks from various projects currently under development.</p>`,
+                "text": `
+                    <h4>LATEST EXPERIMENTS</h4>
+                    <p>Raw audio telemetry.</p>
+                    <p>Tracks from various projects currently under development.</p>
+                `,
                 "imageName": "lab_bg.jpg",
                 "archiveKeys": ["LAB1", "INS2", "NEUR", "EPH1"]
             },
             {
                 "title": "FEATURED TRANSMISSIONS",
-                "text": `<h4>Highlighted archives</h4><p>Pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>`,
+                "text": `
+                    <h4>Highlighted archives</h4>
+                    <p>Pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>
+                `,
                 "imageName": "featured_bg.jpg",
                 "archiveKeys": ["COSP", "INL2", "BREL", "EXCP", "INTL", "INMA"]
             }
@@ -39,54 +51,60 @@ const pageLayoutEngine = {
     "projects": {
         "titleBanner": {
             "title": "<strong>#P1EXP</strong> PROJECTS // 2007 - PRESENT",
-            "text": `<h3>Refined studio compositions and arrangements</h3><p>Complex loop structures and sequences engineered within the audio workspace.</p>`,
+            "text": `
+                <h3>Refined studio compositions and arrangements</h3>
+                <p>Complex loop structures and sequences engineered within the audio workspace.</p>
+            `,
             "imageName": "projects_bg.jpg"
         },
         "sections": [
             {
                 "title": "MACHINEBRAIN // NOW - 2026",
-                "text": `<h4>AI humanoid fusion</h4><span class="meta-tag">Location: Blueroom</span><p>Experiments with Artificial Intelligence, augmenting human composition.</p>`,
+                "text": `
+                    <h4>AI humanoid fusion</h4>
+                    <span class="meta-tag">Location: Blueroom</span>
+                    <p>Experiments with Artificial Intelligence, augmenting human composition.</p>
+                `,
                 "imageName": "machinebrain_bg.jpg",
                 "archiveKeys": ["TETR"]
             },
             {
                 "title": "EPHEMERAL SESSIONS // NOW - 2026",
-                "text": `<h4>Ephemeral development sessions</h4><span class="meta-tag">Location: Blueroom</span><p>The structural evolution of live compositions, captured and archived in real-time.</p>
-                 <details><summary>+ VIEW DETAILS</summary>
-        <div class="details-content">
-<p>Part 3/3 of the Trichromat Video Series</p>
-<p>🌐 <strong>#P1EXP - Explore the full project and discography:</strong><br>
-<a href="https://p1exp.github.io/" target="_blank" rel="noopener noreferrer">https://p1exp.github.io/</a></p>
-<p>This series of 13 music videos captures a fully dawless, improvised hardware ecosystem. Instead of timeline arrangements, tracks were built using live sequencing and generative loops, relying entirely on real-time parameter tweaking to build tension and structure.</p>
-<p>🎛️ <strong>The Process & Gear:</strong></p>
-<ul>
-    <li><strong>The Brain & Beats:</strong> The MPC One acts as the master clock, providing percussion and musical loops punched in live on the pads. Ableton Session mode is used more in this series to provide addtional percussion and sounds, but not as a sequencer.</li>
-    <li><strong>Acid & Bass:</strong> Independent generative sequencers drive the Behringer TD-3 and MAM MB33 via MIDI for evolving basslines.</li>
-    <li><strong>Modular Textures:</strong> The F:Wheel - a custom-built, microcontroller-based generative sequencer drives the Eurorack and Make Noise 0-Coast to create unpredictable, evolving textures. A Moog Subharmonicum and Behringer Spice is also used.</li>
-    <li><strong>The Live Jam Execution:</strong> Every track is a single, continuous take. There are no pre-written arrangements - just riding the mixer, triggering live mutes, and manually sweeping filters on the hardware in real-time - all recorded in one take.</li>
-    <li><strong>Generative Visuals:</strong> The video element is just as live as the audio. Video clips were randomised and sequenced on the fly to match the unpredictable nature of the hardware jam, with both audio and video captured simultaneously direct to OBS Studio.</li>
-    <li><strong>Post-Production & Mastering:</strong> The raw OBS capture was imported and mastered in Adobe Premiere.</li>
-</ul>
-        </div></details>
+                "text": `
+                    <h4>Ephemeral development sessions</h4>
+                    <span class="meta-tag">Location: Blueroom</span>
+                    <p>The structural evolution of live compositions, captured and archived in real-time.</p>
                 `,
                 "imageName": "ephemeral_bg.jpg",
                 "archiveKeys": ["EPH1"]
             },
             {
                 "title": "TRICHROMAT SERIES // 2025 - 2021",
-                "text": `<h4>Generative visual sequences and algorithmic pattern design</h4><span class="meta-tag">Location: Blueroom</span><p>Exploring the intersection of human arrangement and autonomous generative machine logic.</p>`,
+                "text": `
+                    <h4>Generative visual sequences and algorithmic pattern design</h4>
+                    <span class="meta-tag">Location: Blueroom</span>
+                    <p>Exploring the intersection of human arrangement and autonomous generative machine logic.</p>
+                `,
                 "imageName": "trichromat_bg.jpg",
                 "archiveKeys": ["NEUR", "COSP", "COVI"]
             },
             {
                 "title": "IMMUNO // 2020 - 2015",
-                "text": `<h4>Fragmented modular audio</h4><span class="meta-tag">Location: Ermin</span><p>experimental loop compositions reconstructed into complete, structured tracks.</p>`,
+                "text": `
+                    <h4>Fragmented modular audio</h4>
+                    <span class="meta-tag">Location: Ermin</span>
+                    <p>experimental loop compositions reconstructed into complete, structured tracks.</p>
+                `,
                 "imageName": "immuno_bg.jpg",
                 "archiveKeys": ["BREL", "SCDO", "TTLG", "CLEN"]
             },
             {
                 "title": "ELECTRIC ABUSE // 2014 - 2007",
-                "text": `<h4>High-density digital sample manipulation</h4><span class="meta-tag">Location: Lloyds</span><p>Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>`,
+                "text": `
+                    <h4>High-density digital sample manipulation</h4>
+                    <span class="meta-tag">Location: Lloyds</span>
+                    <p>Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>
+                `,
                 "imageName": "electricabuse_bg.jpg",
                 "archiveKeys": ["EXCP", "STRA", "INTL"]
             }
@@ -95,19 +113,28 @@ const pageLayoutEngine = {
     "interlooper": {
         "titleBanner": {
             "title": "INTERLOOPER LIVE // SESSION LABS",
-            "text": `<h3>Collaborative lab sessions and multi-user hardware setups</h3><p>Live electronic improvisations documented alongside RmS.</p>`,
+            "text": `
+                <h3>Collaborative lab sessions and multi-user hardware setups</h3>
+                <p>Live electronic improvisations documented alongside RmS.</p>
+            `,
             "imageName": "interlooper_bg.jpg"
         },
         "sections": [
             {
                 "title": "INTERLOOPER LIVE GIGS",
-                "text": `<h4>Live hardware sets captured on location</h4><p>Remote collaborative jams tracked directly to digital magnetic disc.</p>`,
+                "text": `
+                    <h4>Live hardware sets captured on location</h4>
+                    <p>Remote collaborative jams tracked directly to digital magnetic disc.</p>
+                `,
                 "imageName": "interlooperlive_bg.jpg",
                 "archiveKeys": ["INL2", "INL1"]
             },
             {
                 "title": "INTERLOOPER SESSION LABS",
-                "text": `<h4>Improvisational studio cross-talk communication</h4><span class="meta-tag">Location: Blueroom &amp; Ermin</span><p>Raw, unedited live streams documenting collective hardware experiments.</p>`,
+                "text": `
+                    <h4>Improvisational studio cross-talk communication</h4>
+                    <span class="meta-tag">Location: Blueroom &amp; Ermin</span><p>Raw, unedited live streams documenting collective hardware experiments.</p>
+                `,
                 "imageName": "interloopersessions_bg.jpg",
                 "archiveKeys": ["INS2", "INS1"]
             }
@@ -116,37 +143,60 @@ const pageLayoutEngine = {
     "legacy": {
         "titleBanner": {
             "title": "LEGACY ARCHIVE // 1992 - 2006",
-            "text": `<h3>The foundational project archives</h3><p>Historical tracking data, tape mixdowns, and early studio experiments retrieved from the vaults.</p>`,
+            "text": `
+                <h3>The foundational project archives</h3>
+                <p>Historical tracking data, tape mixdowns, and early studio experiments retrieved from the vaults.</p>
+            `,
             "imageName": "legacy_bg.jpg"
         },
         "sections": [
             {
                 "title": "CARBON60 // 1998 - 2006",
-                "text": `<h4>The transition to the digital audio workspace</h4><span class="meta-tag">Location: Astor</span><p>Heavy industrial distortions and experimental crossover configurations.</p>`,
+                "text": `
+                    <h4>The transition to the digital audio workspace</h4>
+                    <span class="meta-tag">Location: Astor</span>
+                    <p>Heavy industrial distortions and experimental crossover configurations.</p>
+                `,
                 "imageName": "carbon60_bg.jpg",
                 "archiveKeys": ["INMA", "TCSO"]
             },
             {
                 "title": "QUANTA // 1996 - 1997",
-                "text": `<h4>Pure analogue synthesis</h4><span class="meta-tag">Location: Staplins</span><p>Solo algorithmic trance and techno explorations recorded on high-fidelity DAT.</p>`,
+                "text": `
+                    <h4>Pure analogue synthesis</h4>
+                    <span class="meta-tag">Location: Staplins</span>
+                    <p>Solo algorithmic trance and techno explorations recorded on high-fidelity DAT.</p>
+                `,
                 "imageName": "quanta_bg.jpg",
                 "archiveKeys": ["SYNO", "ALGO", "XTFU", "JOBJ", "MHTH"]
             },
             {
                 "title": "JAMBIENCE // 1996 - 1997",
-                "text": `<h4>Restored magnetic tape archives</h4><span class="meta-tag">Location: Staplins</span><p>Legacy multi-user improvised studio sessions capturing raw analogue stress tests.</p>`,
+                "text": `
+                    <h4>Restored magnetic tape archives</h4>
+                    <span class="meta-tag">Location: Staplins</span>
+                    <p>Legacy multi-user improvised studio sessions capturing raw analogue stress tests.</p>
+                `,
                 "imageName": "jambience_bg.jpg",
                 "archiveKeys": ["SYPS", "JAMB"]
             },
             {
                 "title": "ALCHERINGGA // 1994 - 1995",
-                "text": `<h4>The earliest synthetic operations</h4><span class="meta-tag">Location: Grosvenor</span><p>Restored hardware configurations compiled from original cassette data.</p>`,
+                "text": `
+                    <h4>The earliest synthetic operations</h4>
+                    <span class="meta-tag">Location: Grosvenor</span>
+                    <p>Restored hardware configurations compiled from original cassette data.</p>
+                `,
                 "imageName": "alcheringga_bg.jpg",
                 "archiveKeys": ["KNSL", "INNO", "INFA"]
             },
             {
                 "title": "ORIGIN // 1992 - 1993",
-                "text": `<h4>Earliest collaborative projects</h4><span class="meta-tag">Location: North</span><p>showcasing the foundational workspace arrays generated using legacy insruments and software.</p>`,
+                "text": `
+                    <h4>Earliest collaborative projects</h4>
+                    <span class="meta-tag">Location: North</span>
+                    <p>showcasing the foundational workspace arrays generated using legacy insruments and software.</p>
+                `,
                 "imageName": "forerunner_bg.jpg",
                 "archiveKeys": ["ELEM", "GURU"]
             }
