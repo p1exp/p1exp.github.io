@@ -127,7 +127,7 @@ const pageLayoutEngine = {
                     <p>Remote collaborative jams tracked directly to digital magnetic disc.</p>
                 `,
                 "imageName": "interlooperlive_bg.jpg",
-                "archiveKeys": ["INL2", "INL1"]
+                "archiveKeys": ["INL3", "INL2", "INL1"]
             },
             {
                 "title": "INTERLOOPER SESSION LABS",
@@ -425,6 +425,15 @@ const masterCollectionRegistry = {
         "description": "Synchronized multi-user operations. A collaborative matrix composed and sequenced with RmS.",
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=4116788522/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download from BANDCAMP"
+    }, 
+ "INL3": {
+        "title": "INTERLOOPER FESTIVALS LIVE SET 2026", "date": "2026",
+        "description": `Studio recording from sets performed at the Carry on up Lode and Lakefest festivals.`,
+        "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-lakefest-2025%2F",
+        "footer": "MIXCLOUD Stream"
+    }, from the Lakefest sector. Collaborative jam telemetry captured direct to magnetic cassette.`,
+        "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-lakefest-2025%2F",
+        "footer": "MIXCLOUD Stream"
     },
     "INL2": {
         "title": "INTERLOOPER LAKEFEST LIVE SET 2025", "date": "2025",
