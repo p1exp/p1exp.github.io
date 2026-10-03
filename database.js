@@ -426,10 +426,10 @@ const masterCollectionRegistry = {
         "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=4116788522/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download from BANDCAMP"
     }, 
- "INL3": {
+    "INL3": {
         "title": "INTERLOOPER FESTIVALS LIVE SET 2026", "date": "2026",
         "description": `Studio recording from sets performed at the Carry on up Lode and Lakefest festivals.`,
-        "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-lakefest-2025%2F",
+        "mediaUrl": "?hide_cover=1&feed=%2Fp1exp%2Finterlooper-live-lower-lode-lakefest-festivals%2F",
         "footer": "MIXCLOUD Stream"
     },
     "INL2": {
