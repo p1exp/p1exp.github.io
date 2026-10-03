@@ -429,7 +429,7 @@ const masterCollectionRegistry = {
     "INL3": {
         "title": "INTERLOOPER FESTIVALS LIVE SET 2026", "date": "2026",
         "description": `Studio recording from sets performed at the Carry on up Lode and Lakefest festivals.`,
-        "mediaUrl": "?hide_cover=1&feed=%2Fp1exp%2Finterlooper-live-lower-lode-lakefest-festivals%2F",
+        "mediaUrl": "https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fp1exp%2Finterlooper-live-lower-lode-lakefest-festivals%2F",
         "footer": "MIXCLOUD Stream"
     },
     "INL2": {
