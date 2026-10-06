@@ -175,7 +175,7 @@ function routeToDeck(targetUrl) {
         toggleContainer.classList.remove('hidden');
     }
 
-    preloader.classList.remove('hidden');
+   preloader.classList.remove('hidden');
     deckFrame.src = 'about:blank'; 
 
     if (targetUrl.includes('bandcamp.com')) {
@@ -186,10 +186,15 @@ function routeToDeck(targetUrl) {
         wrapper.setAttribute('data-platform', 'mixcloud');
     } else if (targetUrl.includes('hearthis.at')) {
         wrapper.setAttribute('data-platform', 'hearthis');
+    } else if (targetUrl.includes('audius.co')) {
+        wrapper.setAttribute('data-platform', 'audius');
+        // Ensure the deck requests Audius' native dark mode flavor
+        if (!targetUrl.includes('flavor=dark')) {
+            targetUrl += targetUrl.includes('?') ? '&flavor=dark' : '?flavor=dark';
+        }
     } else {
         wrapper.setAttribute('data-platform', 'generic');
     }
-
     wrapper.classList.add('expanded');
     document.getElementById('tracklist-toggle').innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
     deckFrame.src = targetUrl;
