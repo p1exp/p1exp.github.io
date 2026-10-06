@@ -8,8 +8,8 @@ const siteConfiguration = {
         { id: `legacy`, label: `Legacy` }
     ],
     sectionLabels: {
-        deckMatrixShow: `▲ SHOW DECK MATRIX`,
-        deckMatrixHide: `▼ HIDE DECK MATRIX`
+        deckMatrixShow: `▲ EXPAND DECK MATRIX`,
+        deckMatrixHide: `▼ COLLAPSE DECK MATRIX`
     }
 };
 
