@@ -444,9 +444,13 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
 .player-wrapper[data-platform="mixcloud"] { height: 100px; padding-top: 14px; }
 .player-wrapper[data-platform="mixcloud"].expanded { height: 130px; padding-top: 0; } 
 
-/* --- NEW HEARTHIS.AT SIZING --- */
+/* --- HEARTHIS.AT SIZING --- */
 .player-wrapper[data-platform="hearthis"] { height: 150px; }
 .player-wrapper[data-platform="hearthis"].expanded { height: 40vh; max-height: 440px; }
+
+/* --- AUDIUS SIZING --- */
+.player-wrapper[data-platform="audius"] { height: 120px; }
+.player-wrapper[data-platform="audius"].expanded { height: 120px; }
 
 /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
 @media (max-width: 768px) {
@@ -505,4 +509,5 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
     .player-wrapper[data-platform="youtube"].expanded { height: 56vw; }
     .player-wrapper[data-platform="mixcloud"].expanded { height: 130px; }
     .player-wrapper[data-platform="hearthis"].expanded { height: 40vh; max-height: 440px; }
+    .player-wrapper[data-platform="audius"].expanded { height: 120px; }
 }
