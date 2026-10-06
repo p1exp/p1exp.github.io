@@ -186,11 +186,10 @@ function routeToDeck(targetUrl) {
         wrapper.setAttribute('data-platform', 'mixcloud');
     } else if (targetUrl.includes('hearthis.at')) {
         wrapper.setAttribute('data-platform', 'hearthis');
-    } else if (targetUrl.includes('audius.co')) {
+  } else if (targetUrl.includes('audius.co')) {
         wrapper.setAttribute('data-platform', 'audius');
-        // Ensure the deck requests Audius' native dark mode flavor
-        if (!targetUrl.includes('flavor=dark')) {
-            targetUrl += targetUrl.includes('?') ? '&flavor=dark' : '?flavor=dark';
+        if (!targetUrl.includes('flavor=compact')) {
+            targetUrl += targetUrl.includes('?') ? '&flavor=compact' : '?flavor=compact';
         }
     } else {
         wrapper.setAttribute('data-platform', 'generic');
