@@ -244,7 +244,7 @@ const masterCollectionRegistry = {
             </ul>
             </div></details>
             `,
-        "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
+        "mediaUrl": "https://audius.co/embed/track/P1EXP/08-green-flash-silhouette-ephemeral-sessions-1-p1exp",
         "footer": "Download free from BANDCAMP - Status: Final"
     },
     "NEUR": {
