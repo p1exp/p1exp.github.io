@@ -450,7 +450,7 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
 .player-wrapper[data-platform="hearthis"].expanded { height: 40vh; max-height: 440px; }
 
 /* --- AUDIUS SIZING --- */
-.player-wrapper[data-platform="audius"] { height: 130px; }
+.player-wrapper[data-platform="audius"] { height: 132px; }
 .player-wrapper[data-platform="audius"].expanded { height: 440px; }
 
 /* --- RESPONSIVE MOBILE WIREFRAME OVERRIDES --- */
