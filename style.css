@@ -434,7 +434,7 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
 
 /* --- UPDATED BANDCAMP SIZING --- */
 .player-wrapper[data-platform="bandcamp"] { height: 130px; }
-.player-wrapper[data-platform="bandcamp"].expanded { height: 40vh; max-height: 440px; }
+.player-wrapper[data-platform="bandcamp"].expanded { height: 40vh; max-height: 440px; max-width: 700px; }
 
 /* --- UPDATED YOUTUBE SIZING (16:9 Focus) --- */
 .player-wrapper[data-platform="youtube"] { height: 160px; }
