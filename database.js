@@ -244,7 +244,7 @@ const masterCollectionRegistry = {
             </ul>
             </div></details>
             `,
-        "mediaUrl": "https://audius.co/embed/album/Azriel426/la-legge-del-cratere-first-bout",
+        "mediaUrl": "https://bandcamp.com/EmbeddedPlayer/album=1687209366/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/",
         "footer": "Download free from BANDCAMP - Status: Final"
     },
     "NEUR": {
