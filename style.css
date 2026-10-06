@@ -447,7 +447,7 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
 
 /* --- HEARTHIS.AT SIZING --- */
 .player-wrapper[data-platform="hearthis"] { height: 152px; }
-.player-wrapper[data-platform="hearthis"].expanded { height: 40vh; max-height: 440px; }
+.player-wrapper[data-platform="hearthis"].expanded { max-height: 440px; height: 40vh; }
 
 /* --- AUDIUS SIZING --- */
 .player-wrapper[data-platform="audius"] { height: 132px; }
