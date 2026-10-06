@@ -434,19 +434,19 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
 /* --- UPDATED BANDCAMP SIZING --- */
-.player-wrapper[data-platform="bandcamp"] { height: 130px; max-width: 700px; }
+.player-wrapper[data-platform="bandcamp"] { height: 132px; max-width: 700px; }
 .player-wrapper[data-platform="bandcamp"].expanded { height: 40vh; max-height: 440px; }
 
 /* --- UPDATED YOUTUBE SIZING (16:9 Focus) --- */
-.player-wrapper[data-platform="youtube"] { height: 160px; }
+.player-wrapper[data-platform="youtube"] { height: 200px; }
 .player-wrapper[data-platform="youtube"].expanded { height: 40vh; max-height: 523px; }
 
 /* --- UPDATED MIXCLOUD SIZING --- */
-.player-wrapper[data-platform="mixcloud"] { height: 100px; padding-top: 14px; }
-.player-wrapper[data-platform="mixcloud"].expanded { height: 130px; padding-top: 0; } 
+.player-wrapper[data-platform="mixcloud"] { height: 132px; }
+.player-wrapper[data-platform="mixcloud"].expanded { height: 192px; } 
 
 /* --- HEARTHIS.AT SIZING --- */
-.player-wrapper[data-platform="hearthis"] { height: 150px; }
+.player-wrapper[data-platform="hearthis"] { height: 152px; }
 .player-wrapper[data-platform="hearthis"].expanded { height: 40vh; max-height: 440px; }
 
 /* --- AUDIUS SIZING --- */
