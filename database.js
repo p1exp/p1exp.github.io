@@ -244,7 +244,7 @@ const masterCollectionRegistry = {
             </ul>
             </div></details>
             `,
-        "mediaUrl": "https://audius.co/embed/track/P1EXP/08-green-flash-silhouette-ephemeral-sessions-1-p1exp",
+        "mediaUrl": "https://audius.co/embed/album/Azriel426/la-legge-del-cratere-first-bout",
         "footer": "Download free from BANDCAMP - Status: Final"
     },
     "NEUR": {
