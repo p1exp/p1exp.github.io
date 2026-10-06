@@ -435,11 +435,11 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
 
 /* --- UPDATED BANDCAMP SIZING --- */
 .player-wrapper[data-platform="bandcamp"] { height: 132px; max-width: 700px; }
-.player-wrapper[data-platform="bandcamp"].expanded { height: 40vh; max-height: 440px; }
+.player-wrapper[data-platform="bandcamp"].expanded { max-height: 440px; height: 40vh; }
 
 /* --- UPDATED YOUTUBE SIZING (16:9 Focus) --- */
 .player-wrapper[data-platform="youtube"] { height: 200px; }
-.player-wrapper[data-platform="youtube"].expanded { height: 40vh; max-height: 523px; }
+.player-wrapper[data-platform="youtube"].expanded { max-height: 523px; height: 40vh; }
 
 /* --- UPDATED MIXCLOUD SIZING --- */
 .player-wrapper[data-platform="mixcloud"] { height: 132px; }
@@ -506,9 +506,10 @@ iframe#master-deck-frame { position: relative; z-index: 1; width: 100%; height: 
     
     .player-wrapper { max-width: 730px; padding-left: 15px; padding-right: 15px; }
     
-    .player-wrapper[data-platform="bandcamp"].expanded { height: 40vh; max-height: 440px; }
+    .player-wrapper[data-platform="bandcamp"].expanded { max-height: 440px; height: 40vh; }
+    .player-wrapper[data-platform="youtube"] { height: 130px; }
     .player-wrapper[data-platform="youtube"].expanded { height: 56vw; }
-    .player-wrapper[data-platform="mixcloud"].expanded { height: 130px; }
-    .player-wrapper[data-platform="hearthis"].expanded { height: 40vh; max-height: 440px; }
+    .player-wrapper[data-platform="mixcloud"].expanded { height: 192px; }
+    .player-wrapper[data-platform="hearthis"].expanded { max-height: 440px; height: 40vh; }
     .player-wrapper[data-platform="audius"].expanded { height: 300px; }
 }
