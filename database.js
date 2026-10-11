@@ -219,7 +219,7 @@ const masterCollectionRegistry = {
     TETR: {
         title: `TETRACHROME VISION`, date: `2026`,
         description: `A new visual FX project to run with the sound in all medias. More info to follow.`,
-        mediaUrl: `https://audius.co/embed/album/P1EXP/ephemeral-sessions-1-1`,
+        mediaUrl: `https://audius.co/embed/album/P1EXP/ephemeral-sessions-1-1?flavor=compact`,
         footer: ``
     },
     EPH1: {
