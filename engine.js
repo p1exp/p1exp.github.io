@@ -1,43 +1,43 @@
 function bootstrapApplication() {
-    if (typeof masterCollectionRegistry === 'undefined') return;
+    if (typeof masterCollectionRegistry === `undefined`) return;
     const config = siteConfiguration;
 
-    document.getElementById('site-logo').textContent = config.logoTitle || '';
-    document.getElementById('tracklist-toggle').textContent = config.sectionLabels.deckMatrixShow || '';
+    document.getElementById(`site-logo`).textContent = config.logoTitle || ``;
+    document.getElementById(`tracklist-toggle`).textContent = config.sectionLabels.deckMatrixShow || ``;
 
-    const navContainer = document.getElementById('nav-filters');
-    navContainer.innerHTML = '';
+    const navContainer = document.getElementById(`nav-filters`);
+    navContainer.innerHTML = ``;
 
     config.navigationMenu.forEach((menuItem, idx) => {
-        const btn = document.createElement('button');
+        const btn = document.createElement(`button`);
         btn.textContent = menuItem.label;
-        if (idx === 0) btn.className = 'active'; 
+        if (idx === 0) btn.className = `active`; 
         btn.onclick = function() { switchCategory(menuItem.id, this); };
         navContainer.appendChild(btn);
     });
 
     loadPageView(config.navigationMenu[0].id);
     
-    document.getElementById('player-wrapper').classList.remove('expanded');
+    document.getElementById(`player-wrapper`).classList.remove(`expanded`);
 }
 
 function loadPageView(pageKey) {
     const pageMap = pageLayoutEngine[pageKey];
     if (!pageMap) return;
 
-    let layoutHtml = '';
+    let layoutHtml = ``;
 
-// 1. RENDER MAIN HERO BANNER
+    // 1. RENDER MAIN HERO BANNER
     layoutHtml += `
         <div class="full-banner banner-70">
-            <img src="./img_bg/${pageMap.titleBanner.imageName || ''}" class="banner-img">
+            <img src="./img_bg/${pageMap.titleBanner.imageName || ``}" class="banner-img">
             <div class="banner-heading">
-                <h1>${pageMap.titleBanner.title || ''}</h1>
+                <h1>${pageMap.titleBanner.title || ``}</h1>
             </div>
         </div>
     `;
 
-    // 2. INJECT SOCIAL MATRIX (Now positioned immediately after the banner)
+    // 2. INJECT SOCIAL MATRIX
     if (pageKey === siteConfiguration.navigationMenu[0].id) {
         layoutHtml += `
             <div class="social-matrix-wrapper">
@@ -62,7 +62,7 @@ function loadPageView(pageKey) {
     // 3. RENDER THE BANNER TEXT BLOCK
     layoutHtml += `
         <div class="narrow-text-block">
-            ${pageMap.titleBanner.text || ''}
+            ${pageMap.titleBanner.text || ``}
         </div>
     `;
 
@@ -70,19 +70,17 @@ function loadPageView(pageKey) {
     if (pageMap.sections && pageMap.sections.length > 0) {
         pageMap.sections.forEach(section => {
             
-            // A: Only inject a section banner if an imageName exists
             if (section.imageName) {
                 layoutHtml += `
                     <div class="full-banner banner-60">
                         <img src="./img_bg/${section.imageName}" class="banner-img">
                         <div class="banner-heading">
-                            <h2>${section.title || ''}</h2>
+                            <h2>${section.title || ``}</h2>
                         </div>
                     </div>
                 `;
             }
 
-            // B: Inject the raw text block (no forced <p> tags)
             if (section.text) {
                 layoutHtml += `
                     <div class="narrow-text-block">
@@ -91,7 +89,6 @@ function loadPageView(pageKey) {
                 `;
             }
 
-            // C: Only build the project grid if there are archive items
             if (section.archiveKeys && section.archiveKeys.length > 0) {
                 layoutHtml += `<div class="collection-grid">`;
                 section.archiveKeys.forEach(catNo => {
@@ -102,11 +99,11 @@ function loadPageView(pageKey) {
                         <div class="project-layout-card">
                             <img src="./img_coll/${catNo}.jpg" class="card-thumbnail">
                             <div class="card-details">
-                                <h3>${item.title || ''}</h3>
-                                <span class="meta-tag">P1-${catNo} // ${item.date || ''}</span>
-                                <div class="card-desc-block">${item.description || ''}</div>
-                                ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck('${item.mediaUrl}')">▶ PLAY ARCHIVE DECK</button>` : ''}
-                                ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ''}
+                                <h3>${item.title || ``}</h3>
+                                <span class="meta-tag">P1-${catNo} // ${item.date || ``}</span>
+                                <div class="card-desc-block">${item.description || ``}</div>
+                                ${item.mediaUrl ? `<button class="route-link" onclick="routeToDeck(\`${item.mediaUrl}\`)">▶ PLAY ARCHIVE DECK</button>` : ``}
+                                ${item.footer ? `<div class="card-footer-text">${item.footer}</div>` : ``}
                             </div>
                         </div>
                     `;
@@ -123,7 +120,7 @@ function loadPageView(pageKey) {
         const nextItem = navMenu[currentIndex + 1];
         layoutHtml += `
             <div class="next-page-wrapper">
-                <button class="next-page-btn" onclick="triggerNavigation('${nextItem.id}')">
+                <button class="next-page-btn" onclick="triggerNavigation(\`${nextItem.id}\`)">
                     NEXT AREA: ${nextItem.label} &#10142;
                 </button>
             </div>
@@ -138,13 +135,13 @@ function loadPageView(pageKey) {
         </div>
     `;
 
-    const mainPanel = document.getElementById('main-scroll-panel');
-    mainPanel.classList.add('fade-out');
+    const mainPanel = document.getElementById(`main-scroll-panel`);
+    mainPanel.classList.add(`fade-out`);
     
     setTimeout(() => {
         mainPanel.innerHTML = layoutHtml;
         mainPanel.scrollTop = 0;
-        mainPanel.classList.remove('fade-out');
+        mainPanel.classList.remove(`fade-out`);
     }, 300); 
 }
 
@@ -153,7 +150,7 @@ function triggerNavigation(targetPageKey) {
     const targetIndex = navMenu.findIndex(item => item.id === targetPageKey);
     
     if (targetIndex !== -1) {
-        const navButtons = document.querySelectorAll('#nav-filters button');
+        const navButtons = document.querySelectorAll(`#nav-filters button`);
         if (navButtons[targetIndex]) {
             switchCategory(targetPageKey, navButtons[targetIndex]);
         }
@@ -175,9 +172,9 @@ function routeToDeck(targetUrl) {
         toggleContainer.classList.remove(`hidden`);
     }
 
-    // --- NEW: Force hard HTML attributes so React widgets calculate width correctly ---
-    deckFrame.setAttribute(`width`, `100%`);
-    deckFrame.setAttribute(`height`, `100%`);
+    // Force hard HTML & CSS attributes for strict widget rendering
+    deckFrame.style.width = `100%`;
+    deckFrame.style.height = `100%`;
     deckFrame.setAttribute(`allow`, `encrypted-media`);
 
     preloader.classList.remove(`hidden`);
@@ -192,7 +189,6 @@ function routeToDeck(targetUrl) {
     } else if (targetUrl.includes(`hearthis.at`)) {
         wrapper.setAttribute(`data-platform`, `hearthis`);
     } else if (targetUrl.includes(`audius.co`)) {
-        // Just set the CSS height tag, do NOT modify the URL
         wrapper.setAttribute(`data-platform`, `audius`);
     } else {
         wrapper.setAttribute(`data-platform`, `generic`);
@@ -200,7 +196,13 @@ function routeToDeck(targetUrl) {
 
     wrapper.classList.add(`expanded`);
     document.getElementById(`tracklist-toggle`).innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
-    deckFrame.src = targetUrl;
+    
+    // THE AUDIUS FIX: Wait 50 milliseconds before loading the URL.
+    // This allows the CSS to apply the 120px height and full width, 
+    // ensuring the Audius widget measures its container correctly on boot.
+    setTimeout(() => {
+        deckFrame.src = targetUrl;
+    }, 50);
 
     deckFrame.onload = function() {
         if (deckFrame.src !== `about:blank` && deckFrame.src !== window.location.href) {
@@ -210,18 +212,18 @@ function routeToDeck(targetUrl) {
 }
 
 function switchCategory(categoryKey, buttonElement) {
-    document.querySelectorAll('#nav-filters button').forEach(btn => btn.classList.remove('active'));
-    buttonElement.classList.add('active');
+    document.querySelectorAll(`#nav-filters button`).forEach(btn => btn.classList.remove(`active`));
+    buttonElement.classList.add(`active`);
     loadPageView(categoryKey);
 }
 
 function toggleTracklist() {
-    const wrapper = document.getElementById('player-wrapper');
-    const button = document.getElementById('tracklist-toggle');
+    const wrapper = document.getElementById(`player-wrapper`);
+    const button = document.getElementById(`tracklist-toggle`);
     const labels = siteConfiguration.sectionLabels;
 
-    wrapper.classList.toggle('expanded');
-    button.innerHTML = wrapper.classList.contains('expanded') ? labels.deckMatrixHide : labels.deckMatrixShow;
+    wrapper.classList.toggle(`expanded`);
+    button.innerHTML = wrapper.classList.contains(`expanded`) ? labels.deckMatrixHide : labels.deckMatrixShow;
 }
 
 // --- MOBILE SWIPE NAVIGATION ENGINE ---
@@ -230,14 +232,14 @@ let touchStartY = 0;
 let touchEndX = 0;
 let touchEndY = 0;
 
-const mainScrollPanel = document.getElementById('main-scroll-panel');
+const mainScrollPanel = document.getElementById(`main-scroll-panel`);
 
-mainScrollPanel.addEventListener('touchstart', e => {
+mainScrollPanel.addEventListener(`touchstart`, e => {
     touchStartX = e.changedTouches[0].screenX;
     touchStartY = e.changedTouches[0].screenY;
 }, { passive: true }); 
 
-mainScrollPanel.addEventListener('touchend', e => {
+mainScrollPanel.addEventListener(`touchend`, e => {
     touchEndX = e.changedTouches[0].screenX;
     touchEndY = e.changedTouches[0].screenY;
     handleSwipeGesture();
@@ -249,8 +251,8 @@ function handleSwipeGesture() {
     const swipeThreshold = 50; 
 
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
-        const navButtons = Array.from(document.querySelectorAll('#nav-filters button'));
-        const activeBtn = document.querySelector('#nav-filters button.active');
+        const navButtons = Array.from(document.querySelectorAll(`#nav-filters button`));
+        const activeBtn = document.querySelector(`#nav-filters button.active`);
         const currentIndex = navButtons.indexOf(activeBtn);
         const navMenu = siteConfiguration.navigationMenu;
 
