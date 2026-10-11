@@ -192,13 +192,8 @@ function routeToDeck(targetUrl) {
     } else if (targetUrl.includes(`hearthis.at`)) {
         wrapper.setAttribute(`data-platform`, `hearthis`);
     } else if (targetUrl.includes(`audius.co`)) {
+        // Just set the CSS height tag, do NOT modify the URL
         wrapper.setAttribute(`data-platform`, `audius`);
-        
-        // --- NEW: Strip out old dark modes and force the compact horizontal strip ---
-        targetUrl = targetUrl.replace(`flavor=dark`, `flavor=compact`);
-        if (!targetUrl.includes(`flavor=compact`)) {
-            targetUrl += targetUrl.includes(`?`) ? `&flavor=compact` : `?flavor=compact`;
-        }
     } else {
         wrapper.setAttribute(`data-platform`, `generic`);
     }
