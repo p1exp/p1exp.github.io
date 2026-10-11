@@ -93,7 +93,7 @@ const pageLayoutEngine = {
                 text: `
                     <h4>Fragmented modular audio</h4>
                     <span class="meta-tag">Location: Ermin</span>
-                    <p>experimental loop compositions and modular synthesis, reconstructed into complete, structured tracks.</p>
+                    <p>Experimental loop compositions and modular synthesis, reconstructed into complete, structured tracks.</p>
                 `,
                 imageName: `immuno_bg.jpg`,
                 archiveKeys: [`BREL`, `SCDO`, `TTLG`, `CLEN`]
@@ -115,7 +115,7 @@ const pageLayoutEngine = {
             title: `INTERLOOPER LIVE // SESSION LABS`,
             text: `
                 <h3>Collaborative lab sessions and multi-user hardware setups</h3>
-                <p>Live electronic improvisations documented alongside RmS.</p>
+                <p>Live electronic improvisations documented alongside RMS.</p>
             `,
             imageName: `interlooper_bg.jpg`
         },
