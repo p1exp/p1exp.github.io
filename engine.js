@@ -161,48 +161,58 @@ function triggerNavigation(targetPageKey) {
 }
 
 function routeToDeck(targetUrl) {
-    const deckFrame = document.getElementById('master-deck-frame');
-    const wrapper = document.getElementById('player-wrapper');
-    const preloader = document.getElementById('deck-preloader');
-    const idleScreen = document.getElementById('deck-idle');
-    const toggleContainer = document.getElementById('toggle-container');
+    const deckFrame = document.getElementById(`master-deck-frame`);
+    const wrapper = document.getElementById(`player-wrapper`);
+    const preloader = document.getElementById(`deck-preloader`);
+    const idleScreen = document.getElementById(`deck-idle`);
+    const toggleContainer = document.getElementById(`toggle-container`);
     
     if (idleScreen) {
-        idleScreen.classList.add('hidden');
+        idleScreen.classList.add(`hidden`);
     }
     
     if (toggleContainer) {
-        toggleContainer.classList.remove('hidden');
+        toggleContainer.classList.remove(`hidden`);
     }
 
-   preloader.classList.remove('hidden');
-    deckFrame.src = 'about:blank'; 
+    // --- NEW: Force hard HTML attributes so React widgets calculate width correctly ---
+    deckFrame.setAttribute(`width`, `100%`);
+    deckFrame.setAttribute(`height`, `100%`);
+    deckFrame.setAttribute(`allow`, `encrypted-media`);
 
-    if (targetUrl.includes('bandcamp.com')) {
-        wrapper.setAttribute('data-platform', 'bandcamp');
-    } else if (targetUrl.includes('youtube.com')) {
-        wrapper.setAttribute('data-platform', 'youtube');
-    } else if (targetUrl.includes('mixcloud.com')) {
-        wrapper.setAttribute('data-platform', 'mixcloud');
-    } else if (targetUrl.includes('hearthis.at')) {
-        wrapper.setAttribute('data-platform', 'hearthis');
-  } else if (targetUrl.includes('audius.co')) {
-        wrapper.setAttribute('data-platform', 'audius');
-        if (!targetUrl.includes('flavor=compact')) {
-            targetUrl += targetUrl.includes('?') ? '&flavor=compact' : '?flavor=compact';
+    preloader.classList.remove(`hidden`);
+    deckFrame.src = `about:blank`; 
+
+    if (targetUrl.includes(`bandcamp.com`)) {
+        wrapper.setAttribute(`data-platform`, `bandcamp`);
+    } else if (targetUrl.includes(`youtube.com`)) {
+        wrapper.setAttribute(`data-platform`, `youtube`);
+    } else if (targetUrl.includes(`mixcloud.com`)) {
+        wrapper.setAttribute(`data-platform`, `mixcloud`);
+    } else if (targetUrl.includes(`hearthis.at`)) {
+        wrapper.setAttribute(`data-platform`, `hearthis`);
+    } else if (targetUrl.includes(`audius.co`)) {
+        wrapper.setAttribute(`data-platform`, `audius`);
+        
+        // --- NEW: Strip out old dark modes and force the compact horizontal strip ---
+        targetUrl = targetUrl.replace(`flavor=dark`, `flavor=compact`);
+        if (!targetUrl.includes(`flavor=compact`)) {
+            targetUrl += targetUrl.includes(`?`) ? `&flavor=compact` : `?flavor=compact`;
         }
     } else {
-        wrapper.setAttribute('data-platform', 'generic');
+        wrapper.setAttribute(`data-platform`, `generic`);
     }
-    wrapper.classList.add('expanded');
-    document.getElementById('tracklist-toggle').innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
+
+    wrapper.classList.add(`expanded`);
+    document.getElementById(`tracklist-toggle`).innerHTML = siteConfiguration.sectionLabels.deckMatrixHide;
     deckFrame.src = targetUrl;
 
     deckFrame.onload = function() {
-        if (deckFrame.src !== 'about:blank' && deckFrame.src !== window.location.href) {
-            preloader.classList.add('hidden');
+        if (deckFrame.src !== `about:blank` && deckFrame.src !== window.location.href) {
+            preloader.classList.add(`hidden`);
         }
     };
+}
 }
 
 function switchCategory(categoryKey, buttonElement) {
