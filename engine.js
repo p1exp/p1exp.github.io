@@ -213,7 +213,6 @@ function routeToDeck(targetUrl) {
         }
     };
 }
-}
 
 function switchCategory(categoryKey, buttonElement) {
     document.querySelectorAll('#nav-filters button').forEach(btn => btn.classList.remove('active'));
