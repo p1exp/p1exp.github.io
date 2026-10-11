@@ -61,9 +61,9 @@ const pageLayoutEngine = {
             {
                 title: `MACHINEBRAIN // NOW - 2026`,
                 text: `
-                    <h4>AI humanoid fusion</h4>
+                    <h4>Technological Augmentation</h4>
                     <span class="meta-tag">Location: Blueroom</span>
-                    <p>Experiments with Artificial Intelligence, augmenting human composition.</p>
+                    <p>Experiments with generative technology, augmenting human composition.</p>
                 `,
                 imageName: `machinebrain_bg.jpg`,
                 archiveKeys: [`TETR`]
@@ -83,7 +83,7 @@ const pageLayoutEngine = {
                 text: `
                     <h4>Generative visual sequences and algorithmic pattern design</h4>
                     <span class="meta-tag">Location: Blueroom</span>
-                    <p>Exploring the intersection of human arrangement and autonomous generative machine logic.</p>
+                    <p>Exploring visual experience with human arrangement and autonomous generative machine logic.</p>
                 `,
                 imageName: `trichromat_bg.jpg`,
                 archiveKeys: [`NEUR`, `COSP`, `COVI`]
@@ -93,7 +93,7 @@ const pageLayoutEngine = {
                 text: `
                     <h4>Fragmented modular audio</h4>
                     <span class="meta-tag">Location: Ermin</span>
-                    <p>experimental loop compositions reconstructed into complete, structured tracks.</p>
+                    <p>experimental loop compositions and modular synthesis, reconstructed into complete, structured tracks.</p>
                 `,
                 imageName: `immuno_bg.jpg`,
                 archiveKeys: [`BREL`, `SCDO`, `TTLG`, `CLEN`]
@@ -103,7 +103,7 @@ const pageLayoutEngine = {
                 text: `
                     <h4>High-density digital sample manipulation</h4>
                     <span class="meta-tag">Location: Lloyds</span>
-                    <p>Complex loop arrangements mixed and sequenced exclusively within DAW environments.</p>
+                    <p>Complex loop arrangements mixed and sequenced exclusively within digital environments.</p>
                 `,
                 imageName: `electricabuse_bg.jpg`,
                 archiveKeys: [`EXCP`, `STRA`, `INTL`]
@@ -133,7 +133,7 @@ const pageLayoutEngine = {
                 title: `INTERLOOPER SESSION LABS`,
                 text: `
                     <h4>Improvisational studio cross-talk communication</h4>
-                    <span class="meta-tag">Location: Blueroom &amp; Ermin</span><p>Raw, unedited live streams documenting collective hardware experiments.</p>
+                    <span class="meta-tag">Location: Blueroom &amp; Ermin</span><p>Collaborative live streams documenting collective hardware experiments.</p>
                 `,
                 imageName: `interloopersessions_bg.jpg`,
                 archiveKeys: [`INS2`, `INS1`]
@@ -153,7 +153,7 @@ const pageLayoutEngine = {
             {
                 title: `CARBON60 // 1998 - 2006`,
                 text: `
-                    <h4>The transition to the digital audio workspace</h4>
+                    <h4>The transition from analogue to the digital audio workspace</h4>
                     <span class="meta-tag">Location: Astor</span>
                     <p>Heavy industrial distortions and experimental crossover configurations.</p>
                 `,
@@ -165,7 +165,7 @@ const pageLayoutEngine = {
                 text: `
                     <h4>Pure analogue synthesis</h4>
                     <span class="meta-tag">Location: Staplins</span>
-                    <p>Solo algorithmic trance and techno explorations recorded on high-fidelity DAT.</p>
+                    <p>Solo algorithmic explorations recorded on high-fidelity DAT.</p>
                 `,
                 imageName: `quanta_bg.jpg`,
                 archiveKeys: [`SYNO`, `ALGO`, `XTFU`, `JOBJ`, `MHTH`]
@@ -175,7 +175,7 @@ const pageLayoutEngine = {
                 text: `
                     <h4>Restored magnetic tape archives</h4>
                     <span class="meta-tag">Location: Staplins</span>
-                    <p>Legacy multi-user improvised studio sessions capturing raw analogue stress tests.</p>
+                    <p>Legacy multi-user improvised studio sessions capturing raw analogue experimentation.</p>
                 `,
                 imageName: `jambience_bg.jpg`,
                 archiveKeys: [`SYPS`, `JAMB`]
