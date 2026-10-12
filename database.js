@@ -20,7 +20,8 @@ const pageLayoutEngine = {
             title: `<strong>#P1EXP</strong> // PLATFORM-1 EXPERIMENTAL`,
             text: `
                 <h3>The central processing deck for the #P1EXP audio matrix</h3>
-                <p><strong>Swipe the page or select from the menu above to view the timeline archives and projects or view the featured showcase below. Select PLAY ARCHIVE DECK to stream the collections.</strong></p>
+                <p><strong>Swipe the page or select from the menu above to view the timeline archives and projects or view the featured showcase below.</p>
+                <p>Select PLAY ARCHIVE DECK to stream the collections.</strong></p>
                 <details><summary>+ MORE INFORMATION</summary>
                 <div class="details-content">
                     <p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno.</p>
