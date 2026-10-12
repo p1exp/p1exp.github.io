@@ -212,7 +212,10 @@ function routeToDeck(targetUrl) {
 }
 
 function switchCategory(categoryKey, buttonElement) {
-    document.querySelectorAll(`#nav-filters button`).forEach(btn => btn.classList.remove(`active`));
+    document.querySelectorAll(`#nav-filters button`).forEach(btn => {
+        btn.classList.remove(`active`);
+        btn.blur(); // Forces mobile browsers to drop the sticky tap/focus state
+    });
     buttonElement.classList.add(`active`);
     loadPageView(categoryKey);
 }
