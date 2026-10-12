@@ -21,7 +21,7 @@ const pageLayoutEngine = {
             text: `
                 <h3>The central processing deck for the #P1EXP audio matrix</h3>
                 <p><strong>Swipe the page or select from the menu above to view the timeline archives and projects or view the featured showcase below. Select PLAY ARCHIVE DECK to stream the collections.</strong></p>
-                <details><summary>+ VIEW HARDWARE LOG</summary>
+                <details><summary>+ MORE INFORMATION</summary>
                 <div class="details-content">
                     <p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno.</p>
                     <p>This catalogue explores the structural evolution of underground machine compositions, engineered through a hybrid workflow of live hardware modular synthesis, custom generative MIDI sequencing, and complex DAW sample manipulation.</p>
@@ -233,17 +233,17 @@ const masterCollectionRegistry = {
             <div class="details-content">
             <p>To capture raw output during the development process of a live gig performance, testing track structures and dynamic movement before porting the framework to the Akai Force.</p>
             <ul class="log-list">
-            <li><strong>Style:</strong> Live Set Development / Experimental Electronic</li>
-            <li><strong>Methodology:</strong> Performance-driven session routing sample packs and recorded hardware instruments through a standardised 8-channel grid template.</li>
-            <li><strong>Audio Signal Chain:</strong>
-            <ul>
-            <li><em>Brain/Control:</em> Ableton Live managed via Ableton Push 2</li>
-            <li><em>Sound Sources:</em> Sample packs and recorded hardware instruments</li>
-            <li><em>Processing/FX:</em> 8-channel performance bus utilising filters, delays, and Flexbeat for real-time manipulation</li>
-            </ul>
-            </li>
-            <li><strong>Visual & Display Architecture:</strong> Audio-focused development captures (pre-visual integration).</li>
-            <li><strong>Session Data:</strong> Live Set Prototype Captures</li>
+                <li><strong>Style:</strong> Live Set Development / Experimental Electronic</li>
+                <li><strong>Methodology:</strong> Performance-driven session routing sample packs and recorded hardware instruments through a standardised 8-channel grid template.</li>
+                <li><strong>Audio Signal Chain:</strong>
+                <ul>
+                    <li><em>Brain/Control:</em> Ableton Live managed via Ableton Push 2</li>
+                    <li><em>Sound Sources:</em> Sample packs and recorded hardware instruments</li>
+                    <li><em>Processing/FX:</em> 8-channel performance bus utilising filters, delays, and Flexbeat for real-time manipulation</li>
+                </ul>
+                </li>
+                <li><strong>Visual & Display Architecture:</strong> Audio-focused development captures (pre-visual integration).</li>
+                <li><strong>Session Data:</strong> Live Set Prototype Captures</li>
             </ul>
             </div></details>
             `,
@@ -257,17 +257,17 @@ const masterCollectionRegistry = {
             <div class="details-content">
             <p>To execute 13 tracks as continuous, uninterrupted live hardware jams, relying entirely on real-time parameter tweaking and generative sequencing to build tension and structure.</p>
             <ul class="log-list">
-            <li><strong>Style:</strong> Experimental Audio-Visual / Live Hardware Jam</li>
-            <li><strong>Methodology:</strong> 100% live, single continuous takes with zero timeline sequencing. Arrangements were built on the fly by riding the mixer, triggering live mutes, and manually sweeping filters.</li>
-            <li><strong>Audio Signal Chain:</strong>
-            <ul>
-            <li><em>Brain/Control:</em> Akai MPC One (master clock and percussion loops) and Ableton Live Session mode (for additional percussion and sounds). Custom F:Wheel microcontroller and independent generative sequencers driving MIDI.</li>
-            <li><em>Sound Sources:</em> Behringer TD-3, MAM MB33, Eurorack modular, Make Noise 0-Coast, Moog Subharmonicon, and Behringer Spice.</li>
-            <li><em>Processing/FX:</em> Captured raw alongside visuals, with final post-production and mastering completed in Adobe Premiere.</li>
-            </ul>
-            </li>
-            <li><strong>Visual & Display Architecture:</strong> Generative video clips randomly sequenced on the fly to match the unpredictable nature of the hardware jam, captured simultaneously direct to OBS Studio.</li>
-            <li><strong>Session Data:</strong> Part 3 of the #Trichromat Series | 13-Part Live Capture</li>
+                <li><strong>Style:</strong> Experimental Audio-Visual / Live Hardware Jam</li>
+                <li><strong>Methodology:</strong> 100% live, single continuous takes with zero timeline sequencing. Arrangements were built on the fly by riding the mixer, triggering live mutes, and manually sweeping filters.</li>
+                <li><strong>Audio Signal Chain:</strong>
+                <ul>
+                    <li><em>Brain/Control:</em> Akai MPC One (master clock and percussion loops) and Ableton Live Session mode (for additional percussion and sounds). Custom F:Wheel microcontroller and independent generative sequencers driving MIDI.</li>
+                    <li><em>Sound Sources:</em> Behringer TD-3, MAM MB33, Eurorack modular, Make Noise 0-Coast, Moog Subharmonicon, and Behringer Spice.</li>
+                    <li><em>Processing/FX:</em> Captured raw alongside visuals, with final post-production and mastering completed in Adobe Premiere.</li>
+                </ul>
+                </li>
+                <li><strong>Visual & Display Architecture:</strong> Generative video clips randomly sequenced on the fly to match the unpredictable nature of the hardware jam, captured simultaneously direct to OBS Studio.</li>
+                <li><strong>Session Data:</strong> Part 3 of the #Trichromat Series | 13-Part Live Capture</li>
             </ul>
             </div></details>
         `,
@@ -282,16 +282,16 @@ const masterCollectionRegistry = {
             <div class="details-content">
             <p>To execute and capture a continuous audio-visual performance, blending generative sequencing with live hardware manipulation.</p>
             <ul class="log-list">
-            <li><strong>Style:</strong> Live Hardware Jam / Audio-Visual Performance</li>
-            <li><strong>Methodology:</strong> 100% live, single-take performance. The audio architecture integrates MPC One loops with Ableton Session View clips via generative sequencing, mixed in real-time alongside live hardware manipulation.</li>
-            <li><strong>Audio Signal Chain:</strong>
-            <ul>
-            <li><em>Brain/Control:</em> Akai MPC One and Ableton Live (Session View / generative sequencing)</li>
-            <li><em>Sound Sources:</em> Eurorack modular system and external hardware synthesisers</li>
-            </ul>
-            </li>
-            <li><strong>Visual & Display Architecture:</strong> Real-time randomised video clips layered via chroma keying and captured directly in OBS Studio to generate colourful geometric visual compositions.</li>
-            <li><strong>Session Data:</strong> Part 3 of the #Trichromat Series | Live Audio-Visual Capture (Single Take)</li>
+                <li><strong>Style:</strong> Live Hardware Jam / Audio-Visual Performance</li>
+                <li><strong>Methodology:</strong> 100% live, single-take performance. The audio architecture integrates MPC One loops with Ableton Session View clips via generative sequencing, mixed in real-time alongside live hardware manipulation.</li>
+                <li><strong>Audio Signal Chain:</strong>
+                <ul>
+                    <li><em>Brain/Control:</em> Akai MPC One and Ableton Live (Session View / generative sequencing)</li>
+                    <li><em>Sound Sources:</em> Eurorack modular system and external hardware synthesisers</li>
+                </ul>
+                </li>
+                <li><strong>Visual & Display Architecture:</strong> Real-time randomised video clips layered via chroma keying and captured directly in OBS Studio to generate colourful geometric visual compositions.</li>
+                <li><strong>Session Data:</strong> Part 3 of the #Trichromat Series | Live Audio-Visual Capture (Single Take)</li>
             </ul>
             </div></details>
         `,
@@ -306,17 +306,17 @@ const masterCollectionRegistry = {
             <div class="details-content">
             <p>To create structured, autonomous machine logic through 100% dawless hardware improvisation, relying exclusively on standalone sequencers during isolation.</p>
             <ul class="log-list">
-            <li><strong>Style:</strong> Experimental Electronic / Hardware Synthesis</li>
-            <li><strong>Methodology:</strong> 100% dawless, single-take hardware improvisation. No timeline sequencing or computer DAWs (strictly no Ableton) were used; arrangements relied entirely on live mixer manipulation and hardware mutes.</li>
-            <li><strong>Audio Signal Chain:</strong>
-            <ul>
-            <li><em>Brain/Control:</em> Akai MPC One (master clock and sequencing) and custom F:Wheel generative microcontroller.</li>
-            <li><em>Sound Sources:</em> Pure hardware synthesis ecosystem driven directly by the MPC and F:Wheel.</li>
-            <li><em>Processing/FX:</em> Captured live directly to stereo mixdown.</li>
-            </ul>
-            </li>
-            <li><strong>Visual & Display Architecture:</strong> Live generative video elements captured simultaneously with the audio performance to document the offline session.</li>
-            <li><strong>Session Data:</strong> Part 1 of the #Trichromat Series | Format: YouTube Archive</li>
+                <li><strong>Style:</strong> Experimental Electronic / Hardware Synthesis</li>
+                <li><strong>Methodology:</strong> 100% dawless, single-take hardware improvisation. No timeline sequencing or computer DAWs (strictly no Ableton) were used; arrangements relied entirely on live mixer manipulation and hardware mutes.</li>
+                <li><strong>Audio Signal Chain:</strong>
+                <ul>
+                    <li><em>Brain/Control:</em> Akai MPC One (master clock and sequencing) and custom F:Wheel generative microcontroller.</li>
+                    <li><em>Sound Sources:</em> Pure hardware synthesis ecosystem driven directly by the MPC and F:Wheel.</li>
+                    <li><em>Processing/FX:</em> Captured live directly to stereo mixdown.</li>
+                </ul>
+                </li>
+                <li><strong>Visual & Display Architecture:</strong> Live generative video elements captured simultaneously with the audio performance to document the offline session.</li>
+                <li><strong>Session Data:</strong> Part 1 of the #Trichromat Series | Format: YouTube Archive</li>
             </ul>
         </div></details>
         `,
@@ -331,17 +331,17 @@ const masterCollectionRegistry = {
         <div class="details-content">
             <p>To revitalise archival audio loops and project files from the Electric Abuse era, integrating legacy stems with modern virtual studio technology to create cohesive, updated arrangements.</p>
             <ul class="log-list">
-            <li><strong>Style:</strong> Archival Rework / Experimental Electronic</li>
-            <li><strong>Methodology:</strong> Studio-based arrangement and manipulation. Archival Cubase stems were reconstructed and layered with modern VST instruments and updated synthesis techniques.</li>
-            <li><strong>Audio Signal Chain:</strong>
+                <li><strong>Style:</strong> Archival Rework / Experimental Electronic</li>
+                <li><strong>Methodology:</strong> Studio-based arrangement and manipulation. Archival Cubase stems were reconstructed and layered with modern VST instruments and updated synthesis techniques.</li>
+                <li><strong>Audio Signal Chain:</strong>
             <ul>
-            <li><em>Brain/Control:</em> Modern DAW environment sequencing legacy audio loops alongside new MIDI data.</li>
-            <li><em>Sound Sources:</em> Original 'Electric Abuse' audio loops (2007–2014) combined with modern software synthesisers and VST plugins.</li>
-            <li><em>Processing/FX:</em> Modern VST effect chains applied to legacy audio to match current sonic standards.</li>
+                <li><em>Brain/Control:</em> Modern DAW environment sequencing legacy audio loops alongside new MIDI data.</li>
+                <li><em>Sound Sources:</em> Original 'Electric Abuse' audio loops (2007–2014) combined with modern software synthesisers and VST plugins.</li>
+                <li><em>Processing/FX:</em> Modern VST effect chains applied to legacy audio to match current sonic standards.</li>
             </ul>
             </li>
-            <li><strong>Visual & Display Architecture:</strong> Audio-focused studio project.</li>
-            <li><strong>Session Data:</strong> Archival Rework | Source Material: 2007–2014</li>
+                <li><strong>Visual & Display Architecture:</strong> Audio-focused studio project.</li>
+                <li><strong>Session Data:</strong> Archival Rework | Source Material: 2007–2014</li>
             </ul>
         </div></details>
         `,
@@ -356,17 +356,17 @@ const masterCollectionRegistry = {
         <div class="details-content">
             <p>To capture the raw, unpredictable nature of early Eurorack system building, bridging initial generative hardware experiments with structured DAW arrangements.</p>
             <ul class="log-list">
-            <li><strong>Style:</strong> Modular Experimental / Hybrid Electronic</li>
-            <li><strong>Methodology:</strong> Initial raw captures of modular patches and generative sequences, later imported into Ableton Live for editing, loop integration, and final arrangement.</li>
-            <li><strong>Audio Signal Chain:</strong>
+                <li><strong>Style:</strong> Modular Experimental / Hybrid Electronic</li>
+                <li><strong>Methodology:</strong> Initial raw captures of modular patches and generative sequences, later imported into Ableton Live for editing, loop integration, and final arrangement.</li>
+                <li><strong>Audio Signal Chain:</strong>
             <ul>
-            <li><em>Brain/Control:</em> Baby8 sequencer, Music Thing Modular Turing Machine, and Make Noise Maths for generative control, with final arrangement and sequencing in Ableton Live.</li>
-            <li><em>Sound Sources:</em> Mutable Instruments Braids and Tides, Make Noise 0-Coast, Teenage Engineering PO-12 Rhythm, and Arturia DrumBrute Impact.</li>
-            <li><em>Processing/FX:</em> Mutable Instruments Clouds for granular texture, with final mixdown and effects applied in Ableton.</li>
+                <li><em>Brain/Control:</em> Baby8 sequencer, Music Thing Modular Turing Machine, and Make Noise Maths for generative control, with final arrangement and sequencing in Ableton Live.</li>
+                <li><em>Sound Sources:</em> Mutable Instruments Braids and Tides, Make Noise 0-Coast, Teenage Engineering PO-12 Rhythm, and Arturia DrumBrute Impact.</li>
+                <li><em>Processing/FX:</em> Mutable Instruments Clouds for granular texture, with final mixdown and effects applied in Ableton.</li>
             </ul>
             </li>
-            <li><strong>Visual & Display Architecture:</strong> Audio-focused modular system captures.</li>
-            <li><strong>Session Data:</strong> Early Modular System Experiments</li>
+                <li><strong>Visual & Display Architecture:</strong> Audio-focused modular system captures.</li>
+                <li><strong>Session Data:</strong> Early Modular System Experiments</li>
             </ul>
         </div></details>
         `,
