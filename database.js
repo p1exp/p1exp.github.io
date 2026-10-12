@@ -21,8 +21,11 @@ const pageLayoutEngine = {
             text: `
                 <h3>The central processing deck for the #P1EXP audio matrix</h3>
                 <p><strong>Swipe the page or select from the menu above to view the timeline archives and projects or view the featured showcase below. Select PLAY ARCHIVE DECK to stream the collections.</strong></p>
-                <p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno.</p>
-                <p>This catalogue explores the structural evolution of underground machine compositions, engineered through a hybrid workflow of live hardware modular synthesis, custom generative MIDI sequencing, and complex DAW sample manipulation.</p>
+                <details><summary>+ VIEW HARDWARE LOG</summary>
+                <div class="details-content">
+                    <p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno.</p>
+                    <p>This catalogue explores the structural evolution of underground machine compositions, engineered through a hybrid workflow of live hardware modular synthesis, custom generative MIDI sequencing, and complex DAW sample manipulation.</p>
+                </div></details>
             `,
             imageName: `p1_bg.jpg`
         },
