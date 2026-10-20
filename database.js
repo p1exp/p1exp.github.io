@@ -36,10 +36,10 @@ const pageLayoutEngine = {
                 text: `
                     <h4>LATEST EXPERIMENTS</h4>
                     <p>Raw audio telemetry.</p>
-                    <p>Tracks from various projects currently under development.</p>
+                    <p>Projects currently under development.</p>
                 `,
                 imageName: `lab_bg.jpg`,
-                archiveKeys: [`LAB1`, `INS2`, `NEUR`, `EPH1`]
+                archiveKeys: [`LAB1`, `SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
             },
             {
                 title: `FEATURED TRANSMISSIONS`,
@@ -48,7 +48,7 @@ const pageLayoutEngine = {
                     <p>Pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>
                 `,
                 imageName: `featured_bg.jpg`,
-                archiveKeys: [`COSP`, `INL2`, `BREL`, `EXCP`, `INTL`, `INMA`]
+                archiveKeys: [`COSP`, `INS2`, `INL2`, `EXCP`, `INTL`, `INMA`]
             }
         ]
     },
