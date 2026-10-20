@@ -36,10 +36,10 @@ const pageLayoutEngine = {
                 text: `
                     <h4>LATEST EXPERIMENTS</h4>
                     <p>Raw audio telemetry.</p>
-                    <p>Projects currently under development.</p>
+                    <p>Most recent projects currently under development.</p>
                 `,
                 imageName: `lab_bg.jpg`,
-                archiveKeys: [`LAB1`, `SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
+                archiveKeys: [`SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
             },
             {
                 title: `FEATURED TRANSMISSIONS`,
