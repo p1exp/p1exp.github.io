@@ -21,7 +21,7 @@ const pageLayoutEngine = {
             text: `
                 <h3>The central processing deck for the #P1EXP audio matrix</h3>
                 <p><strong>Swipe the page or select from the menu above to view the timeline archives and projects or view the featured showcase below.</p>
-                <p>Select PLAY ARCHIVE DECK to stream the collections.</strong></p>
+                <p>Select [▶ PLAY ARCHIVE DECK] to stream the collections.</strong></p>
                 <details><summary>+ MORE INFORMATION</summary>
                 <div class="details-content">
                     <p>Explore the archive dedicated to experimental electronic music, abstract breaks, ambient soundscapes, and high-density industrial techno.</p>
@@ -35,8 +35,13 @@ const pageLayoutEngine = {
                 title: `IN THE LAB // ON THE SLAB`,
                 text: `
                     <h4>LATEST EXPERIMENTS</h4>
-                    <p>Raw audio telemetry.</p>
-                    <p>Most recent projects currently under development.</p>
+                    <p>Raw audio telemetry - The most recently developed projects.</p>
+                    <p>Select [▶ PLAY ARCHIVE DECK] to stream now.</p>
+                    <details><summary>+ MORE INFORMATION</summary>
+                    <div class="details-content">
+                        <p>The latest remastered projects 2026</p>
+                        <p>These collections have been remastered and remixed and with new content. Although now 2026 versions with additional material, they retain their original release date in the catalogue.</p>
+                    </div></details>
                 `,
                 imageName: `lab_bg.jpg`,
                 archiveKeys: [`SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
