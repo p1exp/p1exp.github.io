@@ -35,8 +35,9 @@ const pageLayoutEngine = {
                 title: `IN THE LAB // ON THE SLAB`,
                 text: `
                     <h4>LATEST EXPERIMENTS</h4>
-                    <p>Raw audio telemetry - The most recently developed projects.</p>
-                    <p>Select [▶ PLAY ARCHIVE DECK] to stream now.</p>
+                    <p>2026 Remaster Initiative - The most recently developed projects.</p>
+                    <p><b>2026 - IN THE LAB</b> is an ongoing collection of individual tracks remixed and mastered from various projects.</p>
+                    <p>The collections that follow are full 2026 remasters — reworked, remixed, and expanded with new material — while retaining their original release dates in the catalogue.</p>
                     <details><summary>+ MORE INFORMATION</summary>
                     <div class="details-content">
                         <p>The latest remastered projects 2026</p>
