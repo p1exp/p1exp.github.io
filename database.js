@@ -219,9 +219,9 @@ const masterCollectionRegistry = {
     // ----- P1EXP ----- //
     LA26: {
         title: `2026 - IN THE LAB`, date: `2026`,
-        description: `Studio recording from sets performed at the Carry on up Lode and Lakefest festivals.`,
+        description: `The latest individual tracks remixed and developed from various projects during 2026 remaster project.`,
         mediaUrl: `https://bandcamp.com/EmbeddedPlayer/album=2586510576/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/`,
-        footer: `MIXCLOUD Stream`
+        footer: `Download free from BANDCAMP - Status: Incremental`
     },
     LAB1: {
         title: `LABORATORY PRELIMS`, date: `2026`,
