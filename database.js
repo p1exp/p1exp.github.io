@@ -44,7 +44,7 @@ const pageLayoutEngine = {
                     </div></details>
                 `,
                 imageName: `lab_bg.jpg`,
-                archiveKeys: [`SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
+                archiveKeys: [`LA26`, `SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
             },
             {
                 title: `FEATURED TRANSMISSIONS`,
@@ -217,6 +217,12 @@ const pageLayoutEngine = {
 const masterCollectionRegistry = {
 
     // ----- P1EXP ----- //
+    LA26: {
+        title: `2026 - IN THE LAB`, date: `2026`,
+        description: `Studio recording from sets performed at the Carry on up Lode and Lakefest festivals.`,
+        mediaUrl: `https://bandcamp.com/EmbeddedPlayer/album=2586510576/size=large/bgcol=333333/linkcol=00ffcc/tracklist=true/artwork=small/transparent=true/`,
+        footer: `MIXCLOUD Stream`
+    },
     LAB1: {
         title: `LABORATORY PRELIMS`, date: `2026`,
         description: `Latest tracks currently under development from various projects.`,
