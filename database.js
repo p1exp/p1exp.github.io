@@ -35,20 +35,20 @@ const pageLayoutEngine = {
                 title: `IN THE LAB // ON THE SLAB`,
                 text: `
                     <h4>LATEST EXPERIMENTS</h4>
-                    <p><b>2026 - IN THE LAB</b> features new additional tracks created or remixed and mastered from various projects, representing the latest work.</p>
-                    <p>The collections that follow are full 2026 remasters — reworked, remixed, and expanded with new material — while retaining their original release dates in the catalogue.</p>
+                    <p>New additional tracks created or remixed and mastered from various projects, representing the latest work.</p>
+                    <p></p>
                 `,
                 imageName: `lab_bg.jpg`,
-                archiveKeys: [`LA26`, 'TTLG', `SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
+                archiveKeys: [`LA26`]
             },
             {
                 title: `FEATURED TRANSMISSIONS`,
                 text: `
-                    <h4>Highlighted archives</h4>
+                    <h4>HIGHLIGHTED ARCHIVES</h4>These collections are 2026 remasters — reworked, remixed, and expanded with new material — while retaining their original release dates in the catalogue.
                     <p>Pulled from active hardware grids, collaborative studio sessions, and legacy data vaults.</p>
                 `,
                 imageName: `featured_bg.jpg`,
-                archiveKeys: [`COSP`, `INS2`, `INL2`, `EXCP`, `INTL`, `INMA`]
+                archiveKeys: ['TTLG', `SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`, `COSP`, `INS2`, `INL2`, `EXCP`, `INTL`, `INMA`]
             }
         ]
     },
