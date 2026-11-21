@@ -35,12 +35,11 @@ const pageLayoutEngine = {
                 title: `IN THE LAB // ON THE SLAB`,
                 text: `
                     <h4>LATEST EXPERIMENTS</h4>
-                    <p>2026 Remaster Initiative - Remastering and remixing the entire catalogue</p>
                     <p><b>2026 - IN THE LAB</b> features new additional tracks created or remixed and mastered from various projects, representing the latest work.</p>
                     <p>The collections that follow are full 2026 remasters — reworked, remixed, and expanded with new material — while retaining their original release dates in the catalogue.</p>
                 `,
                 imageName: `lab_bg.jpg`,
-                archiveKeys: [`LA26`, `SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
+                archiveKeys: [`LA26`, 'TTLG', `SCDO`, `BREL`, `INL3`, `EPH1`, `NEUR`]
             },
             {
                 title: `FEATURED TRANSMISSIONS`,
